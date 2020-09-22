@@ -1,0 +1,134 @@
+USERS TABLE
+---------------------------------------------------
+USE [gladiator]
+GO
+
+/****** Object:  Table [dbo].[users]    Script Date: 22-09-2020 14:41:04 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[users](
+	[full_name] [varchar](50) NOT NULL,
+	[contactno] [varchar](50) NOT NULL,
+	[email] [varchar](50) NOT NULL,
+	[type] [varchar](50) NOT NULL,
+	[address_line1] [varchar](50) NULL,
+	[address_line2] [varchar](50) NULL,
+	[city] [varchar](50) NOT NULL,
+	[state] [varchar](50) NOT NULL,
+	[pincode] [varchar](50) NOT NULL,
+	[land_area] [float] NULL,
+	[land_address] [varchar](50) NULL,
+	[land_pincode] [varchar](50) NULL,
+	[account_no] [varchar](50) NOT NULL,
+	[ifsc] [varchar](50) NOT NULL,
+	[password] [varchar](50) NOT NULL,
+	[approved] [int] NULL,
+ CONSTRAINT [PK_users] PRIMARY KEY CLUSTERED 
+(
+	[email] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[users]  WITH CHECK ADD  CONSTRAINT [CK_users_contactno] CHECK  (([contactno] like '[0-9]*10'))
+GO
+
+ALTER TABLE [dbo].[users] CHECK CONSTRAINT [CK_users_contactno]
+GO
+
+ALTER TABLE [dbo].[users]  WITH CHECK ADD  CONSTRAINT [CK_users_pin] CHECK  (([pincode] like '[0-9]*6'))
+GO
+
+ALTER TABLE [dbo].[users] CHECK CONSTRAINT [CK_users_pin]
+GO
+
+----------------------------------
+CROPS TABLE
+-----------------------------------
+USE [gladiator]
+GO
+
+/****** Object:  Table [dbo].[crops]    Script Date: 22-09-2020 14:44:56 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[crops](
+	[email] [varchar](50) NOT NULL,
+	[crop_name] [varchar](50) NOT NULL,
+	[crop_type] [varchar](50) NOT NULL,
+	[fertilizer_type] [varchar](50) NOT NULL,
+	[quantity] [int] NOT NULL,
+	[base_price] [int] NULL,
+	[sold_price] [float] NULL,
+	[approved] [int] NULL,
+	[sold] [int] NULL,
+	[date_sold] [datetime] NULL,
+	[current_bid] [float] NULL,
+	[bidder_name] [nchar](10) NULL
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[crops]  WITH CHECK ADD  CONSTRAINT [FK_crops_users_email] FOREIGN KEY([email])
+REFERENCES [dbo].[users] ([email])
+GO
+
+ALTER TABLE [dbo].[crops] CHECK CONSTRAINT [FK_crops_users_email]
+GO
+
+
+-------------------------------------
+BIDS
+------------------------------------
+USE [gladiator]
+GO
+
+/****** Object:  Table [dbo].[bids]    Script Date: 22-09-2020 14:46:00 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[bids](
+	[email] [varchar](50) NOT NULL,
+	[crop_name] [varchar](50) NOT NULL,
+	[bid] [float] NOT NULL
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[bids]  WITH CHECK ADD  CONSTRAINT [FK_bids_users] FOREIGN KEY([email])
+REFERENCES [dbo].[users] ([email])
+GO
+
+ALTER TABLE [dbo].[bids] CHECK CONSTRAINT [FK_bids_users]
+GO
+
+
+-----------------------------------------
+CONTACT US TABLE
+-----------------------------------------
+USE [gladiator]
+GO
+
+/****** Object:  Table [dbo].[contactUs]    Script Date: 22-09-2020 14:46:35 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[contactUs](
+	[email_cu] [varbinary](50) NOT NULL,
+	[message] [varbinary](200) NULL
+) ON [PRIMARY]
+GO
+
+
+
