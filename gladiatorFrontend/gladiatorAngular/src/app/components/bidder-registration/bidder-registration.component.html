@@ -1,137 +1,138 @@
-<div  class="form">
-    <div class="list-viewer-wrapper">
-      <div class="list-header-title">Hello Bidder</div>
-      <form [formGroup]="registerForm" novalidate>
-      <mat-form-field>
-        <input id="FullName"
+<div class="form">
+    
+    <div class="list-header-title">Hello Bidder
+    
+    <form [formGroup]="registerForm" >
+    <mat-form-field>
+      <input id="FullName"
+             matInput
+             formControlName="FullName"
+             [(ngModel)]="user.FullName"
+             placeholder="Enter your Full Name" />
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input id="ContactNumber"
+             matInput
+             [(ngModel)]="user.ContactNumber"
+             placeholder="Enter your Contact Number" />
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input id="EmailId"
+             matInput
+             formControlName="EmailId"
+             [(ngModel)]="user.EmailId"
+             placeholder="Enter your EmailId" />
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input id="AddressLine1"
+             matInput
+             formControlName="AddressLine1"
+             [(ngModel)]="user.AddressLine1"
+             placeholder="House.No/landmark" />
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input id="AddressLine2"
+             matInput
+             formControlName="AddressLine2"
+             [(ngModel)]="user.AddressLine2"
+             placeholder="Area/Village" />
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input id="City"
+             matInput
+             formControlName="City"
+             [(ngModel)]="user.City"
+             placeholder="City" />
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input id="State"
+             matInput
+             formControlName="State"
+             [(ngModel)]="user.State"
+             placeholder="State" />
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input id="ResidencePincode"
+             matInput
+             formControlName="ResidencePincode"
+             [(ngModel)]="user.ResidencePincode"
+             placeholder="ResidencePincode" />
+    </mat-form-field>
+    <br>
+    <br>
+    <mat-form-field>
+      <input id="AccountNo"
+             matInput
+             formControlName="AccountNo"
+             [(ngModel)]="user.AccountNo"
+             placeholder="Account No" />
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input id="IFSCcode"
                matInput
-               formControlName="FullName"
-               [(ngModel)]="user.FullName"
-               placeholder="Enter your Full Name" />
+               formControlName="IFSCcode"
+               [(ngModel)]="user.IFSCcode"
+               placeholder="Enter your IFSCcode" />
       </mat-form-field>
       <br>
       <mat-form-field>
-        <input id="ContactNumber"
-               matInput
-               formControlName="ContactNumber"
-               [(ngModel)]="user.ContactNumber"
-               placeholder="Enter your Contact Number" />
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <input id="EmailId"
-               matInput
-               formControlName="EmailId"
-               [(ngModel)]="user.EmailId"
-               placeholder="Enter your EmailId" />
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <input id="AddressLine1"
-               matInput
-               formControlName="AddressLine1"
-               [(ngModel)]="user.AddressLine1"
-               placeholder="House.No/landmark" />
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <input id="AddressLine2"
-               matInput
-               formControlName="AddressLine2"
-               [(ngModel)]="user.AddressLine2"
-               placeholder="Area/Village" />
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <input id="City"
-               matInput
-               formControlName="City"
-               [(ngModel)]="user.City"
-               placeholder="City" />
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <input id="State"
-               matInput
-               formControlName="State"
-               [(ngModel)]="user.State"
-               placeholder="State" />
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <input id="ResidencePincode"
-               matInput
-               formControlName="ResidencePincode"
-               [(ngModel)]="user.ResidencePincode"
-               placeholder="ResidencePincode" />
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <input id="AccountNo"
-               matInput
-               formControlName="AccountNo"
-               [(ngModel)]="user.AccountNo"
-               placeholder="Account No" />
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-          <input id="IFSCcode"
+          <input id="Aadhar"
                  matInput
-                 formControlName="IFSCcode"
-                 [(ngModel)]="user.IFSCcode"
-                 placeholder="Enter your IFSCcode" />
+                 formControlName="Aadhar"
+                 [(ngModel)]="user.Aadhar"
+                 placeholder="Please Upload Aadhar" />
         </mat-form-field>
         <br>
         <mat-form-field>
-            <input id="Aadhar"
-                   matInput
-                   formControlName="Aadhar"
-                   [(ngModel)]="user.Aadhar"
-                   placeholder="Please Upload Aadhar" />
-          </mat-form-field>
-          <br>
-          <mat-form-field>
-            <input id="PAN"
-                   matInput
-                   formControlName="PAN"
-                   [(ngModel)]="user.PAN"
-                   placeholder="Please Upload PAN" />
-          </mat-form-field>
-          <br>
-          <mat-form-field>
-            <input id="TraderLicense"
-                   matInput
-                   formControlName="TraderLicense"
-                   [(ngModel)]="user.TraderLicense"
-                   placeholder="Please Upload TraderLicense" />
-          </mat-form-field>
-          <br>
-      <mat-form-field>
-          <input id="Password"
+          <input id="PAN"
                  matInput
-                 formControlName="Password"
-                 [(ngModel)]="user.Password"
-                 placeholder="Enter your Password"
-                 [type]="hide ? 'Password':'text'" />
+                 formControlName="PAN"
+                 [(ngModel)]="user.PAN"
+                 placeholder="Please Upload PAN" />
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input id="TraderLicense"
+                 matInput
+                 formControlName="TraderLicense"
+                 [(ngModel)]="user.TraderLicense"
+                 placeholder="Please Upload TraderLicense" />
+        </mat-form-field>
+        <br>
+    <mat-form-field>
+        <input id="Password"
+               matInput
+               formControlName="Password"
+               [(ngModel)]="user.Password"
+               placeholder="Enter your Password"
+               [type]="hide ? 'Password':'text'" />
+          <mat-icon matSuffix (click)="hide = !hide">
+            {{hide ? 'visibility' : 'visibility_off'}}
+          </mat-icon>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+          <input id="ConfirmPassword"
+                 matInput
+                 formControlName="ConfirmPassword"
+                 [(ngModel)]="user.ConfirmPassword"
+                 placeholder="Please Renter your Password"
+                 [type]="hide ? 'ConfirmPassword':'text'" />
             <mat-icon matSuffix (click)="hide = !hide">
               {{hide ? 'visibility' : 'visibility_off'}}
             </mat-icon>
         </mat-form-field>
         <br>
-        <mat-form-field>
-            <input id="ConfirmPassword"
-                   matInput
-                   formControlName="ConfirmPassword"
-                   [(ngModel)]="user.ConfirmPassword"
-                   placeholder="Please Renter your Password"
-                   [type]="hide ? 'ConfirmPassword':'text'" />
-              <mat-icon matSuffix (click)="hide = !hide">
-                {{hide ? 'visibility' : 'visibility_off'}}
-              </mat-icon>
-          </mat-form-field>
-          <br>
-    
-        </form>
-        <button mat-raised-button color="primary">Register</button>
-    </div>
+  
+      </form>
   </div>
+      <button mat-raised-button color="primary">Register</button>
+</div>
