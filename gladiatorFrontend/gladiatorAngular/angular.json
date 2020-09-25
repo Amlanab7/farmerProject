@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "gladiatorAngular"
+    }
+  },
+  "defaultProject": "gladiatorAngular",
+  "cli": {
+    "analytics": "2a861628-28b3-46aa-ae4e-50a901636fc8"
+  }
 }
