@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { auctionRequest } from 'src/app/Model/auctionRequest';
+import { CroptableService } from 'src/app/services/croptable.service';
 
 @Component({
   selector: 'app-auction-request',
@@ -9,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AuctionRequestComponent implements OnInit {
   requestForm: FormGroup;
-  constructor(private formBuilder: FormBuilder,private router: Router) {
+  constructor(private formBuilder: FormBuilder,private router: Router,private cropservice:CroptableService) {
     this.requestForm = this.formBuilder.group({
 			cropType: new FormControl(),
       cropName: new FormControl(),
@@ -21,8 +23,14 @@ export class AuctionRequestComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onSubmit(){
-    console.log('Type:' + this.requestForm.get('cropType').value);
-  }
+  onSubmit(requestForm:auctionRequest){
+    console.log(requestForm);
+
+  this.cropservice.addAuctionRequest(requestForm).subscribe(data=>{
+    console.log(data)
+    alert("auction request placed successfully");
+    this.router.navigate(['contactus']);
+  })
+}
 
 }

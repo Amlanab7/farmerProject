@@ -13,15 +13,15 @@ export class FarmerWelcomeComponent implements OnInit {
   ngOnInit(): void {
   }
   goToAuction(){
-    this.router.navigate(['auctio-request']);
+    this.router.navigate(['auction-request']);
 
   }
   goToSoldHistory(){
-    this.router.navigate(['']);
+    this.router.navigate(['contactus']);
 
   }
   goToMarketplace(){
-    this.router.navigate(['']);
+    this.router.navigate(['contactus']);
 
   }
 

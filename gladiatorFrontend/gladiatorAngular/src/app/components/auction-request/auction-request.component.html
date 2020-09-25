@@ -1,33 +1,28 @@
 
 
      
-<form [formGroup]="requestForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="requestForm" (ngSubmit)="onSubmit(requestForm.value)">
     
-    <div class="md-form mb-5">
+    <div class="form-group">
     Crop Type: <input formControlName="cropType"  placeholder="Enter Crop Type">
     </div>  
-    <div class="md-form mb-5">
+    <div class="form-group">
     Crop Name: <input formControlName="cropName"  placeholder="Enter Crop Name">
 </div>
 
-<div class="md-form mb-5">
+<div class="form-group">
     Fertilizer Type: <input formControlName="fertType"  placeholder="Enter Fertilizer Type">
 </div>
-<div class="md-form mb-5">
+<div class="form-group">
     Quantity: <input formControlName="quantity"  placeholder="Enter Quantity">
 </div>
-<div class="md-form mb-5">
+<div class="form-group">
     Base Price: <input formControlName="basePrice"  placeholder="Enter Base Price">
 </div>
 
-<div class="text-center mb-3 col-md-12">
+<div class="text-center">
     <button type="submit">Place Request</button> 
 </div>
-
-<!--Grid row-->
-
-
-
 </form>
 
 
