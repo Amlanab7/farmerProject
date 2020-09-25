@@ -1,8 +1,7 @@
-<div class="form">
-    
-      <div class="list-header-title">Register
-      
-      <form [formGroup]="registerForm" >
+<div  class="form">
+    <div class="list-viewer-wrapper">
+      <div class="list-header-title">Hello Bidder</div>
+      <form [formGroup]="registerForm" novalidate>
       <mat-form-field>
         <input id="FullName"
                matInput
@@ -14,6 +13,7 @@
       <mat-form-field>
         <input id="ContactNumber"
                matInput
+               formControlName="ContactNumber"
                [(ngModel)]="user.ContactNumber"
                placeholder="Enter your Contact Number" />
       </mat-form-field>
@@ -64,30 +64,6 @@
                formControlName="ResidencePincode"
                [(ngModel)]="user.ResidencePincode"
                placeholder="ResidencePincode" />
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <input id="Area"
-               matInput
-               formControlName="Area"
-               [(ngModel)]="user.Area"
-               placeholder="Land Area" />
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <input id="Address"
-               matInput
-               formControlName="Address"
-               [(ngModel)]="user.Address"
-               placeholder="Land Address" />
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <input id="LandPincode"
-               matInput
-               formControlName="LandPincode"
-               [(ngModel)]="user.LandPincode"
-               placeholder="Land Pincode" />
       </mat-form-field>
       <br>
       <mat-form-field>
@@ -156,6 +132,6 @@
           <br>
     
         </form>
-    </div>
         <button mat-raised-button color="primary">Register</button>
+    </div>
   </div>

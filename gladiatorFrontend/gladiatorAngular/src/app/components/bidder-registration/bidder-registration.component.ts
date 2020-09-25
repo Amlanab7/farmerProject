@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import{FarmerRegistrationForm} from 'src/app/Models/FarmerRegistrationForm';
 import{FormGroup,FormBuilder,Validators} from '@angular/forms';
+import { BidderRegistrationForm } from 'src/app/Models/BidderRegistrationForm';
 @Component({
-  selector: 'app-farmer-registration',
-  templateUrl: './farmer-registration.component.html',
-  styleUrls: ['./farmer-registration.component.css']
+  selector: 'app-bidder-registration',
+  templateUrl: './bidder-registration.component.html',
+  styleUrls: ['./bidder-registration.component.css']
 })
-export class FarmerRegistrationComponent implements OnInit {
-  user: FarmerRegistrationForm =new FarmerRegistrationForm();
+export class BidderRegistrationComponent implements OnInit {
+  user:BidderRegistrationForm=new BidderRegistrationForm();
   registerForm:FormGroup;
   hide = true;
   constructor(private formBuilder:FormBuilder) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.registerForm =this.formBuilder.group({
       'FullName': [this.user.FullName, [
              Validators.required
@@ -39,15 +39,7 @@ export class FarmerRegistrationComponent implements OnInit {
              'ResidencePincode': [this.user.ResidencePincode, [
               Validators.required,
             ]],
-            'Area': [this.user.Area, [
-              Validators.required,
-            ]],
-            'Address': [this.user.Address, [
-              Validators.required,
-            ]],
-            'LandPincode': [this.user.LandPincode, [
-              Validators.required,
-            ]],
+           
              'AccountNo': [this.user.AccountNo, [
               Validators.required,
           ]],

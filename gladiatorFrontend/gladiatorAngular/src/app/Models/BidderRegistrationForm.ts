@@ -1,4 +1,4 @@
-export class FarmerRegistrationForm{
+export class BidderRegistrationForm{
     FullName:string;
     ContactNumber:number;
     EmailId:string;
@@ -7,9 +7,6 @@ export class FarmerRegistrationForm{
     City:string;
     State:string;
     ResidencePincode:string;
-    Area:string;
-    Address:string;
-    LandPincode:string
     AccountNo:string;
     IFSCcode:string;
     Aadhar:string;
