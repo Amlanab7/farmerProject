@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-farmer-welcome',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FarmerWelcomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+  }
+  goToAuction(){
+    this.router.navigate(['auctio-request']);
+
+  }
+  goToSoldHistory(){
+    this.router.navigate(['']);
+
+  }
+  goToMarketplace(){
+    this.router.navigate(['']);
+
   }
 
 }

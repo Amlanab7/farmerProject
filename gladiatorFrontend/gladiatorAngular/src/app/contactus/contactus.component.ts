@@ -13,9 +13,9 @@ export class ContactusComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+ngOnInit(): void {
     
-  }
+} 
   submitForm() {
     const allInfo = `My name is ${this.name}. My email is ${this.email}. My message is ${this.message}`;
     alert(allInfo); 
