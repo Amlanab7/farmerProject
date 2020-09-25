@@ -6,10 +6,14 @@ import { BidderRegistrationComponent } from './components/bidder-registration/bi
 import { FarmerRegistrationComponent } from './components/farmer-registration/farmer-registration.component';
 import { FarmerWelcomeComponent } from './components/farmer-welcome/farmer-welcome.component';
 import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
 import { SubRegisterPageComponent } from './components/sub-register-page/sub-register-page.component';
 import { ContactusComponent } from './contactus/contactus.component';
 
 const routes: Routes = [
+  {path:'home',component:HomeComponent},
+  {path:'src/app/about',component:AboutusComponent},
+  {path:'src/app/contact',component:ContactusComponent},
   {path:'subregister', component:SubRegisterPageComponent},
   {path:'aboutus', component:AboutusComponent},
   {path:'home', component:HomeComponent},
@@ -17,7 +21,9 @@ const routes: Routes = [
   {path:'farmer-welcome', component:FarmerWelcomeComponent},
   {path:'auction-request', component:AuctionRequestComponent},
 {path:'farmerregister', component:FarmerRegistrationComponent},
-{path:'bidderregister', component:BidderRegistrationComponent}
+{path:'bidderregister', component:BidderRegistrationComponent},
+{path:'login',component:LoginComponent},
+
 ];
 
 @NgModule({
