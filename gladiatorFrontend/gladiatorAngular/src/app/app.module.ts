@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import {NgForm} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 
 
 
-import { FarmerRegistrationFormComponent } from './components/farmer-registration-form/farmer-registration-form.component';
+//import { FarmerRegistrationFormComponent } from './components/farmer-registration-form/farmer-registration-form.component';
 
 
 import { LoginComponent } from './components/login/login.component';
@@ -20,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { AdminwelcomeComponent } from './components/adminwelcome/adminwelcome.component';
 
 
 
@@ -30,14 +32,15 @@ import { ContactusComponent } from './contactus/contactus.component';
 
 
 
-    FarmerRegistrationFormComponent,
+    //FarmerRegistrationFormComponent,
 
     LoginComponent,
     AuctionRequestComponent,
     FarmerWelcomeComponent,
 
     AboutusComponent,
-    ContactusComponent
+    ContactusComponent,
+    AdminwelcomeComponent
 
 
   ],
