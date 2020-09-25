@@ -1,9 +1,14 @@
 <div class="form">
-    
-    <div class="list-header-title">Hello Bidder
-    
+  <div class="bgpic">
+    <div class="container">
     <form [formGroup]="registerForm" >
-    <mat-form-field>
+      <span>
+        <label for="email" class="font-weight-bold">
+          PERSONAL DETAILS </label><br>
+      </span><br><br>
+      <label for="email" class="font-weight-bold">
+        Full Name: </label><br>
+    <mat-form-field>  
       <input id="FullName"
              matInput
              formControlName="FullName"
@@ -11,6 +16,8 @@
              placeholder="Enter your Full Name" />
     </mat-form-field>
     <br>
+    <label for="email" class="font-weight-bold">
+      Contact Number: </label><br>
     <mat-form-field>
       <input id="ContactNumber"
              matInput
@@ -18,6 +25,8 @@
              placeholder="Enter your Contact Number" />
     </mat-form-field>
     <br>
+    <label for="email" class="font-weight-bold">
+      Email ID : </label><br>
     <mat-form-field>
       <input id="EmailId"
              matInput
@@ -26,6 +35,12 @@
              placeholder="Enter your EmailId" />
     </mat-form-field>
     <br>
+    <span>
+      <label for="email" class="font-weight-bold">
+        ADDRESS DETAILS </label><br>
+    </span><br><br>
+    <label for="email" class="font-weight-bold">
+      Address Line1 : </label><br>
     <mat-form-field>
       <input id="AddressLine1"
              matInput
@@ -34,6 +49,8 @@
              placeholder="House.No/landmark" />
     </mat-form-field>
     <br>
+    <label for="email" class="font-weight-bold">
+      Address Line2 : </label><br>
     <mat-form-field>
       <input id="AddressLine2"
              matInput
@@ -42,6 +59,8 @@
              placeholder="Area/Village" />
     </mat-form-field>
     <br>
+    <label for="email" class="font-weight-bold">
+      City: </label><br>
     <mat-form-field>
       <input id="City"
              matInput
@@ -50,6 +69,8 @@
              placeholder="City" />
     </mat-form-field>
     <br>
+    <label for="email" class="font-weight-bold">
+      State : </label><br>
     <mat-form-field>
       <input id="State"
              matInput
@@ -58,15 +79,22 @@
              placeholder="State" />
     </mat-form-field>
     <br>
+    <label for="email" class="font-weight-bold">
+      Residence Pincode : </label><br>
     <mat-form-field>
       <input id="ResidencePincode"
              matInput
              formControlName="ResidencePincode"
              [(ngModel)]="user.ResidencePincode"
-             placeholder="ResidencePincode" />
+             placeholder="Please enter your Home Pincode" />
     </mat-form-field>
     <br>
-    <br>
+    <span>
+      <label for="email" class="font-weight-bold">
+        BANK DETAILS </label><br>
+    </span><br><br>
+    <label for="email" class="font-weight-bold">
+      Account Number : </label><br>
     <mat-form-field>
       <input id="AccountNo"
              matInput
@@ -75,6 +103,8 @@
              placeholder="Account No" />
     </mat-form-field>
     <br>
+    <label for="email" class="font-weight-bold">
+      IFSC: </label><br>
     <mat-form-field>
         <input id="IFSCcode"
                matInput
@@ -83,6 +113,12 @@
                placeholder="Enter your IFSCcode" />
       </mat-form-field>
       <br>
+      <span>
+        <label for="email" class="font-weight-bold">
+           DOCUMENT UPLOAD </label><br>
+      </span><br><br>
+      <label for="email" class="font-weight-bold">
+        Aadhar : </label><br>
       <mat-form-field>
           <input id="Aadhar"
                  matInput
@@ -91,6 +127,8 @@
                  placeholder="Please Upload Aadhar" />
         </mat-form-field>
         <br>
+        <label for="email" class="font-weight-bold">
+          PAN : </label><br>
         <mat-form-field>
           <input id="PAN"
                  matInput
@@ -99,6 +137,8 @@
                  placeholder="Please Upload PAN" />
         </mat-form-field>
         <br>
+        <label for="email" class="font-weight-bold">
+          Trader License : </label><br>
         <mat-form-field>
           <input id="TraderLicense"
                  matInput
@@ -106,7 +146,9 @@
                  [(ngModel)]="user.TraderLicense"
                  placeholder="Please Upload TraderLicense" />
         </mat-form-field>
-        <br>
+        <br><br><br>
+        <label for="email" class="font-weight-bold">
+          Password : </label><br>
     <mat-form-field>
         <input id="Password"
                matInput
@@ -119,6 +161,8 @@
           </mat-icon>
       </mat-form-field>
       <br>
+      <label for="email" class="font-weight-bold">
+        Confirm Password : </label><br>
       <mat-form-field>
           <input id="ConfirmPassword"
                  matInput
@@ -133,8 +177,12 @@
         <br>
   
       </form>
-  </div>
+ 
       <button mat-raised-button color="primary">Register</button>
-      <button mat-raised-button color="">Reset</button>
+      &nbsp;&nbsp;
+      <button class="btn btn-outline-danger" type="reset"> Cancel</button>
+      &nbsp;&nbsp;
       <a routerLink="/home"><button mat-raised-button color="warn">Back to Home</button></a>
-</div>
+    </div>
+    </div>
+  </div>
