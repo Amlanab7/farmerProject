@@ -1,29 +1,54 @@
-
-
-     
-<form [formGroup]="requestForm" (ngSubmit)="onSubmit(requestForm.value)">
+<h3>request</h3>
+<div class="form">
+<div class="list-header-title">Hello Farmer
+    <form [formGroup]="requestForm" >
+    <mat-form-field>
+      <input id="cropType"
+             matInput
+             formControlName="cropType"
+             [(ngModel)]="request.cropType"
+             placeholder="Enter crop Type" />
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input id="cropName"
+               matInput
+               formControlName="cropName"
+               [(ngModel)]="request.cropName"
+               placeholder="Enter crop Name" />
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input id="fertType"
+               matInput
+               formControlName="fertType"
+               [(ngModel)]="request.fertType"
+               placeholder="Enter fertilizer type" />
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input id="quantity"
+               matInput
+               formControlName="quantity"
+               [(ngModel)]="request.quantity"
+               placeholder="Enter quantity" />
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input id="basePrice"
+               matInput
+               formControlName="basePrice"
+               [(ngModel)]="request.basePrice"
+               placeholder="Enter base price" />
+      </mat-form-field>
     
-    <div class="form-group">
-    Crop Type: <input formControlName="cropType"  placeholder="Enter Crop Type">
-    </div>  
-    <div class="form-group">
-    Crop Name: <input formControlName="cropName"  placeholder="Enter Crop Name">
-</div>
+     
+<!-- <form [formGroup]="requestForm" (ngSubmit)="onSubmit(requestForm.value)"> -->
 
-<div class="form-group">
-    Fertilizer Type: <input formControlName="fertType"  placeholder="Enter Fertilizer Type">
-</div>
-<div class="form-group">
-    Quantity: <input formControlName="quantity"  placeholder="Enter Quantity">
-</div>
-<div class="form-group">
-    Base Price: <input formControlName="basePrice"  placeholder="Enter Base Price">
-</div>
-
-<div class="text-center">
-    <button type="submit">Place Request</button> 
-</div>
 </form>
+</div>
+<button mat-raised-button color="primary" (click)="onSubmit()">Place Request</button>
+</div>
 
 
 
