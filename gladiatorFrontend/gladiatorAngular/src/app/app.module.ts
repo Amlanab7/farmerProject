@@ -8,13 +8,12 @@ import { LoginComponent } from './components/login/login.component';
 import { AuctionRequestComponent } from './components/auction-request/auction-request.component';
 import { FarmerWelcomeComponent } from './components/farmer-welcome/farmer-welcome.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FarmerRegistrationFormComponent } from './components/farmer-registration-form/farmer-registration-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    FarmerRegistrationFormComponent
+
   ],
   imports: [
     BrowserModule,
