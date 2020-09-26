@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import{FormGroup,FormBuilder,Validators} from '@angular/forms';
 import { BidderRegistrationForm } from 'src/app/Models/BidderRegistrationForm';
+import { UsertableService } from 'src/app/services/usertable.service';
 @Component({
   selector: 'app-bidder-registration',
   templateUrl: './bidder-registration.component.html',
@@ -10,7 +11,7 @@ export class BidderRegistrationComponent implements OnInit {
   user:BidderRegistrationForm=new BidderRegistrationForm();
   registerForm:FormGroup;
   hide = true;
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder,private service:UsertableService) { }
 
   ngOnInit() {
     this.registerForm =this.formBuilder.group({
@@ -62,9 +63,17 @@ export class BidderRegistrationComponent implements OnInit {
                Validators.required,
              ]],
       
+    }) 
+  }
+  onSubmit(registerForm : BidderRegistrationForm){
+    console.log(registerForm);
+  
+    this.service.addUser(registerForm).subscribe(data=>{
+      console.log(data)
+      window.location.reload();
+      alert("User Registered Successfully");
+      
     })
-
-   
   }
 
 }
