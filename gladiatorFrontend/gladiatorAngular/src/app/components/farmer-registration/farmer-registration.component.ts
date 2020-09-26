@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import{FarmerRegistrationForm} from 'src/app/Models/FarmerRegistrationForm';
 import{FormGroup,FormBuilder,Validators} from '@angular/forms';
+import { UsertableService } from 'src/app/services/usertable.service';
 @Component({
   selector: 'app-farmer-registration',
   templateUrl: './farmer-registration.component.html',
@@ -10,7 +11,7 @@ export class FarmerRegistrationComponent implements OnInit {
   user: FarmerRegistrationForm =new FarmerRegistrationForm();
   registerForm:FormGroup;
   hide = true;
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder,private service:UsertableService) { }
 
   ngOnInit(): void {
     this.registerForm =this.formBuilder.group({
@@ -74,5 +75,14 @@ export class FarmerRegistrationComponent implements OnInit {
 
    
   }
-
+  onSubmit(registerForm : FarmerRegistrationForm){
+    console.log(registerForm);
+  
+    this.service.addUser(registerForm).subscribe(data=>{
+      console.log(data)
+      window.location.reload();
+      alert("User Registered Successfully");
+      
+    })
+  }
 }
