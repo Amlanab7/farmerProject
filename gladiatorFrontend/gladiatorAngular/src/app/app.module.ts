@@ -17,8 +17,9 @@ import { FarmerRegistrationComponent } from './components/farmer-registration/fa
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { BidderRegistrationComponent } from './components/bidder-registration/bidder-registration.component';
-import { SubRegisterPageComponent } from './components/sub-register-page/sub-register-page.component';
 import { RouterModule } from '@angular/router';
+import { LoginFarmerComponent } from './components/login-farmer/login-farmer.component';
+import { LoginBidderComponent } from './components/login-bidder/login-bidder.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,9 @@ import { RouterModule } from '@angular/router';
     AdminwelcomeComponent,
     NavbarComponent,
     BidderRegistrationComponent,
-    SubRegisterPageComponent
+    LoginFarmerComponent,
+    LoginBidderComponent,
+
 
 
   ],

@@ -1,5 +1,4 @@
-<div class="form">
-    <div class="bgpic">
+<div class="background">
       <div class="container">
       <form [formGroup]="registerForm" >
         <span>
@@ -9,7 +8,7 @@
         <label for="email" class="font-weight-bold">
           Full Name: </label><br>
       <mat-form-field>  
-        <input id="FullName"
+        <input class="padding_textbox" type="text" id="FullName"
                matInput
                formControlName="FullName"
                [(ngModel)]="user.FullName"
@@ -217,6 +216,5 @@
         <button class="btn btn-outline-danger" type="reset"> Cancel</button>
         &nbsp;&nbsp;
         <a routerLink="/home"><button mat-raised-button color="warn">Back to Home</button></a>
-      </div>
       </div>
     </div>

@@ -8,7 +8,7 @@ import { LoginForm } from 'src/app/Models/LoginForm';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  myimage:string="assets/images/Homepagebgi.jpg";
   loginForm: LoginForm =new LoginForm();
   submitted=false;
   constructor(private formBuilder:FormBuilder) { }

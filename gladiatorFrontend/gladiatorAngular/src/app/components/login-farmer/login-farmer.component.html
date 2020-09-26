@@ -1,0 +1,88 @@
+<br/>
+<br/>
+<div class="bgpic">
+    <div class="container">
+        <br/>
+        <br/>
+        <!-- LOGIN FORM -->
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 container justify-content-center">
+                <h1 class="text-center login-title text-white font-weight-bold"><p>Hello Farmer!</p>
+                    Please Enter login details</h1>
+                <div class="account-wall">
+                    <!-- ICON FOR LOGIN FORM -->
+                    <!-- <div margin=""></div>
+                    <mat-icon>person</mat-icon> -->
+                    
+                
+                    <form [formGroup]="loginForm" (ngSubmit)="verifyLogin()" class="form-signin">
+                        <!-- email address -->
+                        <div class="form-group">
+                            <label for="email" class="font-weight-bold">
+                                Email ID : </label>
+                            <input type="text" class="form-control" placeholder="Email Id " formControlName="email" />
+<!-- 
+                            <div *ngIf="submitted  &&  loginForm.controls.CustomerID.errors">
+                                <div class="alert alert-danger" *ngIf="loginForm.controls.CustomerID.errors.required">
+                                    CustomerID is required !
+                                </div>
+                            </div> -->
+
+                            <!-- <div *ngIf="submitted  &&  loginForm.controls.CustomerID.errors">
+                                <div class="text-danger" *ngIf="loginForm.controls.CustomerID.errors.pattern">
+                                    Invalid Customer Id !
+                                </div>
+                            </div> -->
+
+
+                        </div>
+
+                        <!-- Password -->
+                        <div class="form-group">
+                            <label for="password" class="font-weight-bold">
+                                Password : </label>
+                            <input type="password" class="form-control" placeholder="Password" maxlength="15" formControlName="password" />
+
+<!-- 
+                            <div *ngIf="submitted  &&  loginForm.controls.LoginPassword.errors">
+                                <div class="alert alert-danger" *ngIf="loginForm.controls.LoginPassword.errors.required">
+                                    Password is required !
+                                </div>
+                            </div> -->
+                        </div>
+
+                        <button class="btn btn-outline-success">Login</button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                        <button class="btn btn-outline-danger" type="reset"> Cancel</button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a class="btn btn-warning" routerLink="/home">
+                            Go Home</a>
+                        <br/>
+                        <br/>
+                        Not Registerd?<a routerLink="/farmerregister"> Signup Here</a>
+                        
+                        <!-- <a routerLink="/forgotcustomerid" class="" routerLink="/forgotcustomerid">Forgot CustomerID</a> &nbsp; &nbsp;&nbsp;
+                        <a class="" routerLink="/forgotcustomerpwd">Forgot Password</a> -->
+                        <br/>
+                        <!-- <div class="error" *ngIf="invalidLogin">
+                            <div class="text-danger">
+                                Invalid Customer Id or Password !
+                            </div>
+                        </div> -->
+                    </form>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+            </div>
+            <br/>
+            <br/>
+        </div>
+    </div>
+    <!-- <div>
+        <img [src]="myimage" style="height:1000px ;width:1500px" >
+    </div> -->
+   
+</div>

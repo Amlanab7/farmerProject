@@ -1,20 +1,25 @@
-<mat-toolbar color="primary" class="navbar">
-  <div>
-      FARMER PORTAL
+<mat-toolbar class="navbar" color="white">
+  <div class="logo-text" >
+    <a routerLink='/' style="color: inherit; text-decoration: none; height: 100%">
+      Farmer Portal
+    </a>
   </div>
   <div>
-    <span>
-       
-      
-      
-      <a mat-button routerLink="/farmer-welcome" >Welcome Farmer</a> 
-      <a mat-raised-button routerLink="/subregister">Register</a>
-      <a mat-button routerLink="/home" >Home</a> 
+    <span> 
+      <a mat-button routerLink="" >Home</a> 
       <a mat-button routerLink="src/app/about" >About Us</a> 
       <a mat-button routerLink="src/app/contact" >Contact Us</a> 
-      <a mat-raised-button routerLink="/login">Login</a>
+
+      <mat-menu #appMenu="matMenu">
+        <a routerLink="/loginfarmer"><button mat-menu-item >Farmer</button></a>
+        <a routerLink="/loginbidder"><button mat-menu-item >Bidder</button></a>
+        <a routerLink="/login"><button mat-menu-item >Admin</button></a>
+
+      </mat-menu>
+
+    <button  mat-raised-button [matMenuTriggerFor]="appMenu">Login</button>
     </span>
   </div>
   </mat-toolbar>
-  
+
 <router-outlet></router-outlet>
