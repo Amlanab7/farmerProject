@@ -6,7 +6,7 @@ using WebApi.Models;
 
 namespace WebApi.Repositories
 {
-    public class UserRepo:IUserRepo<user>
+    public class UserRepo : IUserRepo<user>
     {
         public readonly gladiatorEntities dbContext;
         public UserRepo(gladiatorEntities db)

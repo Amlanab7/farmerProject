@@ -33,13 +33,13 @@ namespace WebApi.Controllers
         {
             try
             {
-                if(!ModelState.IsValid)
+                if (!ModelState.IsValid)
                 {
                     return BadRequest(ModelState);
                 }
                 dataRepo.Add(userObj);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
 

@@ -11,8 +11,7 @@ namespace WebApi.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations.Schema;
-
+    
     public partial class user
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,6 +21,7 @@ namespace WebApi.Models
             this.bids = new HashSet<bid>();
         }
     
+        public int UID { get; set; }
         public string full_name { get; set; }
         public string contactno { get; set; }
         public string email { get; set; }
@@ -38,8 +38,6 @@ namespace WebApi.Models
         public string ifsc { get; set; }
         public string password { get; set; }
         public Nullable<int> approved { get; set; }
-       
-        public int UID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<crop> crops { get; set; }

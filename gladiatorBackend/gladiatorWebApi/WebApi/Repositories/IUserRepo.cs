@@ -9,7 +9,7 @@ namespace WebApi.Repositories
     interface IUserRepo<TEntity>
     {
         IEnumerable<TEntity> GetAll();
-        
+
         void Add(TEntity entity);
     }
 }
