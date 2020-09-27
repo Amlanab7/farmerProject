@@ -26,8 +26,8 @@ namespace WebApi.Controllers
         }
 
         [HttpPost]
-        [Route("")]
-        public IHttpActionResult AddUser([FromBody] user userObj)
+        [Route("create")]
+        public IHttpActionResult AddUser([FromBody] user RegistrationForm)
         {
             try
             {
@@ -36,7 +36,7 @@ namespace WebApi.Controllers
                     return BadRequest(ModelState);
                 }
 
-                db.users.Add(userObj);
+                db.users.Add(RegistrationForm);
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -44,7 +44,7 @@ namespace WebApi.Controllers
                 throw ex;
 
             }
-            return Ok(userObj);
+            return Ok(RegistrationForm);
         }
         [HttpPut]
         [Route("approval/{id}")]
@@ -60,6 +60,8 @@ namespace WebApi.Controllers
             }
             return Ok();
         }
+
+
         [HttpPut]
         [Route("rejection/{id}")]
         public IHttpActionResult Reject(int id)
@@ -74,5 +76,35 @@ namespace WebApi.Controllers
             }
             return Ok();
         }
+
+        [HttpPost]
+        [Route("login")]
+        public IHttpActionResult VerifyLogin(LoginDetails Details)
+        {
+            
+            user Userdata = null;
+
+            try
+            {
+                var userFound = db.users
+                .Where(u => u.email == Details.email && u.password == Details.password)
+                                     .SingleOrDefault();
+
+                if (userFound != null)
+                {
+                    Userdata = userFound;
+                }
+                else
+                {
+                    Userdata = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return Ok(Userdata);
+
         }
+    }
 }
