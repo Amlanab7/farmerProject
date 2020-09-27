@@ -12,9 +12,13 @@ namespace WebApi.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class contactU
+    public partial class image
     {
-        public string email_cu { get; set; }
-        public string message { get; set; }
+        public int imgID { get; set; }
+        public string imgCaption { get; set; }
+        public string imgName { get; set; }
+        public int UID { get; set; }
+    
+        public virtual user user { get; set; }
     }
 }

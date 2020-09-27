@@ -4,15 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="aba9c212e2c248c9b71e01fed68345b5" Name="Diagram1" ZoomLevel="67">
-        <EntityTypeShape EntityType="gladiatorModel.crop" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="gladiatorModel.sysdiagram" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="gladiatorModel.user" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="gladiatorModel.bid" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="gladiatorModel.contactU" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+      <Diagram DiagramId="c84c5f3c3bc448a5bf5fb5394fba8fb0" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="gladiatorModel.crop" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="gladiatorModel.sysdiagram" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="gladiatorModel.user" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="gladiatorModel.bid" Width="1.5" PointX="5.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="gladiatorModel.contactU" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="gladiatorModel.image" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
         <AssociationConnector Association="gladiatorModel.FK_bids_crops1" ManuallyRouted="false" />
         <AssociationConnector Association="gladiatorModel.FK_crops_users" ManuallyRouted="false" />
         <AssociationConnector Association="gladiatorModel.FK_bids_users" ManuallyRouted="false" />
+        <AssociationConnector Association="gladiatorModel.FK_images_users" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

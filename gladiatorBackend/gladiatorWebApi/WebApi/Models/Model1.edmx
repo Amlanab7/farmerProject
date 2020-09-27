@@ -25,8 +25,8 @@ warning 6002: The table/view 'gladiator.dbo.contactUs' does not have a primary k
           <Key>
             <PropertyRef Name="email_cu" />
           </Key>
-          <Property Name="email_cu" Type="varbinary" MaxLength="50" Nullable="false" />
-          <Property Name="message" Type="varbinary" MaxLength="200" />
+          <Property Name="email_cu" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="message" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="crops">
           <Key>
@@ -44,6 +44,20 @@ warning 6002: The table/view 'gladiator.dbo.contactUs' does not have a primary k
           <Property Name="date_sold" Type="datetime" />
           <Property Name="current_bid" Type="float" />
           <Property Name="bidder_name" Type="nchar" MaxLength="10" />
+          <Property Name="UID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'gladiator.dbo.images' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="images">
+          <Key>
+            <PropertyRef Name="imgID" />
+            <PropertyRef Name="imgCaption" />
+            <PropertyRef Name="imgName" />
+            <PropertyRef Name="UID" />
+          </Key>
+          <Property Name="imgID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="imgCaption" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="imgName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="UID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -114,6 +128,18 @@ warning 6002: The table/view 'gladiator.dbo.contactUs' does not have a primary k
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_images_users">
+          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="images" Type="Self.images" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="UID" />
+            </Principal>
+            <Dependent Role="images">
+              <PropertyRef Name="UID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="gladiatorModelStoreContainer">
           <EntitySet Name="crops" EntityType="Self.crops" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -132,6 +158,14 @@ warning 6002: The table/view 'gladiator.dbo.contactUs' does not have a primary k
     [contactUs].[message] AS [message]
     FROM [dbo].[contactUs] AS [contactUs]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="images" EntityType="Self.images" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [images].[imgID] AS [imgID], 
+    [images].[imgCaption] AS [imgCaption], 
+    [images].[imgName] AS [imgName], 
+    [images].[UID] AS [UID]
+    FROM [dbo].[images] AS [images]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_bids_crops1" Association="Self.FK_bids_crops1">
             <End Role="crops" EntitySet="crops" />
             <End Role="bids" EntitySet="bids" />
@@ -143,6 +177,10 @@ warning 6002: The table/view 'gladiator.dbo.contactUs' does not have a primary k
           <AssociationSet Name="FK_crops_users" Association="Self.FK_crops_users">
             <End Role="users" EntitySet="users" />
             <End Role="crops" EntitySet="crops" />
+          </AssociationSet>
+          <AssociationSet Name="FK_images_users" Association="Self.FK_images_users">
+            <End Role="users" EntitySet="users" />
+            <End Role="images" EntitySet="images" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -203,6 +241,7 @@ warning 6002: The table/view 'gladiator.dbo.contactUs' does not have a primary k
           <Property Name="approved" Type="Int32" />
           <NavigationProperty Name="crops" Relationship="Self.FK_crops_users" FromRole="users" ToRole="crops" />
           <NavigationProperty Name="bids" Relationship="Self.FK_bids_users" FromRole="users" ToRole="bids" />
+          <NavigationProperty Name="images" Relationship="Self.FK_images_users" FromRole="users" ToRole="images" />
         </EntityType>
         <EntityType Name="bid">
           <Key>
@@ -222,8 +261,21 @@ warning 6002: The table/view 'gladiator.dbo.contactUs' does not have a primary k
           <Key>
             <PropertyRef Name="email_cu" />
           </Key>
-          <Property Name="email_cu" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
-          <Property Name="message" Type="Binary" MaxLength="200" FixedLength="false" />
+          <Property Name="email_cu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="message" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="image">
+          <Key>
+            <PropertyRef Name="imgID" />
+            <PropertyRef Name="imgCaption" />
+            <PropertyRef Name="imgName" />
+            <PropertyRef Name="UID" />
+          </Key>
+          <Property Name="imgID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imgCaption" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="imgName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="user" Relationship="Self.FK_images_users" FromRole="images" ToRole="users" />
         </EntityType>
         <Association Name="FK_bids_crops1">
           <End Role="crops" Type="Self.crop" Multiplicity="1" />
@@ -261,12 +313,25 @@ warning 6002: The table/view 'gladiator.dbo.contactUs' does not have a primary k
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_images_users">
+          <End Role="users" Type="Self.user" Multiplicity="1" />
+          <End Role="images" Type="Self.image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="UID" />
+            </Principal>
+            <Dependent Role="images">
+              <PropertyRef Name="UID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="gladiatorEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="crops" EntityType="Self.crop" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="users" EntityType="Self.user" />
           <EntitySet Name="bids" EntityType="Self.bid" />
           <EntitySet Name="contactUs" EntityType="Self.contactU" />
+          <EntitySet Name="images" EntityType="Self.image" />
           <AssociationSet Name="FK_bids_crops1" Association="Self.FK_bids_crops1">
             <End Role="crops" EntitySet="crops" />
             <End Role="bids" EntitySet="bids" />
@@ -278,6 +343,10 @@ warning 6002: The table/view 'gladiator.dbo.contactUs' does not have a primary k
           <AssociationSet Name="FK_bids_users" Association="Self.FK_bids_users">
             <End Role="users" EntitySet="users" />
             <End Role="bids" EntitySet="bids" />
+          </AssociationSet>
+          <AssociationSet Name="FK_images_users" Association="Self.FK_images_users">
+            <End Role="users" EntitySet="users" />
+            <End Role="images" EntitySet="images" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -354,6 +423,16 @@ warning 6002: The table/view 'gladiator.dbo.contactUs' does not have a primary k
               <MappingFragment StoreEntitySet="contactUs">
                 <ScalarProperty Name="email_cu" ColumnName="email_cu" />
                 <ScalarProperty Name="message" ColumnName="message" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="images">
+            <EntityTypeMapping TypeName="gladiatorModel.image">
+              <MappingFragment StoreEntitySet="images">
+                <ScalarProperty Name="imgID" ColumnName="imgID" />
+                <ScalarProperty Name="imgCaption" ColumnName="imgCaption" />
+                <ScalarProperty Name="imgName" ColumnName="imgName" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

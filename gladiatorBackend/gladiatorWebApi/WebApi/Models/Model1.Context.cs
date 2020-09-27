@@ -30,5 +30,6 @@ namespace WebApi.Models
         public virtual DbSet<user> users { get; set; }
         public virtual DbSet<bid> bids { get; set; }
         public virtual DbSet<contactU> contactUs { get; set; }
+        public virtual DbSet<image> images { get; set; }
     }
 }

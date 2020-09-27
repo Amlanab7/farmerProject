@@ -19,6 +19,7 @@ namespace WebApi.Models
         {
             this.crops = new HashSet<crop>();
             this.bids = new HashSet<bid>();
+            this.images = new HashSet<image>();
         }
     
         public int UID { get; set; }
@@ -43,5 +44,7 @@ namespace WebApi.Models
         public virtual ICollection<crop> crops { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<bid> bids { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<image> images { get; set; }
     }
 }
