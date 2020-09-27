@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using WebApi.Models;
-
+using WebApi.RequiredClasses;
 
 namespace WebApi.Controllers
 {
