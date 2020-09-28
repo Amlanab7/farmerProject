@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using WebApi.Models;
-using WebApi.RequiredClasses;
+
 
 namespace WebApi.Controllers
 {
@@ -86,9 +86,7 @@ namespace WebApi.Controllers
 
             try
             {
-                var userFound = db.users
-                .Where(u => u.email == Details.email && u.password == Details.password)
-                                     .SingleOrDefault();
+                var userFound = db.users.Where(u => u.email == Details.email && u.password == Details.password).SingleOrDefault();
 
                 if (userFound != null)
                 {

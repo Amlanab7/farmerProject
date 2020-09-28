@@ -18,6 +18,8 @@ namespace WebApi.Models
         public string crop_name { get; set; }
         public double bid1 { get; set; }
         public int UID { get; set; }
+        public Nullable<int> approved { get; set; }
+        public int BIID { get; set; }
     
         public virtual crop crop { get; set; }
         public virtual user user { get; set; }

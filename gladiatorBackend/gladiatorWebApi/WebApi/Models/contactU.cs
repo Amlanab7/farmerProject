@@ -16,5 +16,6 @@ namespace WebApi.Models
     {
         public string email_cu { get; set; }
         public string message { get; set; }
+        public int CUID { get; set; }
     }
 }

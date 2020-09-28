@@ -4,29 +4,25 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="gladiatorModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'gladiator.dbo.bids' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+    <Schema Namespace="gladiatorModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="bids">
           <Key>
-            <PropertyRef Name="CID" />
-            <PropertyRef Name="crop_name" />
-            <PropertyRef Name="bid" />
-            <PropertyRef Name="UID" />
+            <PropertyRef Name="BIID" />
           </Key>
           <Property Name="CID" Type="int" Nullable="false" />
           <Property Name="crop_name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="bid" Type="float" Nullable="false" />
           <Property Name="UID" Type="int" Nullable="false" />
+          <Property Name="approved" Type="int" />
+          <Property Name="BIID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'gladiator.dbo.contactUs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="contactUs">
           <Key>
-            <PropertyRef Name="email_cu" />
+            <PropertyRef Name="CUID" />
           </Key>
           <Property Name="email_cu" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="message" Type="varchar" MaxLength="50" />
+          <Property Name="CUID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="crops">
           <Key>
@@ -46,14 +42,9 @@ warning 6002: The table/view 'gladiator.dbo.contactUs' does not have a primary k
           <Property Name="bidder_name" Type="nchar" MaxLength="10" />
           <Property Name="UID" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'gladiator.dbo.images' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="images">
           <Key>
             <PropertyRef Name="imgID" />
-            <PropertyRef Name="imgCaption" />
-            <PropertyRef Name="imgName" />
-            <PropertyRef Name="UID" />
           </Key>
           <Property Name="imgID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="imgCaption" Type="varchar" MaxLength="50" Nullable="false" />
@@ -141,31 +132,12 @@ warning 6002: The table/view 'gladiator.dbo.images' does not have a primary key 
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="gladiatorModelStoreContainer">
+          <EntitySet Name="bids" EntityType="Self.bids" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="contactUs" EntityType="Self.contactUs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="crops" EntityType="Self.crops" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="images" EntityType="Self.images" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="bids" EntityType="Self.bids" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [bids].[CID] AS [CID], 
-    [bids].[crop_name] AS [crop_name], 
-    [bids].[bid] AS [bid], 
-    [bids].[UID] AS [UID]
-    FROM [dbo].[bids] AS [bids]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="contactUs" EntityType="Self.contactUs" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [contactUs].[email_cu] AS [email_cu], 
-    [contactUs].[message] AS [message]
-    FROM [dbo].[contactUs] AS [contactUs]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="images" EntityType="Self.images" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [images].[imgID] AS [imgID], 
-    [images].[imgCaption] AS [imgCaption], 
-    [images].[imgName] AS [imgName], 
-    [images].[UID] AS [UID]
-    FROM [dbo].[images] AS [images]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_bids_crops1" Association="Self.FK_bids_crops1">
             <End Role="crops" EntitySet="crops" />
             <End Role="bids" EntitySet="bids" />
@@ -183,8 +155,7 @@ warning 6002: The table/view 'gladiator.dbo.images' does not have a primary key 
             <End Role="images" EntitySet="images" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="gladiatorModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -249,6 +220,7 @@ warning 6002: The table/view 'gladiator.dbo.images' does not have a primary key 
             <PropertyRef Name="crop_name" />
             <PropertyRef Name="bid1" />
             <PropertyRef Name="UID" />
+            <PropertyRef Name="BIID" />
           </Key>
           <Property Name="CID" Type="Int32" Nullable="false" />
           <Property Name="crop_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -256,13 +228,17 @@ warning 6002: The table/view 'gladiator.dbo.images' does not have a primary key 
           <Property Name="UID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="crop" Relationship="Self.FK_bids_crops1" FromRole="bids" ToRole="crops" />
           <NavigationProperty Name="user" Relationship="Self.FK_bids_users" FromRole="bids" ToRole="users" />
+          <Property Name="approved" Type="Int32" />
+          <Property Name="BIID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="contactU">
           <Key>
             <PropertyRef Name="email_cu" />
+            <PropertyRef Name="CUID" />
           </Key>
           <Property Name="email_cu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="message" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CUID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="image">
           <Key>
@@ -411,6 +387,8 @@ warning 6002: The table/view 'gladiator.dbo.images' does not have a primary key 
           <EntitySetMapping Name="bids">
             <EntityTypeMapping TypeName="gladiatorModel.bid">
               <MappingFragment StoreEntitySet="bids">
+                <ScalarProperty Name="BIID" ColumnName="BIID" />
+                <ScalarProperty Name="approved" ColumnName="approved" />
                 <ScalarProperty Name="CID" ColumnName="CID" />
                 <ScalarProperty Name="crop_name" ColumnName="crop_name" />
                 <ScalarProperty Name="bid1" ColumnName="bid" />
@@ -421,6 +399,7 @@ warning 6002: The table/view 'gladiator.dbo.images' does not have a primary key 
           <EntitySetMapping Name="contactUs">
             <EntityTypeMapping TypeName="gladiatorModel.contactU">
               <MappingFragment StoreEntitySet="contactUs">
+                <ScalarProperty Name="CUID" ColumnName="CUID" />
                 <ScalarProperty Name="email_cu" ColumnName="email_cu" />
                 <ScalarProperty Name="message" ColumnName="message" />
               </MappingFragment>
