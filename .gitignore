@@ -338,3 +338,22 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+gladiatorBackend/gladiatorWebApi/WebApi/Models/user.cs
+gladiatorBackend/gladiatorWebApi/WebApi/packages.config
+gladiatorBackend/gladiatorWebApi/WebApi/Web.config
+gladiatorBackend/gladiatorWebApi/WebApi/WebApi.csproj
+gladiatorBackend/gladiatorWebApi/WebApi/Models/bid.cs
+gladiatorBackend/gladiatorWebApi/WebApi/Models/contactU.cs
+gladiatorBackend/gladiatorWebApi/WebApi/Models/Model1.edmx
+gladiatorBackend/gladiatorWebApi/WebApi/Models/Model1.edmx.diagram
+gladiatorBackend/gladiatorWebApi/WebApi/Models/Model1.tt
+gladiatorBackend/gladiatorWebApi/WebApi/Models/sysdiagram.cs
+gladiatorBackend/gladiatorWebApi/WebApi/Models/crop.cs
+gladiatorBackend/gladiatorWebApi/WebApi/Models/image.cs
+gladiatorBackend/gladiatorWebApi/WebApi/Models/Model1.tt
+gladiatorBackend/gladiatorWebApi/WebApi/Models/Model1.edmx.diagram
+gladiatorBackend/gladiatorWebApi/WebApi/Models/Model1.cs
+gladiatorBackend/gladiatorWebApi/WebApi/Models/Model1.Context.cs
+gladiatorBackend/gladiatorWebApi/WebApi/packages.config
+gladiatorBackend/gladiatorWebApi/WebApi/Web.config
+gladiatorBackend/gladiatorWebApi/WebApi/WebApi.csproj
