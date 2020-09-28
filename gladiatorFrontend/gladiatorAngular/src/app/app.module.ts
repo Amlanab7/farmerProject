@@ -21,6 +21,10 @@ import { RouterModule } from '@angular/router';
 import { LoginFarmerComponent } from './components/login-farmer/login-farmer.component';
 import { LoginBidderComponent } from './components/login-bidder/login-bidder.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BidderWelcomeComponent } from './components/bidder-welcome/bidder-welcome.component';
+import { BiddingAuctionComponent } from './components/bidding-auction/bidding-auction.component';
+import { AdminUserApprovalsComponent } from './components/admin-user-approvals/admin-user-approvals.component';
+import { AdminBidAuctionComponent } from './components/admin-bid-auction/admin-bid-auction.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +46,10 @@ import { HttpClientModule } from '@angular/common/http';
     BidderRegistrationComponent,
     LoginFarmerComponent,
     LoginBidderComponent,
+    BidderWelcomeComponent,
+    BiddingAuctionComponent,
+    AdminUserApprovalsComponent,
+    AdminBidAuctionComponent,
     
 
 

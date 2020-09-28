@@ -1,60 +1,62 @@
-<form [formGroup]="user" (ngSubmit)="(onSubmit(user.value))">
+<form [formGroup]="user" (ngSubmit)="(onSubmit())">
 
   <div class="form-group" >
       <label for="fullName">First Name: </label>
-      <input type="text" size="10px"class="form-control" formControlName="FullName" id="fullName" />
+      <input type="text" size="10px"class="form-control" formControlName="full_name" id="fullName" />
 
   </div>
 
   <div class="form-group" >
-      <label for="ContactNumber">Last Name: </label>
-      <input type="text" class="form-control" formControlName="ContactNumber" id="ContactNumber" />
+      <label for="ContactNumber">Contact Number: </label>
+      <input type="text" class="form-control" formControlName="contactno" id="ContactNumber" />
 
   </div>
 
   <div class="form-group" >
       <label for="EmailId">Email: </label>
-      <input type="email" class="form-control" formControlName="EmailId" id="EmailId" />
+      <input type="email" class="form-control" formControlName="email" id="EmailId" />
 
   </div>
 
   <div class="form-group" >
       <label for="AddressLine1">AddressLine1: </label>
-      <input type="text" class="form-control" formControlName="AddressLine1" id="AddressLine1" />
+      <input type="text" class="form-control" formControlName="address_line1" id="AddressLine1" />
 
   </div>
   <div class="form-group" >
     <label for="AddressLine2">AddressLine2: </label>
-    <input type="text" class="form-control" formControlName="AddressLine2" id="AddressLine2" />
+    <input type="text" class="form-control" formControlName="address_line2" id="AddressLine2" />
 
 </div>
 <div class="form-group" >
   <label for="city">city: </label>
-  <input type="text" class="form-control" formControlName="City" id="city" />
+  <input type="text" class="form-control" formControlName="city" id="city" />
 
 </div>
 
 <div class="form-group" >
 <label for="state">state: </label>
-<input type="text" class="form-control" formControlName="State" id="state" />
+<input type="text" class="form-control" formControlName="state" id="state" />
 
 </div>
 <div class="form-group" >
 <label for="ResidencePincode">Residence Pincode: </label>
-<input type="text" class="form-control" formControlName="ResidencePincode" id="ResidencePincode" />
+<input type="text" class="form-control" formControlName="pincode" id="ResidencePincode" />
+
+
 
 </div>
 <div class="form-group" >
 <label for="AccountNo">AccountNo: </label>
-<input type="text" class="form-control" formControlName="AccountNo" id="AccountNo" />
+<input type="text" class="form-control" formControlName="account_no" id="AccountNo" />
 
 </div>
 <div class="form-group" >
 <label for="IFSCcode">IFSCcode: </label>
-<input type="text" class="form-control" formControlName="IFSCcode" id="IFSCcode" />
+<input type="text" class="form-control" formControlName="ifsc" id="IFSCcode" />
 
 </div>
-<div class="form-group" >
+<!-- <div class="form-group" >
 <label for="Aadhar">Aadhar: </label>
 <input type="text" class="form-control" formControlName="Aadhar" id="Aadhar" />
 
@@ -66,19 +68,19 @@
 </div>
 <div class="form-group">
 <label for="TraderLicense:string;"> TraderLicense:string; : </label>
-<input type="text" class="form-control" formControlName="TraderLicense"id=" TraderLicense" />
+<input type="text" class="form-control" formControlName="TraderLicense"id=" TraderLicense" /> -->
 
-</div>
+<!-- </div> -->
 <div class="form-group" >
 <label for="Password">Password: </label>
-<input type="text" class="form-control" formControlName="Password" id="Password" />
+<input type="password" class="form-control" formControlName="password" id="Password" />
 
 </div>
-<div class="form-group" >
+<!-- <div class="form-group" >
 <label for="ConfirmPassword">ConfirmPassword: </label>
-<input type="text" class="form-control" formControlName="ConfirmPassword" id="ConfirmPassword" />
-</div>
-  <button class="btn btn-success" type="submit">Save</button> &nbsp;&nbsp;
+<input type="password" class="form-control" formControlName="ConfirmPassword" id="ConfirmPassword" />
+</div> -->
+  <button class="btn btn-success" type="submit" >Save</button> &nbsp;&nbsp;
   <button class="btn btn-danger" type="reset">Cancel</button>
   &nbsp;&nbsp;
   <a class="btn btn-warning" routerLink="">Home</a>
