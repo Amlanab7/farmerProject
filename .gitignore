@@ -357,3 +357,4 @@ gladiatorBackend/gladiatorWebApi/WebApi/Models/Model1.Context.cs
 gladiatorBackend/gladiatorWebApi/WebApi/packages.config
 gladiatorBackend/gladiatorWebApi/WebApi/Web.config
 gladiatorBackend/gladiatorWebApi/WebApi/WebApi.csproj
+gladiatorBackend/gladiatorWebApi/WebApi/Models/farmerForm.cs
