@@ -2,74 +2,64 @@ import { Component, OnInit } from '@angular/core';
 import{FarmerRegistrationForm} from 'src/app/Models/FarmerRegistrationForm';
 import{FormGroup,FormBuilder,Validators} from '@angular/forms';
 import { UsertableService } from 'src/app/services/usertable.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-farmer-registration',
   templateUrl: './farmer-registration.component.html',
   styleUrls: ['./farmer-registration.component.css']
 })
 export class FarmerRegistrationComponent implements OnInit {
-  user : FormGroup
-  farmerform:FarmerRegistrationForm=new FarmerRegistrationForm();
-  constructor(private formBuilder:FormBuilder,private service:UsertableService) { }
+  user:FormGroup;
+  constructor(private formBuilder:FormBuilder,private service:UsertableService,private router:Router) { }
 
   ngOnInit(): void {
     // this.registerForm =this.formBuilder.group({
         this.user= this.formBuilder.group({
-        FullName: [this.farmerform.FullName, [
+          full_name: ['', [
         Validators.required
         ]],
-        'ContactNumber': [this.farmerform.ContactNumber, [
+        'contactno': ['', [
         Validators.required
         ]],
-        'EmailId': [this.farmerform.EmailId, [
+        'email': ['', [
           Validators.required,
-          Validators.email
+         // Validators.email
        ]],
-      'AddressLine1': [this.farmerform.AddressLine1, [
+      'address_line1': ['', [
           Validators.required,
     ]],
-        'AddressLine2': [this.farmerform.AddressLine2, [
+        'address_line2': ['', [
           Validators.required,
      ]],
-        'City': [this.farmerform.City, [
+        'city': ['', [
           Validators.required,
        ]],
-       'State': [this.farmerform.State, [
+       'state': ['', [
         Validators.required,
       ]],
-      'ResidencePincode': [this.farmerform.ResidencePincode, [
+      'pincode': ['', [
          Validators.required,
        ]],
-      'Area': [this.farmerform.Area, [
+      'land_area': ['', [
          Validators.required,
       ]],
-     'Address': [this.farmerform.Address, [
+     'land_address': ['', [
          Validators.required,
       ]],
-       'LandPincode': [this.farmerform.LandPincode, [
+       'land_pincode': ['', [
        Validators.required,
        ]],
-        'AccountNo': [this.farmerform.AccountNo, [
+        'account_no': ['', [
          Validators.required,
      ]],
-        'IFSCcode': [this.farmerform.IFSCcode, [
+        'ifsc': ['', [
           Validators.required,
       ]],
-       'Aadhar': [this.farmerform.Aadhar, [
-          Validators.required,
-       ]],
-      'PAN': [this.farmerform.PAN, [
-        Validators.required,
-        ]],
-        'TraderLicense': [this.farmerform.TraderLicense, [
-          Validators.required,
-        ]],
-       'Password': [this.farmerform.Password, [
+       
+       'password': ['', [
       Validators.required,
         ]],
-        'ConfirmPassword': [this.farmerform.ConfirmPassword, [
-       Validators.required,
-        ]],
+        
     })
   
    
@@ -84,14 +74,26 @@ export class FarmerRegistrationComponent implements OnInit {
       
   //   })
   // }
-  onSubmit(farmerform : FarmerRegistrationForm){
-    console.log(farmerform);
+  // onSubmit(){
+  //   console.log(this.user.value);
   
-    this.service.addUser(farmerform).subscribe(data=>{
-      console.log(data)
-      window.location.reload();
-      alert("User Added Successfully");
+  //   this.service.addUser(this.user.value).subscribe(data=>{
+  //     console.log(data)
+  //     window.location.reload();
+  //     alert("User Added Successfully");
       
-    })
-    }
+  //   })
+  //   }
+    onSubmit() {
+      this.service.addUser(this.user.value).subscribe(data=>{
+        localStorage.setItem("userData",JSON.stringify(data));
+        this.router.navigate(['/loginfarmer']);
+        
+      },(e)=>{
+        console.log(e);
+   
+      })
+      console.log(this.user.value);
+      alert("User Added Successfully");
+     }
 }

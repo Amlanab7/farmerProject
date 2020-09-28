@@ -27,7 +27,7 @@ namespace WebApi.Controllers
 
         [HttpPost]
         [Route("create")]
-        public IHttpActionResult AddUser([FromBody] user RegistrationForm)
+        public IHttpActionResult AddUser(user RegistrationForm)
         {
             try
             {
@@ -37,6 +37,7 @@ namespace WebApi.Controllers
                 }
 
                 db.users.Add(RegistrationForm);
+                
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -86,7 +87,7 @@ namespace WebApi.Controllers
 
             try
             {
-                var userFound = db.users.Where(u => u.email == Details.email && u.password == Details.password).SingleOrDefault();
+                var userFound = db.users.Where(u => u.email == Details.email && u.password == Details.password).FirstOrDefault();
 
                 if (userFound != null)
                 {

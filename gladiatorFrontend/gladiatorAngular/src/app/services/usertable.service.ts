@@ -12,7 +12,7 @@ export class UsertableService {
     return this.http.get<FarmerRegistrationForm[]>(this.baseURL);
   }
   addUser(user){
-    return this.http.post<FarmerRegistrationForm>(this.baseURL,JSON.stringify(user));
+    return this.http.post<FarmerRegistrationForm>(this.baseURL+"/create",user);
   }
   
 }
