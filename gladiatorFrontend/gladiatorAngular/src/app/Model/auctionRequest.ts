@@ -1,13 +1,12 @@
 export class auctionRequest
 {
-    email: any;
-  approved: number;
     
-    basePrice: number;
-    cropName:String;
-    cropType: String;
-    fertType:String;
+   
+    crop_name:String;
+    crop_type: String;
+    fertilizer_type:String;
     quantity:number;
-    phVal:number;
+    basePrice: number;
+    ph:number;
     
 }

@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { AdminBidAuctionComponent } from './components/admin-bid-auction/admin-bid-auction.component';
+import { AdminUserApprovalsComponent } from './components/admin-user-approvals/admin-user-approvals.component';
 import { AuctionRequestComponent } from './components/auction-request/auction-request.component';
 import { BidderRegistrationComponent } from './components/bidder-registration/bidder-registration.component';
+import { BidderWelcomeComponent } from './components/bidder-welcome/bidder-welcome.component';
+import { BiddingAuctionComponent } from './components/bidding-auction/bidding-auction.component';
 import { FarmerRegistrationComponent } from './components/farmer-registration/farmer-registration.component';
 import { FarmerWelcomeComponent } from './components/farmer-welcome/farmer-welcome.component';
 import { HomeComponent } from './components/home/home.component';
@@ -25,6 +29,10 @@ const routes: Routes = [
 {path:'login',component:LoginComponent},
 {path:'loginfarmer',component:LoginFarmerComponent},
 {path:'loginbidder',component:LoginBidderComponent},
+{path:'bidder-welcome',component:BidderWelcomeComponent},
+{path:'bidding-auction',component:BiddingAuctionComponent},
+{path:'admin-user-approval',component:AdminUserApprovalsComponent},
+{path:'admin-bid-auction',component:AdminBidAuctionComponent}
 
 ];
 

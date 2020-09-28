@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{FormGroup,FormBuilder,Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 import { BidderRegistrationForm } from 'src/app/Models/BidderRegistrationForm';
 import { UsertableService } from 'src/app/services/usertable.service';
 @Component({
@@ -8,70 +9,63 @@ import { UsertableService } from 'src/app/services/usertable.service';
   styleUrls: ['./bidder-registration.component.css']
 })
 export class BidderRegistrationComponent implements OnInit {
-  user : FormGroup
-  bidderform:BidderRegistrationForm=new BidderRegistrationForm();
+  user : FormGroup;
+  
   hide = true;
-  constructor(private formBuilder:FormBuilder,private service:UsertableService) { }
+  constructor(private formBuilder:FormBuilder,private service:UsertableService,private router: Router) { }
 
   ngOnInit() {
     this.user= this.formBuilder.group({
-      FullName: [this.bidderform.FullName, [
+        full_name: ['', [
       Validators.required
       ]],
-      'ContactNumber': [this.bidderform.ContactNumber, [
+      'contactno': ['', [
       Validators.required
       ]],
-      'EmailId': [this.bidderform.EmailId, [
+      'email': ['', [
         Validators.required,
-        Validators.email
+       // Validators.email
      ]],
-    'AddressLine1': [this.bidderform.AddressLine1, [
+    'address_line1': ['', [
         Validators.required,
   ]],
-      'AddressLine2': [this.bidderform.AddressLine2, [
+      'address_line2': ['', [
         Validators.required,
    ]],
-      'City': [this.bidderform.City, [
+      'city': ['', [
         Validators.required,
      ]],
-     'State': [this.bidderform.State, [
+     'state': ['', [
       Validators.required,
     ]],
-    'ResidencePincode': [this.bidderform.ResidencePincode, [
+    'pincode': ['', [
        Validators.required,
      ]],
-      'AccountNo': [this.bidderform.AccountNo, [
+   
+      'account_no': ['', [
        Validators.required,
    ]],
-      'IFSCcode': [this.bidderform.IFSCcode, [
+      'ifsc': ['', [
         Validators.required,
     ]],
-     'Aadhar': [this.bidderform.Aadhar, [
-        Validators.required,
-     ]],
-    'PAN': [this.bidderform.PAN, [
-      Validators.required,
-      ]],
-      'TraderLicense': [this.bidderform.TraderLicense, [
-        Validators.required,
-      ]],
-     'Password': [this.bidderform.Password, [
+     
+     'password': ['', [
     Validators.required,
       ]],
-      'ConfirmPassword': [this.bidderform.ConfirmPassword, [
-     Validators.required,
-      ]],
+      
   })
   }
-  onSubmit(registerForm : BidderRegistrationForm){
-    console.log(registerForm);
-  
-    this.service.addUser(registerForm).subscribe(data=>{
-      console.log(data)
-      window.location.reload();
-      alert("User Registered Successfully");
+  onSubmit() {
+    this.service.addUser(this.user.value).subscribe(data=>{
+      localStorage.setItem("userData",JSON.stringify(data));
+      this.router.navigate(['/loginbidder']);
       
+    },(e)=>{
+      console.log(e);
+ 
     })
-  }
+    console.log(this.user.value);
+    alert("User Added Successfully");
+   }
 
 }

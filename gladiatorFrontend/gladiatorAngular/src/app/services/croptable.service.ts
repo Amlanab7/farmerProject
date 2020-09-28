@@ -8,9 +8,9 @@ import{auctionRequest} from 'src/app/Model/auctionRequest'
 export class CroptableService {
 
   constructor(private http:HttpClient) { }
-  baseURL:string=""
+  baseURL:string="https://localhost:44331/api/crops"
 
   addAuctionRequest(auctionrequest){
-    return this.http.post<auctionRequest>(this.baseURL,JSON.stringify(auctionrequest));
+    return this.http.post<auctionRequest>(this.baseURL+"/add",JSON.stringify(auctionrequest));
   }
 }

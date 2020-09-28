@@ -25,7 +25,8 @@ export class LoginFarmerComponent implements OnInit {
     this.userService.doLogin(this.loginForm.value).subscribe(result => {
       console.log(result);
       localStorage.setItem('userData', JSON.stringify(result));
-  
+      // var user = JSON.parse(localStorage.getItem('userData'));
+      // alert(user.UID);
       this.router.navigate(['/farmer-welcome']);
       alert('Success');
     }, (error) => {
