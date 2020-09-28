@@ -338,3 +338,4 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+gladiatorBackend/gladiatorWebApi/WebApi/Models/farmerForm.cs
