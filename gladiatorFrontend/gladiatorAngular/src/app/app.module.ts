@@ -20,6 +20,7 @@ import { BidderRegistrationComponent } from './components/bidder-registration/bi
 import { RouterModule } from '@angular/router';
 import { LoginFarmerComponent } from './components/login-farmer/login-farmer.component';
 import { LoginBidderComponent } from './components/login-bidder/login-bidder.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { LoginBidderComponent } from './components/login-bidder/login-bidder.com
     BidderRegistrationComponent,
     LoginFarmerComponent,
     LoginBidderComponent,
-
+    
 
 
   ],
@@ -49,7 +50,7 @@ import { LoginBidderComponent } from './components/login-bidder/login-bidder.com
     RouterModule,
     BrowserModule,
     AppRoutingModule,
-
+    HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,

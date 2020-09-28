@@ -10,7 +10,7 @@ export class LoginBidderComponent implements OnInit {
   myimage:string="assets/images/Homepagebgi.jpg";
   loginForm: LoginForm =new LoginForm();
   submitted=false;
-  constructor(private formBuilder:FormBuilder) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

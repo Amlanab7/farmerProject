@@ -9,9 +9,11 @@ import { LoginForm } from 'src/app/Models/LoginForm';
 })
 export class LoginComponent implements OnInit {
   myimage:string="assets/images/Homepagebgi.jpg";
-  loginForm: LoginForm =new LoginForm();
+  loginForm: FormGroup;
   submitted=false;
-  constructor(private formBuilder:FormBuilder) { }
+  constructor() {
+   
+   }
 
   ngOnInit(): void {
   }

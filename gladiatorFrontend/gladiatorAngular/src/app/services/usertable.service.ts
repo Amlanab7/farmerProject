@@ -14,4 +14,5 @@ export class UsertableService {
   addUser(user){
     return this.http.post<FarmerRegistrationForm>(this.baseURL,JSON.stringify(user));
   }
+  
 }

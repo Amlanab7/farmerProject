@@ -1,188 +1,90 @@
-<div class="form">
-  <div class="bgpic">
-    <div class="container">
-    <form [formGroup]="registerForm" >
-      <span>
-        <label for="email" class="font-weight-bold">
-          PERSONAL DETAILS </label><br>
-      </span><br><br>
-      <label for="email" class="font-weight-bold">
-        Full Name: </label><br>
-    <mat-form-field>  
-      <input id="FullName"
-             matInput
-             formControlName="FullName"
-             [(ngModel)]="user.FullName"
-             placeholder="Enter your Full Name" />
-    </mat-form-field>
-    <br>
-    <label for="email" class="font-weight-bold">
-      Contact Number: </label><br>
-    <mat-form-field>
-      <input id="ContactNumber"
-             matInput
-             [(ngModel)]="user.ContactNumber"
-             placeholder="Enter your Contact Number" />
-    </mat-form-field>
-    <br>
-    <label for="email" class="font-weight-bold">
-      Email ID : </label><br>
-    <mat-form-field>
-      <input id="EmailId"
-             matInput
-             formControlName="EmailId"
-             [(ngModel)]="user.EmailId"
-             placeholder="Enter your EmailId" />
-    </mat-form-field>
-    <br>
-    <span>
-      <label for="email" class="font-weight-bold">
-        ADDRESS DETAILS </label><br>
-    </span><br><br>
-    <label for="email" class="font-weight-bold">
-      Address Line1 : </label><br>
-    <mat-form-field>
-      <input id="AddressLine1"
-             matInput
-             formControlName="AddressLine1"
-             [(ngModel)]="user.AddressLine1"
-             placeholder="House.No/landmark" />
-    </mat-form-field>
-    <br>
-    <label for="email" class="font-weight-bold">
-      Address Line2 : </label><br>
-    <mat-form-field>
-      <input id="AddressLine2"
-             matInput
-             formControlName="AddressLine2"
-             [(ngModel)]="user.AddressLine2"
-             placeholder="Area/Village" />
-    </mat-form-field>
-    <br>
-    <label for="email" class="font-weight-bold">
-      City: </label><br>
-    <mat-form-field>
-      <input id="City"
-             matInput
-             formControlName="City"
-             [(ngModel)]="user.City"
-             placeholder="City" />
-    </mat-form-field>
-    <br>
-    <label for="email" class="font-weight-bold">
-      State : </label><br>
-    <mat-form-field>
-      <input id="State"
-             matInput
-             formControlName="State"
-             [(ngModel)]="user.State"
-             placeholder="State" />
-    </mat-form-field>
-    <br>
-    <label for="email" class="font-weight-bold">
-      Residence Pincode : </label><br>
-    <mat-form-field>
-      <input id="ResidencePincode"
-             matInput
-             formControlName="ResidencePincode"
-             [(ngModel)]="user.ResidencePincode"
-             placeholder="Please enter your Home Pincode" />
-    </mat-form-field>
-    <br>
-    <span>
-      <label for="email" class="font-weight-bold">
-        BANK DETAILS </label><br>
-    </span><br><br>
-    <label for="email" class="font-weight-bold">
-      Account Number : </label><br>
-    <mat-form-field>
-      <input id="AccountNo"
-             matInput
-             formControlName="AccountNo"
-             [(ngModel)]="user.AccountNo"
-             placeholder="Account No" />
-    </mat-form-field>
-    <br>
-    <label for="email" class="font-weight-bold">
-      IFSC: </label><br>
-    <mat-form-field>
-        <input id="IFSCcode"
-               matInput
-               formControlName="IFSCcode"
-               [(ngModel)]="user.IFSCcode"
-               placeholder="Enter your IFSCcode" />
-      </mat-form-field>
-      <br>
-      <span>
-        <label for="email" class="font-weight-bold">
-           DOCUMENT UPLOAD </label><br>
-      </span><br><br>
-      <label for="email" class="font-weight-bold">
-        Aadhar : </label><br>
-      <mat-form-field>
-          <input id="Aadhar"
-                 matInput
-                 formControlName="Aadhar"
-                 [(ngModel)]="user.Aadhar"
-                 placeholder="Please Upload Aadhar" />
-        </mat-form-field>
-        <br>
-        <label for="email" class="font-weight-bold">
-          PAN : </label><br>
-        <mat-form-field>
-          <input id="PAN"
-                 matInput
-                 formControlName="PAN"
-                 [(ngModel)]="user.PAN"
-                 placeholder="Please Upload PAN" />
-        </mat-form-field>
-        <br>
-        <label for="email" class="font-weight-bold">
-          Trader License : </label><br>
-        <mat-form-field>
-          <input id="TraderLicense"
-                 matInput
-                 formControlName="TraderLicense"
-                 [(ngModel)]="user.TraderLicense"
-                 placeholder="Please Upload TraderLicense" />
-        </mat-form-field>
-        <br><br><br>
-        <label for="email" class="font-weight-bold">
-          Password : </label><br>
-    <mat-form-field>
-        <input id="Password"
-               matInput
-               formControlName="Password"
-               [(ngModel)]="user.Password"
-               placeholder="Enter your Password"
-               [type]="hide ? 'Password':'text'" />
-          <mat-icon matSuffix (click)="hide = !hide">
-            {{hide ? 'visibility' : 'visibility_off'}}
-          </mat-icon>
-      </mat-form-field>
-      <br>
-      <label for="email" class="font-weight-bold">
-        Confirm Password : </label><br>
-      <mat-form-field>
-          <input id="ConfirmPassword"
-                 matInput
-                 formControlName="ConfirmPassword"
-                 [(ngModel)]="user.ConfirmPassword"
-                 placeholder="Please Renter your Password"
-                 [type]="hide ? 'ConfirmPassword':'text'" />
-            <mat-icon matSuffix (click)="hide = !hide">
-              {{hide ? 'visibility' : 'visibility_off'}}
-            </mat-icon>
-        </mat-form-field>
-        <br>
-  
-      </form>
- 
-      <button mat-raised-button color="primary" (click)="onSubmit(registerForm.value)">Register</button>
-      &nbsp;&nbsp;
-      <button class="btn btn-outline-danger" type="reset"> Cancel</button>
-      &nbsp;&nbsp;
-      <a routerLink="/home"><button mat-raised-button color="warn">Back to Home</button></a>
-    </div>
-    </div>
+<form [formGroup]="user" (ngSubmit)="(onSubmit(user.value))">
+
+  <div class="form-group" >
+      <label for="fullName">First Name: </label>
+      <input type="text" size="10px"class="form-control" formControlName="FullName" id="fullName" />
+
   </div>
+
+  <div class="form-group" >
+      <label for="ContactNumber">Last Name: </label>
+      <input type="text" class="form-control" formControlName="ContactNumber" id="ContactNumber" />
+
+  </div>
+
+  <div class="form-group" >
+      <label for="EmailId">Email: </label>
+      <input type="email" class="form-control" formControlName="EmailId" id="EmailId" />
+
+  </div>
+
+  <div class="form-group" >
+      <label for="AddressLine1">AddressLine1: </label>
+      <input type="text" class="form-control" formControlName="AddressLine1" id="AddressLine1" />
+
+  </div>
+  <div class="form-group" >
+    <label for="AddressLine2">AddressLine2: </label>
+    <input type="text" class="form-control" formControlName="AddressLine2" id="AddressLine2" />
+
+</div>
+<div class="form-group" >
+  <label for="city">city: </label>
+  <input type="text" class="form-control" formControlName="City" id="city" />
+
+</div>
+
+<div class="form-group" >
+<label for="state">state: </label>
+<input type="text" class="form-control" formControlName="State" id="state" />
+
+</div>
+<div class="form-group" >
+<label for="ResidencePincode">Residence Pincode: </label>
+<input type="text" class="form-control" formControlName="ResidencePincode" id="ResidencePincode" />
+
+</div>
+<div class="form-group" >
+<label for="AccountNo">AccountNo: </label>
+<input type="text" class="form-control" formControlName="AccountNo" id="AccountNo" />
+
+</div>
+<div class="form-group" >
+<label for="IFSCcode">IFSCcode: </label>
+<input type="text" class="form-control" formControlName="IFSCcode" id="IFSCcode" />
+
+</div>
+<div class="form-group" >
+<label for="Aadhar">Aadhar: </label>
+<input type="text" class="form-control" formControlName="Aadhar" id="Aadhar" />
+
+</div>
+<div class="form-group" >
+<label for="PAN">PAN: </label>
+<input type="text" class="form-control" formControlName="PAN" id="PAN" />
+
+</div>
+<div class="form-group">
+<label for="TraderLicense:string;"> TraderLicense:string; : </label>
+<input type="text" class="form-control" formControlName="TraderLicense"id=" TraderLicense" />
+
+</div>
+<div class="form-group" >
+<label for="Password">Password: </label>
+<input type="text" class="form-control" formControlName="Password" id="Password" />
+
+</div>
+<div class="form-group" >
+<label for="ConfirmPassword">ConfirmPassword: </label>
+<input type="text" class="form-control" formControlName="ConfirmPassword" id="ConfirmPassword" />
+</div>
+  <button class="btn btn-success" type="submit">Save</button> &nbsp;&nbsp;
+  <button class="btn btn-danger" type="reset">Cancel</button>
+  &nbsp;&nbsp;
+  <a class="btn btn-warning" routerLink="">Home</a>
+</form>
+
+
+
+
+

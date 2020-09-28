@@ -8,62 +8,60 @@ import { UsertableService } from 'src/app/services/usertable.service';
   styleUrls: ['./bidder-registration.component.css']
 })
 export class BidderRegistrationComponent implements OnInit {
-  user:BidderRegistrationForm=new BidderRegistrationForm();
-  registerForm:FormGroup;
+  user : FormGroup
+  bidderform:BidderRegistrationForm=new BidderRegistrationForm();
   hide = true;
   constructor(private formBuilder:FormBuilder,private service:UsertableService) { }
 
   ngOnInit() {
-    this.registerForm =this.formBuilder.group({
-      'FullName': [this.user.FullName, [
-             Validators.required
-             ]],
-             'ContactNumber': [this.user.ContactNumber, [
-               Validators.required
-             ]],
-             'EmailId': [this.user.EmailId, [
-               Validators.required,
-               Validators.email
-            ]],
-            'AddressLine1': [this.user.AddressLine1, [
-               Validators.required,
-            ]],
-             'AddressLine2': [this.user.AddressLine2, [
-               Validators.required,
-             ]],
-             'City': [this.user.City, [
-               Validators.required,
-             ]],
-             'State': [this.user.State, [
-              Validators.required,
-            ]],
-             'ResidencePincode': [this.user.ResidencePincode, [
-              Validators.required,
-            ]],
-           
-             'AccountNo': [this.user.AccountNo, [
-              Validators.required,
-          ]],
-             'IFSCcode': [this.user.IFSCcode, [
-               Validators.required,
-           ]],
-            'Aadhar': [this.user.Aadhar, [
-               Validators.required,
-             ]],
-             'PAN': [this.user.PAN, [
-               Validators.required,
-             ]],
-             'TraderLicense': [this.user.TraderLicense, [
-               Validators.required,
-             ]],
-             'Password': [this.user.Password, [
-             Validators.required,
-             ]],
-             'ConfrimPassword': [this.user.ConfirmPassword, [
-               Validators.required,
-             ]],
-      
-    }) 
+    this.user= this.formBuilder.group({
+      FullName: [this.bidderform.FullName, [
+      Validators.required
+      ]],
+      'ContactNumber': [this.bidderform.ContactNumber, [
+      Validators.required
+      ]],
+      'EmailId': [this.bidderform.EmailId, [
+        Validators.required,
+        Validators.email
+     ]],
+    'AddressLine1': [this.bidderform.AddressLine1, [
+        Validators.required,
+  ]],
+      'AddressLine2': [this.bidderform.AddressLine2, [
+        Validators.required,
+   ]],
+      'City': [this.bidderform.City, [
+        Validators.required,
+     ]],
+     'State': [this.bidderform.State, [
+      Validators.required,
+    ]],
+    'ResidencePincode': [this.bidderform.ResidencePincode, [
+       Validators.required,
+     ]],
+      'AccountNo': [this.bidderform.AccountNo, [
+       Validators.required,
+   ]],
+      'IFSCcode': [this.bidderform.IFSCcode, [
+        Validators.required,
+    ]],
+     'Aadhar': [this.bidderform.Aadhar, [
+        Validators.required,
+     ]],
+    'PAN': [this.bidderform.PAN, [
+      Validators.required,
+      ]],
+      'TraderLicense': [this.bidderform.TraderLicense, [
+        Validators.required,
+      ]],
+     'Password': [this.bidderform.Password, [
+    Validators.required,
+      ]],
+      'ConfirmPassword': [this.bidderform.ConfirmPassword, [
+     Validators.required,
+      ]],
+  })
   }
   onSubmit(registerForm : BidderRegistrationForm){
     console.log(registerForm);
