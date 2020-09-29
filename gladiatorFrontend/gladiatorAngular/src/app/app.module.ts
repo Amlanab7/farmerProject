@@ -25,6 +25,9 @@ import { BidderWelcomeComponent } from './components/bidder-welcome/bidder-welco
 import { BiddingAuctionComponent } from './components/bidding-auction/bidding-auction.component';
 import { AdminUserApprovalsComponent } from './components/admin-user-approvals/admin-user-approvals.component';
 import { AdminBidAuctionComponent } from './components/admin-bid-auction/admin-bid-auction.component';
+import { SoldHistoryComponent } from './components/sold-history/sold-history.component';
+import { BidRequestComponent } from './components/bid-request/bid-request.component';
+import { AdminSellAuctionComponent } from './components/admin-sell-auction/admin-sell-auction.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +53,9 @@ import { AdminBidAuctionComponent } from './components/admin-bid-auction/admin-b
     BiddingAuctionComponent,
     AdminUserApprovalsComponent,
     AdminBidAuctionComponent,
+    SoldHistoryComponent,
+    BidRequestComponent,
+    AdminSellAuctionComponent,
     
 
 

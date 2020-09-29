@@ -1,0 +1,36 @@
+<h3>Bidder Marketplace Table</h3>
+<br>
+
+<table border="5" class="table">
+<tr>
+    <th>
+        Crop Type
+    </th>
+    <th>
+        Crop Name
+    </th>
+    
+    <th>
+        Base Price
+    </th>
+    <th>
+        Current Bid
+    </th>
+    
+</tr>
+<tr>
+    <td>{{item.Crop_Type}}</td>
+    <td>{{item.Crop_name}}</td>
+    <td>{{item.Base_price}}</td>
+    <td>{{item.Current_bid}}</td>
+    
+    
+    
+
+
+</tr><br><br>
+<tr>Bid Amount:<input type="text" name="bidamount"> </tr><br>
+<a><button class="btn btn-danger btn-lg" (click)="onPlaceBid(bidamount)" >Place Bid</button></a>
+<a><button class="btn btn-danger btn-lg" routerLink="/bidder-welcome" >Back</button></a>
+</table>
+

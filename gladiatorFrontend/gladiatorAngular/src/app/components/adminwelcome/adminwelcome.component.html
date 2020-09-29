@@ -1,3 +1,8 @@
-<a routerLink="/admin-user-approval"><button mat-raised-button >User Approvals</button></a>
-<a routerLink="/admin-bid-auction"><button mat-raised-button >Bid Auction</button></a>
-
+<div class="container">
+    
+    <div class="btn-group">
+      <button type="button" class="welcomebutton " color="primary" mat-raised-button (click)="UserRequests()">User Requests for Approval</button>
+      <button type="button" class="welcomebutton" color="primary" mat-raised-button (click)="AuctionRequests()">Auction Requests by Farmers</button>
+      <button type="button" class="welcomebutton" color="primary" mat-raised-button (click)="BidRequests()">Bid Requests ny Bidders</button>
+    </div>
+  </div>

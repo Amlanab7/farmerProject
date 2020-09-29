@@ -1,3 +1,33 @@
 
-<p>All user requests for signup will be displayed here</p>
 
+<h3>User Approval Requests</h3>
+<br>
+
+<table border="5" class="table">
+<tr>
+    <th>
+        UID
+    </th>
+    <th>
+        Full Name
+    </th>
+    <th>
+        Email
+    </th>
+    <th>
+        Mobile
+    </th>
+    
+</tr>
+<tr *ngFor="let i of listUsers">
+    <td>{{i.UID}}</td>
+    <td>{{i.full_name}}</td>
+    <td>{{i.email}}</td>
+    <td>{{i.contactno}}</td>
+    
+    <td><a><button class="btn btn-danger btn-lg" (click)="onAccept(i.UID)" >Accept</button></a></td>
+    <td><a><button class="btn btn-danger btn-lg" (click)="onReject(i.UID)" >Rejectt</button></a></td>
+    
+
+</tr>
+</table>

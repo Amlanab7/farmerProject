@@ -1,3 +1,37 @@
-<p>
-Welome to the Bidding Auction
-</p>
+<h3>Bidder Marketplace Table</h3>
+<br>
+
+<table border="5" class="table">
+<tr>
+    <th>
+        CID
+    </th>
+    <th>
+        Crop Type
+    </th>
+    <th>
+        Crop Name
+    </th>
+    
+    <th>
+        Base Price
+    </th>
+    <th>
+        Current Bid
+    </th>
+    
+</tr>
+<tr *ngFor="let i of saleItems">
+    <td>{{i.CID}}</td>
+    <td>{{i.Crop_Type}}</td>
+    <td>{{i.Crop_name}}</td>
+    <td>{{i.Base_price}}</td>
+    <td>{{i.Current_bid}}</td>
+    <td><a><button class="btn btn-danger btn-lg" (click)="onBid(i.CID)">Bid</button></a></td>
+    
+    
+
+
+</tr>
+<a><button class="btn btn-danger btn-lg" routerLink="/farmer-welcome" >Back</button></a>
+</table>

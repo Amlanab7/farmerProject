@@ -1,0 +1,43 @@
+
+
+<h3>User Approval Requests</h3>
+<br>
+
+<table border="5" class="table">
+<tr>
+    <th>
+        Crop Type
+    </th>
+    <th>
+        Crop Name
+    </th>
+    <th>
+        Quantity
+    </th>
+    <th>
+        Fertilizer Type
+    </th>
+    <th>
+        Base Price
+    </th>
+    <th>
+        pH Value
+    </th>
+    
+</tr>
+<tr *ngFor="let i of listofCrops">
+    
+    <td>{{i.crop_type}}</td>
+    <td>{{i.crop_name}}</td>
+    <td>{{i.quantity}}</td>
+    <td>{{i.fertilizer_type}}</td>
+    <td>{{i.base_price}}</td>
+    <td>{{i.ph}}</td>
+    
+    <td><a><button class="btn btn-danger btn-lg" (click)="onAccept(i.CID)" >Accept</button></a></td>
+    <td><a><button class="btn btn-danger btn-lg" (click)="onReject(i.CID)" >Reject</button></a></td>
+    
+
+</tr>
+</table>
+

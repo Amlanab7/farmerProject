@@ -21,11 +21,12 @@ namespace WebApi.Controllers
                     return BadRequest(ModelState);
                 }
                 var uid = db.crops.Where(u => u.CID == id).FirstOrDefault();
+                
+
+                db.bids.Add(newbid);
                 newbid.UID = uid.UID;
                 newbid.CID = id;
 
-                db.bids.Add(newbid);
-                
                 db.SaveChanges();
             }
             catch (Exception ex)

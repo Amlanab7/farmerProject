@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-adminwelcome',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminwelcomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
-  }
+   
 
+}
+UserRequests(){
+  this.router.navigate(['/admin-user-approval']);
+
+}
+AuctionRequests(){
+  this.router.navigate(['admin-sell-auction']);
+
+}
+BidRequests(){
+  this.router.navigate(['admin-bid-auction']);
+}
 }

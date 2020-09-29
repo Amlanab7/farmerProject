@@ -28,7 +28,7 @@ export class AuctionRequestComponent implements OnInit {
   }
   onSubmit(){
     var user = JSON.parse(localStorage.getItem('userData'));
-    this.service.addAuctionRequest(this.requestForm.value).subscribe(data=>{
+    this.service.addAuctionRequest(user.UID,this.requestForm.value).subscribe(data=>{
       localStorage.setItem("cropData",JSON.stringify(data));
       this.router.navigate(['/farmer-welcome']);
       
