@@ -21,7 +21,7 @@ export class FarmerWelcomeComponent implements OnInit {
 
   }
   goToMarketplace(){
-    this.router.navigate(['contactus']);
+    this.router.navigate(['farmer-marketplace']);
 
   }
 

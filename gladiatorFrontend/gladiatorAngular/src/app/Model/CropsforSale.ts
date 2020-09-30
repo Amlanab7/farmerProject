@@ -5,5 +5,6 @@ export class CropsforSale
     Crop_name: String;
     Base_price: number;
     Current_bid:number;
+    bidamout:number;
     
 }

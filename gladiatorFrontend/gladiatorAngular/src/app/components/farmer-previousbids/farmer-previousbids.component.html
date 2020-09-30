@@ -1,4 +1,4 @@
-<h3>Bidder Marketplace Table</h3>
+<h3>Crop Market Status</h3>
 <br>
 
 <table border="5" class="table">
@@ -16,6 +16,9 @@
     <th>
         Current Bid
     </th>
+    <th>
+        Previos Bids
+    </th>
     
 </tr>
 <tr>
@@ -23,16 +26,13 @@
     <td>{{item.crop_name}}</td>
     <td>{{item.base_price}}</td>
     <td>{{item.current_bid}}</td>
+    <td *ngFor="let i of previousbids">{{i.bid1}}</td>
     
     
     
 
 
 </tr><br><br>
-<label for="bidamount">Bid Amount:</label>
-  <input [(ngModel)]="bidamount" type="text"  id="bidamount" name="bidamount"><br><br>
-  
-<a><button class="btn btn-danger btn-lg" (click)="onPlaceBid(bidamount)" >Place Bid</button></a>
 <a><button class="btn btn-danger btn-lg" routerLink="/bidder-welcome" >Back</button></a>
 </table>
 

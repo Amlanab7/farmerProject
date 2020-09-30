@@ -28,6 +28,8 @@ import { AdminBidAuctionComponent } from './components/admin-bid-auction/admin-b
 import { SoldHistoryComponent } from './components/sold-history/sold-history.component';
 import { BidRequestComponent } from './components/bid-request/bid-request.component';
 import { AdminSellAuctionComponent } from './components/admin-sell-auction/admin-sell-auction.component';
+import { FarmerMarketplaceComponent } from './components/farmer-marketplace/farmer-marketplace.component';
+import { FarmerPreviousbidsComponent } from './components/farmer-previousbids/farmer-previousbids.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,8 @@ import { AdminSellAuctionComponent } from './components/admin-sell-auction/admin
     SoldHistoryComponent,
     BidRequestComponent,
     AdminSellAuctionComponent,
+    FarmerMarketplaceComponent,
+    FarmerPreviousbidsComponent,
     
 
 

@@ -10,6 +10,7 @@ import { BidRequestComponent } from './components/bid-request/bid-request.compon
 import { BidderRegistrationComponent } from './components/bidder-registration/bidder-registration.component';
 import { BidderWelcomeComponent } from './components/bidder-welcome/bidder-welcome.component';
 import { BiddingAuctionComponent } from './components/bidding-auction/bidding-auction.component';
+import { FarmerMarketplaceComponent } from './components/farmer-marketplace/farmer-marketplace.component';
 import { FarmerRegistrationComponent } from './components/farmer-registration/farmer-registration.component';
 import { FarmerWelcomeComponent } from './components/farmer-welcome/farmer-welcome.component';
 import { HomeComponent } from './components/home/home.component';
@@ -39,9 +40,9 @@ const routes: Routes = [
 {path:'admin-user-approval',component:AdminUserApprovalsComponent},
 {path:'admin-bid-auction',component:AdminBidAuctionComponent},
 {path:'soldhistory',component:SoldHistoryComponent},
-{path:'bid-request',component:BidRequestComponent},
+{path:'bid-request/:CID',component:BidRequestComponent},
 {path:'admin-sell-auction',component:AdminSellAuctionComponent},
-
+{path:'farmer-marketplace',component:FarmerMarketplaceComponent},
 ];
 
 @NgModule({
