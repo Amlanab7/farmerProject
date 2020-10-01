@@ -24,6 +24,7 @@ namespace WebApi.Controllers
             return db.users;
             
         }
+        
 
         [HttpPost]
         [Route("create")]
@@ -47,6 +48,22 @@ namespace WebApi.Controllers
             }
             return Ok(RegistrationForm);
         }
+        
+        [HttpPut]
+        [Route("type/{id}")]
+        public IHttpActionResult TypeInputFarmer(UserType type)
+        {
+            var user= db.users.Where(x => x.UID == type.UID).FirstOrDefault();
+            if (user != null) 
+            {
+                user.type = type.type;
+                db.SaveChanges();
+            }
+         
+            return Ok(user);
+
+        }
+
         [HttpPut]
         [Route("approval/{id}")]
         public IHttpActionResult Approval(int id)
@@ -79,15 +96,15 @@ namespace WebApi.Controllers
         }
 
         [HttpPost]
-        [Route("login")]
-        public IHttpActionResult VerifyLogin(LoginDetails Details)
+        [Route("login/admin")]
+        public IHttpActionResult VerifyLoginAdmin(LoginDetails Details)
         {
-            
+
             user Userdata = null;
 
             try
             {
-                var userFound = db.users.Where(u => u.email == Details.email && u.password == Details.password).FirstOrDefault();
+                var userFound = db.users.Where(u => u.email == Details.email && u.password == Details.password && u.type == "admin").SingleOrDefault();
 
                 if (userFound != null)
                 {
@@ -96,6 +113,7 @@ namespace WebApi.Controllers
                 else
                 {
                     Userdata = null;
+                    return NotFound();
                 }
             }
             catch (Exception ex)
@@ -103,6 +121,63 @@ namespace WebApi.Controllers
                 throw ex;
             }
             return Ok(Userdata);
+
+        }
+        [HttpPost]
+        [Route("login/farmer")]
+        public IHttpActionResult VerifyLoginFarmer(LoginDetails Details)
+        {
+
+            user Userdata = null;
+
+            try
+            {
+                var userFound = db.users.Where(u => u.email == Details.email && u.password == Details.password && u.type == "farmer").SingleOrDefault();
+
+                if (userFound != null)
+                {
+                    Userdata = userFound;
+                }
+                else
+                {
+                    Userdata = null;
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return Ok(Userdata);
+
+        }
+        [HttpPost]
+        [Route("login/bidder")]
+        public IHttpActionResult VerifyLoginBidder(LoginDetails Details)
+        {
+
+            user Userdata = null;
+
+            try
+            {
+                var userFound = db.users.Where(u => u.email == Details.email && u.password == Details.password && u.type == "bidder").SingleOrDefault();
+
+                if (userFound != null)
+                {
+                    Userdata = userFound;
+                    return Ok(Userdata);
+                }
+                else
+                {
+                    Userdata = null;
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
 
         }
     }

@@ -4,6 +4,7 @@ import{auctionRequest} from 'src/app/Model/auctionRequest'
 import { SoldHistory } from '../Model/SoldHistory';
 import { CropsforSale } from '../Model/CropsforSale';
 import { BidRequest } from '../Model/Bidrequest';
+import { Bids } from '../Model/bids';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,9 @@ export class CroptableService {
   soldHistory(id){
     return this.http.get<SoldHistory[]>(this.baseURL+"/soldhistory/"+id,this.httpOptions);
   }
+  FarmerMarketCrops(UID){
+    return this.http.get<CropsforSale[]>(this.baseURL+"/market/get/"+UID,this.httpOptions);
+  }
   BidderMarket(){
       return this.http.get<CropsforSale[]>(this.baseURL+"/cropforsale");
   }
@@ -36,10 +40,15 @@ export class CroptableService {
    return this.http.put<auctionRequest>(this.baseURL+"/rejection/"+id,this.httpOptions)
 }
 getCropbyCID(CID){
-  return this.http.get<CropsforSale>(this.baseURL+"\\"+CID);
-}
+  return this.http.get<CropsforSale>(this.baseURL+"/get/"+CID);
+}//,bidamount,UID
+//,[bidamount,UID]
   PlaceBidRequest(CID,bidamount,UID)
   {
-   return this.http.post<CropsforSale>(this.baseURL+"/bids/"+CID,[bidamount,UID],this.httpOptions);
+    alert(CID+bidamount+UID);
+   return this.http.post<CropsforSale>(this.baseURL+"/bids/"+CID,[CID,bidamount,UID],this.httpOptions);
+  }
+  PreviousBids(CID,UID){
+    return this.http.get<Bids[]>(this.baseURL+"/previous/get/"+CID,UID);
   }
 }

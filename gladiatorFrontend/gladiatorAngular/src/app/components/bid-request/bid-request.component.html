@@ -19,17 +19,19 @@
     
 </tr>
 <tr>
-    <td>{{item.Crop_Type}}</td>
-    <td>{{item.Crop_name}}</td>
-    <td>{{item.Base_price}}</td>
-    <td>{{item.Current_bid}}</td>
+    <td>{{item.crop_type}}</td>
+    <td>{{item.crop_name}}</td>
+    <td>{{item.base_price}}</td>
+    <td>{{item.current_bid}}</td>
     
     
     
 
 
 </tr><br><br>
-<tr>Bid Amount:<input type="text" name="bidamount"> </tr><br>
+<label for="bidamount">Bid Amount:</label>
+  <input [(ngModel)]="bidamount" type="text"  id="bidamount" name="bidamount"><br><br>
+  
 <a><button class="btn btn-danger btn-lg" (click)="onPlaceBid(bidamount)" >Place Bid</button></a>
 <a><button class="btn btn-danger btn-lg" routerLink="/bidder-welcome" >Back</button></a>
 </table>

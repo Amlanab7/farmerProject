@@ -30,6 +30,7 @@ import { BidRequestComponent } from './components/bid-request/bid-request.compon
 import { AdminSellAuctionComponent } from './components/admin-sell-auction/admin-sell-auction.component';
 import { AuthguardService } from './service/authguard.service';
 import { DocsUploadComponent } from './docs-upload/docs-upload.component';
+import { BidderDocsuploadComponent } from './components/bidder-docsupload/bidder-docsupload.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { DocsUploadComponent } from './docs-upload/docs-upload.component';
     BidRequestComponent,
     AdminSellAuctionComponent,
     DocsUploadComponent,
+    BidderDocsuploadComponent,
     
 
 

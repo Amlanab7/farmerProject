@@ -1,6 +1,8 @@
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserType } from '../Models/UserType';
+import { UsertableService } from '../services/usertable.service';
 
 @Component({
   selector: 'app-docs-upload',
@@ -10,8 +12,8 @@ import { Router } from '@angular/router';
 export class DocsUploadComponent implements OnInit {
   selectedFile:File=null;;
   imageAPIurl="https://localhost:44331/api/Image/upload";
-
-  constructor(private http:HttpClient,private router:Router) { }
+  typedata:UserType=new UserType();
+  constructor(private http:HttpClient,private router:Router,private service:UsertableService) { }
 
   ngOnInit(): void {
   }
@@ -29,7 +31,26 @@ export class DocsUploadComponent implements OnInit {
       
       this.http.post(this.imageAPIurl+"\\"+UID.UID,fd)
       .subscribe(res=>console.log(res));
-
       
     }
+    onSubmit(){
+      var user=JSON.parse(localStorage.getItem('userData'));
+      alert(user.UID);
+      
+     this.typedata.UID=user.UID;
+     alert(this.typedata.UID);
+     this.typedata.type="farmer";
+    
+      alert(this.typedata.UID+this.typedata.type);
+      this.service.usertype(this.typedata).subscribe(data=>{
+        console.log(data);
+        localStorage.setItem("userData",JSON.stringify(data));
+           },(e)=>{
+        console.log(e);
+   
+      })
+
+      alert("User Added Successfully");
+      this.router.navigate(['loginfarmer']);
+       }
 }

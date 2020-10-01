@@ -10,14 +10,22 @@ import { CroptableService } from 'src/app/services/croptable.service';
 })
 export class BidRequestComponent implements OnInit {
   item:CropsforSale;
+  newitem:CropsforSale;
   CID;
   UID;
-  bidamount:number;
-  constructor(private route:ActivatedRoute,private service:CroptableService) { }
+  bidamount;
+
+  constructor(private route:ActivatedRoute,private service:CroptableService) { 
+    
+      
+  
+}
 
   ngOnInit(): void {
     // var saleData = JSON.parse(localStorage.getItem('saleData'));
     // this.item=saleData;
+    this.route.params.subscribe(data => {console.log(data);});
+    
     this.CID = this.route.snapshot.paramMap.get('CID');
     var UIDforBid = JSON.parse(localStorage.getItem('userData'));
     this.UID=UIDforBid.UID;
@@ -26,11 +34,17 @@ export class BidRequestComponent implements OnInit {
     alert(this.CID+" "+this.UID);
   
     this.service.getCropbyCID(this.CID).subscribe(data=>{
-     this.item= data;})
+     this.item= data;console.log(data);localStorage.setItem("bidData",JSON.stringify(data));})
+     var bidData = JSON.parse(localStorage.getItem('bidData'));
+     
   }
  
-  onPlaceBid(bidamount)
+  onPlaceBid(bidamount:number)
 {
-    this.service.PlaceBidRequest(this.CID,bidamount,this.UID).subscribe(data=>{this.item=data;})
+  //,bidamount,this.UID
+  
+    this.service.PlaceBidRequest(this.CID,bidamount,this.UID).subscribe(data=>{this.newitem=data;})
+    alert("Your bid request placed successfully");
+
 }
 }

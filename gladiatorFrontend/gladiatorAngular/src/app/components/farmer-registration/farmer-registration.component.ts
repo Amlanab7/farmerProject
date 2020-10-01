@@ -12,7 +12,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 export class FarmerRegistrationComponent implements OnInit {
   user:FormGroup;
   constructor(private formBuilder:FormBuilder,private service:UsertableService,private router:Router,private http:HttpClient) { }
-
   ngOnInit(): void {
     // this.registerForm =this.formBuilder.group({
         this.user= this.formBuilder.group({

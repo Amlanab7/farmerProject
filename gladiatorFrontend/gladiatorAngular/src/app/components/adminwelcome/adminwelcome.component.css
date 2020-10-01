@@ -1,0 +1,26 @@
+.btn {
+    width: 100%;
+    display: block;
+    height: 60px;
+    font-size: 15px; 
+    font-family: Comic Sans MS, cursive, sans-serif;
+    text-align: center;
+    border: 1em;
+  }
+
+  .btn-container {
+    width: 150px;
+    text-align: center;
+    margin: auto;
+  }
+
+  .card-title {
+      text-align:center;
+  }
+
+  .bg{
+    background-position: center;
+    background-image: url("src/assets/images/unnamed.jpg");
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }

@@ -7,10 +7,12 @@ namespace WebApi.Models
 {
     public class LoginDetails : user
     {
-        public LoginDetails(string email, string password)
+        public LoginDetails(string email, string password, string type)
         {
+            
             this.email = email;
             this.password = password;
+        
         }
     }
 }

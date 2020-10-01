@@ -9,8 +9,18 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  doLogin(data) {
+  doLoginFarmer(data) {
     console.log(data);
-    return this.http.post(this.API_URI, data);
+    return this.http.post(this.API_URI+"/farmer", data);
+  }
+  
+  doLoginBidder(data) {
+    console.log(data);
+    return this.http.post(this.API_URI+"/bidder", data);
+  }
+  
+  doLoginAdmin(data) {
+    console.log(data);
+    return this.http.post(this.API_URI+"/admin", data);
   }
 }

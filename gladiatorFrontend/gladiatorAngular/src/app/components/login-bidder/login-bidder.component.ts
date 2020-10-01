@@ -24,7 +24,7 @@ export class LoginBidderComponent implements OnInit {
   }
 
   doLogin(){
-    this.userService.doLogin(this.loginForm.value).subscribe(result => {
+    this.userService.doLoginBidder(this.loginForm.value).subscribe(result => {
       console.log(result);
       localStorage.setItem('userData', JSON.stringify(result));
       // var user = JSON.parse(localStorage.getItem('userData'));
@@ -35,5 +35,6 @@ export class LoginBidderComponent implements OnInit {
       console.log(error);
       alert("Unsuccessfull")
     });
+    this.router.navigate(['loginbidder']);
   }
 }

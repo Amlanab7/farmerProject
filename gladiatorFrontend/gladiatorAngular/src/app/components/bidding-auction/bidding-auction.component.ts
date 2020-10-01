@@ -27,7 +27,7 @@ export class BiddingAuctionComponent implements OnInit {
     onBid(CID){
       
       alert(CID);
-      this.router.navigate(["/bid-request"],CID);
+      this.router.navigate(["/bid-request",CID]);
       // this.router.navigate("/bid-request");
     }
     

@@ -11,6 +11,7 @@ import { BidRequestComponent } from './components/bid-request/bid-request.compon
 import { BidderRegistrationComponent } from './components/bidder-registration/bidder-registration.component';
 import { BidderWelcomeComponent } from './components/bidder-welcome/bidder-welcome.component';
 import { BiddingAuctionComponent } from './components/bidding-auction/bidding-auction.component';
+import { FarmerMarketplaceComponent } from './components/farmer-marketplace/farmer-marketplace.component';
 import { FarmerRegistrationComponent } from './components/farmer-registration/farmer-registration.component';
 import { FarmerWelcomeComponent } from './components/farmer-welcome/farmer-welcome.component';
 import { HomeComponent } from './components/home/home.component';
@@ -23,7 +24,6 @@ import { DocsUploadComponent } from './docs-upload/docs-upload.component';
 
 
 const routes: Routes = [
-  {path:'',redirectTo:"/login",pathMatch:'full'},
   {path:'home',component:HomeComponent},
   {path:'src/app/about',component:AboutusComponent},
   {path:'src/app/contact',component:ContactusComponent},
@@ -33,7 +33,7 @@ const routes: Routes = [
   {path:'auction-request', component:AuctionRequestComponent},
 {path:'farmerregister', component:FarmerRegistrationComponent},
 {path:'bidderregister', component:BidderRegistrationComponent},
-{path:'login',component:LoginComponent},
+{path:'loginadmin',component:LoginComponent},
 {path:'loginfarmer',component:LoginFarmerComponent},
 {path:'loginbidder',component:LoginBidderComponent},
 {path:'bidder-welcome',component:BidderWelcomeComponent},
@@ -42,7 +42,7 @@ const routes: Routes = [
 {path:'admin-user-approval',component:AdminUserApprovalsComponent},
 {path:'admin-bid-auction',component:AdminBidAuctionComponent},
 {path:'soldhistory',component:SoldHistoryComponent},
-{path:'bid-request',component:BidRequestComponent},
+{path:'bid-request/:CID',component:BidRequestComponent},
 {path:'admin-sell-auction',component:AdminSellAuctionComponent},
 {path:'docs-upload',component:DocsUploadComponent},
 

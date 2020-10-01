@@ -1,0 +1,29 @@
+<h3>Sold History Table</h3>
+<br>
+
+<table border="5" class="table">
+<tr>
+    <th>
+        CID
+    </th>
+    <th>
+        Crop Name
+    </th>
+    <th>
+        Crop Type
+    </th>
+    
+  
+    
+</tr>
+<tr *ngFor ="let i of marketcrops">
+    <td>{{i.CID}}</td>
+    <td>{{i.crop_name}}</td>
+    <td>{{i.crop_type}}</td>
+    
+    <td><a><button class="btn btn-success" (click)="onView(i.CID)" >View</button></a></td>
+    
+
+
+</tr>
+</table>
