@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
+
 import { AdminBidAuctionComponent } from './components/admin-bid-auction/admin-bid-auction.component';
 import { AdminSellAuctionComponent } from './components/admin-sell-auction/admin-sell-auction.component';
 import { AdminUserApprovalsComponent } from './components/admin-user-approvals/admin-user-approvals.component';
@@ -18,13 +19,15 @@ import { LoginFarmerComponent } from './components/login-farmer/login-farmer.com
 import { LoginComponent } from './components/login/login.component';
 import { SoldHistoryComponent } from './components/sold-history/sold-history.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { DocsUploadComponent } from './docs-upload/docs-upload.component';
+
 
 const routes: Routes = [
-  {path:'',component:HomeComponent},
+  {path:'',redirectTo:"/login",pathMatch:'full'},
+  {path:'home',component:HomeComponent},
   {path:'src/app/about',component:AboutusComponent},
   {path:'src/app/contact',component:ContactusComponent},
   {path:'aboutus', component:AboutusComponent},
-  {path:'home', component:HomeComponent},
   {path:'contactus', component:ContactusComponent},
   {path:'farmer-welcome', component:FarmerWelcomeComponent},
   {path:'auction-request', component:AuctionRequestComponent},
@@ -41,6 +44,7 @@ const routes: Routes = [
 {path:'soldhistory',component:SoldHistoryComponent},
 {path:'bid-request',component:BidRequestComponent},
 {path:'admin-sell-auction',component:AdminSellAuctionComponent},
+{path:'docs-upload',component:DocsUploadComponent},
 
 ];
 

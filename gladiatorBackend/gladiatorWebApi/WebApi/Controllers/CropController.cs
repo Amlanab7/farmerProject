@@ -14,6 +14,7 @@ namespace WebApi.Controllers
         gladiatorEntities db = new gladiatorEntities();
 
         [HttpGet]
+
         [Route("GetAll")]
 
         public IEnumerable<crop> GetCrops()
@@ -21,6 +22,8 @@ namespace WebApi.Controllers
             return db.crops;
 
         }
+
+
 
         [HttpPost]
         [Route("{id}")]
@@ -34,6 +37,7 @@ namespace WebApi.Controllers
                 }
                 newCrop.UID = id;
                 db.crops.Add(newCrop);
+               
                 db.SaveChanges();
                 
             }

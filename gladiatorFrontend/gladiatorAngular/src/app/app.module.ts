@@ -28,6 +28,8 @@ import { AdminBidAuctionComponent } from './components/admin-bid-auction/admin-b
 import { SoldHistoryComponent } from './components/sold-history/sold-history.component';
 import { BidRequestComponent } from './components/bid-request/bid-request.component';
 import { AdminSellAuctionComponent } from './components/admin-sell-auction/admin-sell-auction.component';
+import { AuthguardService } from './service/authguard.service';
+import { DocsUploadComponent } from './docs-upload/docs-upload.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,7 @@ import { AdminSellAuctionComponent } from './components/admin-sell-auction/admin
     SoldHistoryComponent,
     BidRequestComponent,
     AdminSellAuctionComponent,
+    DocsUploadComponent,
     
 
 
@@ -71,7 +74,9 @@ import { AdminSellAuctionComponent } from './components/admin-sell-auction/admin
     ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [
+    AuthguardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
