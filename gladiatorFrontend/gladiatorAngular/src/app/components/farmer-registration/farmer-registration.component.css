@@ -12,14 +12,14 @@ input{
     border-radius: 4px;
 
   }
-  
+
 .background{
     background-color:rgb(193, 241, 193);
     
     padding:7px;
     width:70%;
     margin-left: 15%;
-   margin-top:8%;
+    margin-top:8%;
     align-content: center;
     text-align: center;
     border-radius: 15px;

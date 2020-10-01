@@ -34,6 +34,7 @@ import { BidderDocsuploadComponent } from './components/bidder-docsupload/bidder
 import { FarmerMarketplaceComponent } from './components/farmer-marketplace/farmer-marketplace.component';
 import { FarmerPreviousbidsComponent } from './components/farmer-previousbids/farmer-previousbids.component';
 import { AdminSoldComponent } from './components/admin-sold/admin-sold.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { AdminSoldComponent } from './components/admin-sold/admin-sold.component
     FarmerMarketplaceComponent,
     FarmerPreviousbidsComponent,
     AdminSoldComponent,
+    ForgotPasswordComponent,
     
 
 
