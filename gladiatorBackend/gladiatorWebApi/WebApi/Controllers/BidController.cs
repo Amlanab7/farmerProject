@@ -36,22 +36,22 @@ namespace WebApi.Controllers
             }
             return Ok(newbid);
         }
-        [Route("approval/{id}")]
-        public IHttpActionResult Approval(int id)
-        {
+        //[Route("approval/{id}")]
+        //public IHttpActionResult Approval(int id)
+        //{
 
-            var approval = db.bids.FirstOrDefault(x => x.CID == id);
-            var currentBid = db.crops.Where(u => u.CID == approval.CID).SingleOrDefault();
-            var biddername = db.users.Where(u => u.UID == approval.UID).SingleOrDefault();
-            if (approval != null)
-            {
-                approval.approved = 1;
-                currentBid.current_bid = approval.bid1;
-                currentBid.bidder_name = biddername.full_name;
+        //    var approval = db.bids.FirstOrDefault(x => x.CID == id);
+        //    var currentBid = db.crops.Where(u => u.CID == approval.CID).SingleOrDefault();
+        //    var biddername = db.users.Where(u => u.UID == approval.UID).SingleOrDefault();
+        //    if (approval != null)
+        //    {
+        //        approval.approved = 1;
+        //        currentBid.current_bid = approval.bid1;
+        //        currentBid.bidder_name = biddername.full_name;
                 
-                db.SaveChanges();
-            }
-            return Ok();
-        }
+        //        db.SaveChanges();
+        //    }
+        //    return Ok();
+        //}
     }
 }

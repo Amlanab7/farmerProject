@@ -5,6 +5,7 @@ import { SoldHistory } from '../Model/SoldHistory';
 import { CropsforSale } from '../Model/CropsforSale';
 import { BidRequest } from '../Model/Bidrequest';
 import { Bids } from '../Model/bids';
+import { AdminMarket } from '../Model/AdminMarket';
 
 @Injectable({
   providedIn: 'root'
@@ -30,14 +31,29 @@ export class CroptableService {
   BidderMarket(){
       return this.http.get<CropsforSale[]>(this.baseURL+"/cropforsale");
   }
+  AdminMarket(){
+    return this.http.get<AdminMarket[]>(this.baseURL+"/adminmarket");
+  }
   getAllCrops(){
     return this.http.get<auctionRequest[]>(this.baseURL+"/getall");
+  }
+  getAllBids(){
+    return this.http.get<BidRequest[]>(this.baseURL+"/allbids");
   }
   accept(id){
     return this.http.put<auctionRequest>(this.baseURL+"/approval/"+id,this.httpOptions)
  }
  reject(id){
    return this.http.put<auctionRequest>(this.baseURL+"/rejection/"+id,this.httpOptions)
+}
+acceptbid(id){
+  return this.http.put<BidRequest>(this.baseURL+"/bids/approval/"+id,this.httpOptions)
+}
+rejectbid(id){
+ return this.http.put<BidRequest>(this.baseURL+"/bids/rejection/"+id,this.httpOptions)
+}
+soldByAdmin(id){
+  return this.http.put<AdminMarket>(this.baseURL+"/sold/"+id,this.httpOptions)
 }
 getCropbyCID(CID){
   return this.http.get<CropsforSale>(this.baseURL+"/get/"+CID);

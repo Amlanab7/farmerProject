@@ -1,10 +1,13 @@
 
 
-<h3>Bid Approval Requests</h3>
+<h3>Admin Marketplace</h3>
 <br>
 
 <table border="5" class="table">
 <tr>
+    <th>
+        CID
+    </th>
     <th>
         Crop Name
     </th>
@@ -18,25 +21,22 @@
         Current Bid
     </th>
     <th>
-        Bid Amount
+        Bidder Name
     </th>
     
     
 </tr>
-<tr *ngFor="let i of listofBids">
-    
+<tr *ngFor="let i of listofCrops">
+    <td>{{i.CID}}</td>
     
     <td>{{i.crop_name}}</td>
     <td>{{i.crop_type}}</td>
     <td>{{i.base_price}}</td>
     <td>{{i.current_bid}}</td>
-    <td>{{i.bid1}}</td>
+    <td>{{i.bidder_name}}</td>
     
+    <td><a><button class="btn btn-success btn-lg" (click)="onSold(i.CID)" >Sell Crop</button></a></td>
     
-    
-    
-    <td><a><button class="btn btn-success btn-lg" (click)="onAccept(i.BIID)" >Accept</button></a></td>
-    <td><a><button class="btn btn-danger btn-lg" (click)="onReject(i.BIID)" >Reject</button></a></td>
     
 
 </tr>

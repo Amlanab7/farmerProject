@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { AdminBidAuctionComponent } from './components/admin-bid-auction/admin-bid-auction.component';
 import { AdminSellAuctionComponent } from './components/admin-sell-auction/admin-sell-auction.component';
+import { AdminSoldComponent } from './components/admin-sold/admin-sold.component';
 import { AdminUserApprovalsComponent } from './components/admin-user-approvals/admin-user-approvals.component';
 import { AdminwelcomeComponent } from './components/adminwelcome/adminwelcome.component';
 import { AuctionRequestComponent } from './components/auction-request/auction-request.component';
@@ -11,6 +12,7 @@ import { BidderRegistrationComponent } from './components/bidder-registration/bi
 import { BidderWelcomeComponent } from './components/bidder-welcome/bidder-welcome.component';
 import { BiddingAuctionComponent } from './components/bidding-auction/bidding-auction.component';
 import { FarmerMarketplaceComponent } from './components/farmer-marketplace/farmer-marketplace.component';
+import { FarmerPreviousbidsComponent } from './components/farmer-previousbids/farmer-previousbids.component';
 import { FarmerRegistrationComponent } from './components/farmer-registration/farmer-registration.component';
 import { FarmerWelcomeComponent } from './components/farmer-welcome/farmer-welcome.component';
 import { HomeComponent } from './components/home/home.component';
@@ -43,6 +45,8 @@ const routes: Routes = [
 {path:'bid-request/:CID',component:BidRequestComponent},
 {path:'admin-sell-auction',component:AdminSellAuctionComponent},
 {path:'farmer-marketplace',component:FarmerMarketplaceComponent},
+{path:'previousbids/:CID',component:FarmerPreviousbidsComponent},
+{path:'adminsold',component:AdminSoldComponent}
 ];
 
 @NgModule({
