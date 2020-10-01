@@ -1,10 +1,18 @@
-<p>bidder-docsupload works!</p>
-
+<h1>Please Upload your documents</h1>
+<br>
 <div class="form-group">
-    <label for="PAN">PAN: </label><br>
+    <label for="PAN" style="font-weight:bold;">PAN: </label><br>
     <input type="file" id="image" (change)="onSelectedFile($event)" />
-    <button mat-raised-button type="button" (click)="onUpload()">Upload the file</button>
+    <button mat-raised-button type="button" (click)="onUpload()">Upload</button>
   
 </div>
+<br>
 
-<a ><button mat-raised-button (click)="onSubmit()">Submit</button></a>
+<div >
+    <label for="Aadhar" style="font-weight:bold;">Aadhar: </label><br>
+    <input type="file" id="image" (change)="onSelectedFile($event)" />
+    <button mat-raised-button type="button" (click)="onUpload()">Upload</button>
+  
+</div>
+<br>
+<a ><button btn-btn-success (click)="onSubmit()">Submit</button></a>

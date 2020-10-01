@@ -1,6 +1,7 @@
 .homegpic{
     background-position: center;
-    /* background-image: url("src/assets/images/SubregisterBGI.jpg"); */
+
+    background-image: url("src/assets/images/FarmerBGI.jpg");
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
   }

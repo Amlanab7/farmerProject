@@ -26,7 +26,7 @@ import { DocsUploadComponent } from './docs-upload/docs-upload.component';
 
 
 const routes: Routes = [
-  {path:'home',component:HomeComponent},
+  {path:'',component:HomeComponent},
   {path:'src/app/about',component:AboutusComponent},
   {path:'src/app/contact',component:ContactusComponent},
   {path:'aboutus', component:AboutusComponent},

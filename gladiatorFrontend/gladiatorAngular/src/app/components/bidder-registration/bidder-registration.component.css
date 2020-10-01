@@ -1,3 +1,33 @@
+.bgpic{
+    background-position: center;
+    background-image: url("src/assets/images/LoginBGI.jpg");
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid green;
+    border-radius: 4px;
+  }
+  .background{
+    background-color:rgb(193, 241, 193);
+    
+    padding:7px;
+    width:70%;
+    margin-left: 15%;
+   margin-top:8%;
+    align-content: center;
+    text-align: center;
+    border-radius: 15px;
+    font-size:large;
+    background-position: center;
+    /* background-image: url("src/assets/images/LoginBGI.jpg"); */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }
 span{
     margin-left:100px;
 }
