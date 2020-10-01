@@ -31,6 +31,9 @@ import { AdminSellAuctionComponent } from './components/admin-sell-auction/admin
 import { AuthguardService } from './service/authguard.service';
 import { DocsUploadComponent } from './docs-upload/docs-upload.component';
 import { BidderDocsuploadComponent } from './components/bidder-docsupload/bidder-docsupload.component';
+import { FarmerMarketplaceComponent } from './components/farmer-marketplace/farmer-marketplace.component';
+import { FarmerPreviousbidsComponent } from './components/farmer-previousbids/farmer-previousbids.component';
+import { AdminSoldComponent } from './components/admin-sold/admin-sold.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +64,9 @@ import { BidderDocsuploadComponent } from './components/bidder-docsupload/bidder
     AdminSellAuctionComponent,
     DocsUploadComponent,
     BidderDocsuploadComponent,
+    FarmerMarketplaceComponent,
+    FarmerPreviousbidsComponent,
+    AdminSoldComponent,
     
 
 

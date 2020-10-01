@@ -16,23 +16,26 @@
     <th>
         Current Bid
     </th>
-    <th>
-        Previos Bids
-    </th>
+
     
 </tr>
 <tr>
-    <td>{{item.crop_type}}</td>
-    <td>{{item.crop_name}}</td>
-    <td>{{item.base_price}}</td>
-    <td>{{item.current_bid}}</td>
-    <td *ngFor="let i of previousbids">{{i.bid1}}</td>
-    
-    
-    
-
-
+    <td>{{marketcrop.crop_type}}</td>
+    <td>{{marketcrop.crop_name}}</td>
+    <td>{{marketcrop.base_price}}</td>
+    <td>{{marketcrop.current_bid}}</td>
 </tr><br><br>
+<table border="5" class="table"></table>
+<tr>
+    <th>
+        Previous Bids
+    </th>
+        
+</tr>
+<tr *ngFor="let i of previousbids">
+    <td>{{i.bid1}}</td>
+</tr>
+
 <a><button class="btn btn-danger btn-lg" routerLink="/bidder-welcome" >Back</button></a>
 </table>
 

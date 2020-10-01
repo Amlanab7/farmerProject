@@ -20,6 +20,7 @@ export class FarmerPreviousbidsComponent implements OnInit {
     this.route.params.subscribe(data => {console.log(data);});
     
     this.CID = this.route.snapshot.paramMap.get('CID');
+    alert(this.CID);
     var UID = JSON.parse(localStorage.getItem('userData'));
     this.UID=UID.UID;
     
@@ -30,9 +31,9 @@ export class FarmerPreviousbidsComponent implements OnInit {
       this.marketcrop = data;
       console.log(this.marketcrop);
     });
-      this.service.PreviousBids(this.CID,this.UID).subscribe(
-        
-    );
+       this.service.PreviousBids(this.CID,this.UID).subscribe(
+       
+     );
      var bidData = JSON.parse(localStorage.getItem('bidData'));
      alert(bidData.CID+" "+bidData.crop_type);
   }

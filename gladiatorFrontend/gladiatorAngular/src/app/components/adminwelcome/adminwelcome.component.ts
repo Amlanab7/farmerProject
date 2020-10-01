@@ -25,4 +25,7 @@ AuctionRequests(){
 BidRequests(){
   this.router.navigate(['admin-bid-auction']);
 }
+SellCrop(){
+  this.router.navigate(['adminsold']);
+}
 }

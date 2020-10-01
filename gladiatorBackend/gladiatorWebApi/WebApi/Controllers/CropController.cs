@@ -116,7 +116,7 @@ namespace WebApi.Controllers
             IList<SoldHistory> soldItems = null;
 
             
-            {
+            
                 soldItems = db.crops.Where(u=>u.UID==id && u.sold==1).Select(s => new SoldHistory()
                         {
                             date = (DateTime)s.date_sold,
@@ -125,7 +125,7 @@ namespace WebApi.Controllers
                             Base_price= (int)s.base_price,
                             Sold_price= (double)s.sold_price
                         }).ToList<SoldHistory>();
-            }
+            
 
             if (soldItems.Count == 0)
             {
@@ -159,11 +159,15 @@ namespace WebApi.Controllers
         [Route("previous/get/{id}")]
         public IHttpActionResult GetPreviousBidss(int id, int UID)
         {
-            IList<bid> prevBids = null;
+            IList<PreviousBids> prevBids = null;
 
             try
             {
-                prevBids = db.bids.Where(c => c.approved == 1 && c.UID == UID && c.CID == id).ToList<bid>();
+                prevBids = db.bids.Where(c => c.approved == 1 && c.UID == UID && c.CID == id)
+                                  .Select(s => new PreviousBids
+                                  {
+                                      bid1 = s.bid1
+                                  }).ToList<PreviousBids>() ;
                 if (prevBids.Count() == 0)
                 {
                     return NotFound();
@@ -176,8 +180,37 @@ namespace WebApi.Controllers
             }
             return Ok(prevBids);
         }
+        [HttpGet]
+        [Route("allbids")]
+        public IHttpActionResult GetBids()
+        {
+            IList<AllBids> allbids = null;
 
-       
+
+            
+                allbids = (IList<AllBids>)(from c in db.crops
+                            join b in db.bids on c.CID equals b.CID
+                                           where b.approved==null               
+                            select new AllBids()
+                            {
+                                BIID=b.BIID,
+                                crop_name=c.crop_name,
+                                crop_type=c.crop_type,
+                                base_price= (int)c.base_price,
+                                current_bid= (double)c.current_bid,
+                                bid1=b.bid1
+                            }).ToList<AllBids>();
+            
+
+            if (allbids.Count == 0)
+            {
+                return NotFound();
+            }
+
+            return Ok(allbids);
+        }
+
+
         [HttpPost]
         [Route("bids/{id}")]
         public IHttpActionResult AddBid([FromBody] int[] biddata)
@@ -226,6 +259,25 @@ namespace WebApi.Controllers
             }
             return Ok();
         }
+        [HttpPut]
+        [Route("bids/rejection/{id}")]
+        public IHttpActionResult RejectionBid(int id)
+        {
+
+            var approval = db.bids.FirstOrDefault(x => x.BIID == id);
+
+            //var crop_current = db.crops.FirstOrDefault(u => u.CID == approval.CID);
+            //var bidder = db.users.FirstOrDefault(u => u.UID == crop_current.UID);
+            if (approval != null)
+            {
+                approval.approved = 1;
+                //crop_current.current_bid = approval.bid1;
+                //crop_current.bidder_name = bidder.full_name;
+
+                db.SaveChanges();
+            }
+            return Ok();
+        }
         [HttpGet]
         [Route("cropforsale")]
         public IHttpActionResult BidderMarketplace()
@@ -250,6 +302,32 @@ namespace WebApi.Controllers
             }
 
             return Ok(saleItems);
+        }
+        [HttpGet]
+        [Route("adminmarket")]
+        public IHttpActionResult AdminMarketplace()
+        {
+            IList<AdminMarket> itemsforSale = null;
+
+
+            {
+                itemsforSale = db.crops.Where(u => u.approved == 1 && u.sold == null && u.current_bid != null).Select(s => new AdminMarket()
+                {
+                    CID = s.CID,
+                      crop_type = s.crop_type,
+                    crop_name = s.crop_name,
+                    base_price = (int)s.base_price,
+                    current_bid = (double)s.current_bid,
+                    bidder_name = s.bidder_name
+                }).ToList<AdminMarket>();
+            }
+
+            if (itemsforSale.Count == 0)
+            {
+                return NotFound();
+            }
+
+            return Ok(itemsforSale);
         }
     }
 }
