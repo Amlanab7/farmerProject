@@ -31,9 +31,8 @@ export class FarmerPreviousbidsComponent implements OnInit {
       this.marketcrop = data;
       console.log(this.marketcrop);
     });
-       this.service.PreviousBids(this.CID,this.UID).subscribe(data=>
-       {this.previousbids=data;
-        console.log(this.previousbids)}
+       this.service.PreviousBids(this.CID,this.UID).subscribe(
+       
      );
      var bidData = JSON.parse(localStorage.getItem('bidData'));
      alert(bidData.CID+" "+bidData.crop_type);

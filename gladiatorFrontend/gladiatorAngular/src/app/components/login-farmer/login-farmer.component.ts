@@ -11,20 +11,23 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginFarmerComponent implements OnInit {
   myimage:string="assets/images/Homepagebgi.jpg";
   loginForm:FormGroup;
+
   submitted=false;
   constructor(private formBuilder: FormBuilder, private userService:AuthService,private router: Router) {
+
     this.loginForm = this.formBuilder.group({
 			email: ['', [Validators.required]],
 			password: ['', [Validators.required]]
 		});
-   }
-
+  }
+  
   ngOnInit(): void {
+   
   }
   doLogin() {
-    this.userService.doLogin(this.loginForm.value).subscribe(result => {
+    this.userService.doLoginFarmer(this.loginForm.value).subscribe(result => {
       console.log(result);
-      localStorage.setItem('userData', JSON.stringify(result));
+       localStorage.setItem('userData', JSON.stringify(result));
       // var user = JSON.parse(localStorage.getItem('userData'));
       // alert(user.UID);
       this.router.navigate(['/farmer-welcome']);
@@ -33,6 +36,8 @@ export class LoginFarmerComponent implements OnInit {
       console.log(error);
       alert("Unsuccessfull")
     });
+    this.router.navigate(['loginfarmer']);
+    
     
   }
 }

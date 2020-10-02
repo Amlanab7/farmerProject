@@ -28,9 +28,13 @@ import { AdminBidAuctionComponent } from './components/admin-bid-auction/admin-b
 import { SoldHistoryComponent } from './components/sold-history/sold-history.component';
 import { BidRequestComponent } from './components/bid-request/bid-request.component';
 import { AdminSellAuctionComponent } from './components/admin-sell-auction/admin-sell-auction.component';
+import { AuthguardService } from './service/authguard.service';
+import { DocsUploadComponent } from './docs-upload/docs-upload.component';
+import { BidderDocsuploadComponent } from './components/bidder-docsupload/bidder-docsupload.component';
 import { FarmerMarketplaceComponent } from './components/farmer-marketplace/farmer-marketplace.component';
 import { FarmerPreviousbidsComponent } from './components/farmer-previousbids/farmer-previousbids.component';
 import { AdminSoldComponent } from './components/admin-sold/admin-sold.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -59,9 +63,12 @@ import { AdminSoldComponent } from './components/admin-sold/admin-sold.component
     SoldHistoryComponent,
     BidRequestComponent,
     AdminSellAuctionComponent,
+    DocsUploadComponent,
+    BidderDocsuploadComponent,
     FarmerMarketplaceComponent,
     FarmerPreviousbidsComponent,
     AdminSoldComponent,
+    ForgotPasswordComponent,
     
 
 
@@ -77,7 +84,9 @@ import { AdminSoldComponent } from './components/admin-sold/admin-sold.component
     ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [
+    AuthguardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

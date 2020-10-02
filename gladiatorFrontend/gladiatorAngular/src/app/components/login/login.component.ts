@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   doLogin() {
-    this.userService.doLogin(this.loginForm.value).subscribe(result => {
+    this.userService.doLoginAdmin(this.loginForm.value).subscribe(result => {
       console.log(result);
       localStorage.setItem('userData', JSON.stringify(result));
       // var user = JSON.parse(localStorage.getItem('userData'));
@@ -36,6 +36,6 @@ export class LoginComponent implements OnInit {
       console.log(error);
       alert("Unsuccessfull")
     });
-    
+    this.router.navigate(['loginbidder']);
   }
 }

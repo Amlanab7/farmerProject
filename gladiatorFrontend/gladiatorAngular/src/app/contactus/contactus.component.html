@@ -1,19 +1,50 @@
- 
-    
-        <h1>Contact Us</h1>
-        <form (ngSubmit)="submitForm()">
-            <div class="field">
-                <input type="text" name="name" class="input" placeholder="Your Name" [(ngModel)]="name">
-</div>
+<div class="background">
+    <div class="container">
+      <div class="screen">
+        <div class="screen-header">
+          <div class="screen-header-left">
+            <div class="screen-header-button close"></div>
+            <div class="screen-header-button maximize"></div>
+            <div class="screen-header-button minimize"></div>
+          </div>
+          <div class="screen-header-right">
+            <div class="screen-header-ellipsis"></div>
+            <div class="screen-header-ellipsis"></div>
+            <div class="screen-header-ellipsis"></div>
+          </div>
+        </div>
+        <div class="screen-body">
+          <div class="screen-body-item left">
+            <div class="app-title">
+              <span>CONTACT</span>
+              <span>US</span>
+            </div>
+            <div class="app-contact">Mobile No : +91 9589979448 <br> Email : ltiteam4@gmail.com  </div>
             
-<div class="field">
-                <input type="email" name="email" class="input" placeholder="Your Email" [(ngModel)]="email">
-            
-</div>
-
-<div class="field">
-                <textarea class="textarea" name="message" placeholder="Message" [(ngModel)]="message"></textarea>
-</div>
-
-<button type="submit" class="button is-danger is-large">Submit</button>
-</form>           
+          </div>
+          <div class="screen-body-item">
+            <div class="app-form">
+                <form (ngSubmit)="submitForm()">
+              <div class="app-form-group">
+                <input class="app-form-control" name="name" placeholder="NAME" [(ngModel)]="name">
+              </div>
+              <div class="app-form-group">
+                <input class="app-form-control" name="email" placeholder="EMAIL" [(ngModel)]="email">
+              </div>
+              
+              <div class="app-form-group message">
+                
+                <textarea class="app-form-control" name="message" placeholder="Message" [(ngModel)]="message"></textarea>
+              </div>
+              <div class="app-form-group buttons">
+                
+                <button type="submit" class="app-form-button">SEND</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>

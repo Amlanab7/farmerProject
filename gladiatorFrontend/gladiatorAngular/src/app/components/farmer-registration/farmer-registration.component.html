@@ -1,4 +1,6 @@
- <form [formGroup]="user" (ngSubmit)="(onSubmit())">
+ <div class="bgpic">
+ <div border="2"class="background" >
+ <form [formGroup]="user" (ngSubmit)="(onNext())">
 
     <div class="form-group" >
         <label for="fullName">First Name: </label>
@@ -69,27 +71,14 @@
   <input type="text" class="form-control" formControlName="ifsc" id="IFSCcode" />
 
 </div>
-<!-- <div class="form-group" >
-  <label for="Aadhar">Aadhar: </label>
-  <input type="text" class="form-control" formControlName="Aadhar" id="Aadhar" />
 
-</div>
-<div class="form-group" >
-  <label for="PAN">PAN: </label>
-  <input type="text" class="form-control" formControlName="PAN" id="PAN" />
 
-</div>
-<div class="form-group">
+
+<!-- <div class="form-group">
   <label for="TraderLicense:string;"> TraderLicense:string; : </label>
-  <input type="text" class="form-control" formControlName="TraderLicense"id=" TraderLicense" /> -->
+  <input type="text" class="form-control" formControlName="TraderLicense"id=" TraderLicense" /> 
 
-<!-- </div> -->
-<div class="form-group">
-  <label for="PAN">PAN: </label><br>
-  <input type="file" id="image" (change)="onSelectedFile($event)" />
-  <button mat-raised-button type="button" (click)="onUpload()">Upload the file</button>
-
- </div>
+ </div>   -->
 <div class="form-group" >
   <label for="Password">Password: </label>
   <input type="password" class="form-control" formControlName="password" id="Password" />
@@ -99,12 +88,13 @@
   <label for="ConfirmPassword">ConfirmPassword: </label>
   <input type="password" class="form-control" formControlName="ConfirmPassword" id="ConfirmPassword" />
 </div> -->
-    <button class="btn btn-success" type="submit" >Save</button> &nbsp;&nbsp;
-    <button class="btn btn-danger" type="reset">Cancel</button>
+    <button class="btn btn-success" type="submit" >Next</button> &nbsp;&nbsp;
+    <button class="btn btn-danger" type="reset">Reset</button>
     &nbsp;&nbsp;
     <a class="btn btn-warning" routerLink="">Home</a>
 </form>
-
+</div>
+</div>
  
 
 

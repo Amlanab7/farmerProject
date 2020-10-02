@@ -77,7 +77,7 @@
 
 .bgpic{
     background-position: center;
-    background-image: url("src/assets/images/Homepagebgi.jpg");
+    background-image: url("src/assets/images/LoginBGI.jpg");
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
 }

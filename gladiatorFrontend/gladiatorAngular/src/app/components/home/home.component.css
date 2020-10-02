@@ -1,17 +1,18 @@
-.content
+/* .content
 {
   display: flex;
   flex-direction: column;
   margin: 3% 18% 8%;
   align-self: center;
-  padding: 3% 3%;;
+  padding: 3% 3%;
   background: rgb(192, 235, 192);
   text-align: center;
   border-radius: 20px;
   height: 60%;
 
-}
+} */
 .homebgpic{
+    width:cover;
     background-position: center;
     background-image: url("src/assets/images/HomeBGI (2).jpg");
     background-repeat: no-repeat; /* Do not repeat the image */

@@ -12,8 +12,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 export class FarmerRegistrationComponent implements OnInit {
   user:FormGroup;
   constructor(private formBuilder:FormBuilder,private service:UsertableService,private router:Router,private http:HttpClient) { }
-selectedFile:File=null;;
-imageAPIurl="https://localhost:44331/api/Image/upload";
   ngOnInit(): void {
     // this.registerForm =this.formBuilder.group({
         this.user= this.formBuilder.group({
@@ -66,25 +64,11 @@ imageAPIurl="https://localhost:44331/api/Image/upload";
   
    
   }
-
-  onSelectedFile(event){
-    if(event.target.files.length>0)
-    {
-      console.log(event);
-      this.selectedFile=<File>event.target.files[0];
-    
-    }}
-    onUpload(){
-      const fd=new FormData();
-      fd.append('image',this.selectedFile,this.selectedFile.name);
-      this.http.post(this.imageAPIurl,fd)
-      .subscribe(res=>console.log(res));
-      
-    }
-    onSubmit() {
+    onNext() {
       this.service.addUser(this.user.value).subscribe(data=>{
+        console.log(data);
         localStorage.setItem("userData",JSON.stringify(data));
-        this.router.navigate(['/loginfarmer']);
+        this.router.navigate(['/docs-upload']);
         
       },(e)=>{
         console.log(e);

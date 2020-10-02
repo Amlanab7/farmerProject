@@ -1,9 +1,44 @@
-<div class="container">
+<br><br>
+
+<div class="bg" >
+
+
+<div class="card" style="width: 22rem; margin:0 auto;"> 
+  <img class="card-img-top"
+      src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/20190506125816/avt.png"
+              alt="Card image cap"> 
     
-    <div class="btn-group">
-      <button type="button" class="welcomebutton " color="primary" mat-raised-button (click)="UserRequests()">User Requests for Approval</button>
-      <button type="button" class="welcomebutton" color="primary" mat-raised-button (click)="AuctionRequests()">Auction Requests by Farmers</button>
-      <button type="button" class="welcomebutton" color="primary" mat-raised-button (click)="BidRequests()">Bid Requests by Bidders</button>
-      <button type="button" class="welcomebutton" color="primary" mat-raised-button (click)="SellCrop()">Sell Crops in Auction</button>
-    </div>
-  </div>
+  <div class="card-body"> 
+      <h4 class="card-title" style="color:green"> 
+          Welcome Admin
+      </h4> 
+        
+     
+        
+      
+  </div> 
+    
+  <div class="card-footer text-center"> 
+        
+    <div class="btn-container">
+        
+      <button class="btn" (click)="UserRequests()"
+                  id="left" style="color:rgb(204, 23, 23)"> 
+          Approve Requests 
+      </button> 
+        
+      <button class="btn" (click)="AuctionRequests()"
+              id="center" style="color:rgb(68, 136, 37)"> 
+          Auction Requests
+      </button> 
+        
+      <button class="btn" (click)="BidRequests()"
+              id="right" style="color:rgb(105, 20, 218)"> 
+          Bid Requests 
+      </button> 
+      </div>
+  </div> 
+</div> 
+
+</div>

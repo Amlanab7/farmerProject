@@ -10,7 +10,7 @@ import { CroptableService } from 'src/app/services/croptable.service';
   styleUrls: ['./auction-request.component.css']
 })
 export class AuctionRequestComponent implements OnInit {
-  request:auctionRequest=new auctionRequest();
+  
   requestForm: FormGroup;
   constructor(private formBuilder: FormBuilder,private router:Router,private service:CroptableService) {
     this.requestForm = this.formBuilder.group({
@@ -18,8 +18,8 @@ export class AuctionRequestComponent implements OnInit {
 			'crop_name': ['', [Validators.required]],
       'fertilizer_type': ['', [Validators.required]],
       'quantity': ['', [Validators.required]],
-      'base_price': ['', [Validators.required]],
-      'ph': ['', [Validators.required]]
+      'base_price': ['', [Validators.required]]
+
       
       });
     }

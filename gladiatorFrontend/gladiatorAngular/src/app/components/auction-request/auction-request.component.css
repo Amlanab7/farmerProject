@@ -1,0 +1,17 @@
+
+.background{
+    background-color:rgb(193, 241, 193);
+    
+    padding:7px;
+    width:70%;
+    margin-left: 15%;
+   margin-top:3%;
+    align-content: center;
+    text-align: center;
+    border-radius: 15px;
+    font-size:large;
+    background-position: center;
+    /* background-image: url("src/assets/images/LoginBGI.jpg"); */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }
