@@ -25,33 +25,35 @@ import { SoldHistoryComponent } from './components/sold-history/sold-history.com
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { DocsUploadComponent } from './docs-upload/docs-upload.component';
+import { AdminauthGuard } from './guards/adminauth.guard';
+import { BidderauthGuard } from './guards/bidderauth.guard';
+import { FarmerauthGuard } from './guards/farmerauth.guard';
 
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'src/app/about',component:AboutusComponent},
   {path:'src/app/contact',component:ContactusComponent},
-  {path:'farmer-welcome', component:FarmerWelcomeComponent},
-  {path:'auction-request', component:AuctionRequestComponent},
+  {path:'farmer-welcome', component:FarmerWelcomeComponent,canActivate:[FarmerauthGuard]},
+  {path:'auction-request', component:AuctionRequestComponent,canActivate:[FarmerauthGuard]},
 {path:'farmerregister', component:FarmerRegistrationComponent},
 {path:'bidderregister', component:BidderRegistrationComponent},
 {path:'loginadmin',component:LoginComponent},
 {path:'loginfarmer',component:LoginFarmerComponent},
 {path:'loginbidder',component:LoginBidderComponent},
-{path:'bidder-welcome',component:BidderWelcomeComponent},
-{path:'bidding-auction',component:BiddingAuctionComponent},
-{path:'admin-welcome',component:AdminwelcomeComponent},
-{path:'admin-user-approval',component:AdminUserApprovalsComponent},
-{path:'admin-bid-auction',component:AdminBidAuctionComponent},
-{path:'soldhistory',component:SoldHistoryComponent},
-{path:'bid-request/:CID',component:BidRequestComponent},
-{path:'admin-sell-auction',component:AdminSellAuctionComponent},
+{path:'bidder-welcome',component:BidderWelcomeComponent,canActivate:[BidderauthGuard]},
+{path:'bidding-auction',component:BiddingAuctionComponent,canActivate:[BidderauthGuard]},
+{path:'admin-welcome',component:AdminwelcomeComponent,canActivate:[AdminauthGuard]},
+{path:'admin-user-approval',component:AdminUserApprovalsComponent,canActivate:[AdminauthGuard]},
+{path:'admin-bid-auction',component:AdminBidAuctionComponent,canActivate:[AdminauthGuard]},
+{path:'soldhistory',component:SoldHistoryComponent,canActivate:[FarmerauthGuard]},
+{path:'bid-request/:CID',component:BidRequestComponent,canActivate:[BidderauthGuard]},
+{path:'admin-sell-auction',component:AdminSellAuctionComponent,canActivate:[AdminauthGuard]},
 {path:'docs-upload',component:DocsUploadComponent},
 {path:'forgotpassword',component:ForgotPasswordComponent},
-{path:'farmer-marketplace',component:FarmerMarketplaceComponent},
-{path:'previousbids/:CID',component:FarmerPreviousbidsComponent},
-{path:'adminsold',component:AdminSoldComponent},
-{path:'userdetails/:UID',component:UserDetailsComponent}
+{path:'farmer-marketplace',component:FarmerMarketplaceComponent,canActivate:[FarmerauthGuard]},
+{path:'previousbids/:CID',component:FarmerPreviousbidsComponent,canActivate:[FarmerauthGuard]},
+{path:'adminsold',component:AdminSoldComponent,canActivate:[AdminauthGuard]}
 ];
 
 @NgModule({

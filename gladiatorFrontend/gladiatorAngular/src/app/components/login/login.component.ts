@@ -28,14 +28,17 @@ export class LoginComponent implements OnInit {
     this.userService.doLoginAdmin(this.loginForm.value).subscribe(result => {
       console.log(result);
       localStorage.setItem('userData', JSON.stringify(result));
+      sessionStorage.setItem('sessionUser',JSON.stringify(result));
       // var user = JSON.parse(localStorage.getItem('userData'));
       // alert(user.UID);
-      this.router.navigate(['/admin-welcome']).then(()=>{window.location.reload()});
+      this.router.navigate(['/admin-welcome']).then(()=>{
+        window.location.reload();
+      });
       alert('Success');
     }, (error) => {
       console.log(error);
       alert("Unsuccessfull")
     });
-    this.router.navigate(['login']);
+    this.router.navigate(['loginadmin']);
   }
 }

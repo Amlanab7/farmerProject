@@ -27,8 +27,10 @@ export class LoginBidderComponent implements OnInit {
     this.userService.doLoginBidder(this.loginForm.value).subscribe(result => {
       console.log(result);
       localStorage.setItem('userData', JSON.stringify(result));
+      sessionStorage.setItem('sessionUser',JSON.stringify(result));
       // var user = JSON.parse(localStorage.getItem('userData'));
       // alert(user.UID);
+      
       this.router.navigate(['/bidder-welcome']).then(()=>{window.location.reload()});
       alert('Success');
     }, (error) => {
