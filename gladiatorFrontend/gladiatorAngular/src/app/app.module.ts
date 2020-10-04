@@ -35,6 +35,9 @@ import { FarmerMarketplaceComponent } from './components/farmer-marketplace/farm
 import { FarmerPreviousbidsComponent } from './components/farmer-previousbids/farmer-previousbids.component';
 import { AdminSoldComponent } from './components/admin-sold/admin-sold.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { AdminauthService } from './services/adminauth.service';
+import { BidderauthService } from './services/bidderauth.service';
+import { FarmerauthService } from './services/farmerauth.service';
 
 @NgModule({
   declarations: [
@@ -85,7 +88,10 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 
   ],
   providers: [
-    AuthguardService
+    AuthguardService,
+    AdminauthService,
+    BidderauthService,
+    FarmerauthService
   ],
   bootstrap: [AppComponent]
 })
