@@ -11,24 +11,33 @@ import { CroptableService } from 'src/app/services/croptable.service';
 })
 export class AuctionRequestComponent implements OnInit {
   
-  requestForm: FormGroup;
-  constructor(private formBuilder: FormBuilder,private router:Router,private service:CroptableService) {
-    this.requestForm = this.formBuilder.group({
+  registerForm: FormGroup;
+  submitted = false;
+  constructor(private formBuilder: FormBuilder,private router:Router,private service:CroptableService) { }
+    
+  ngOnInit(): void {
+    this.registerForm = this.formBuilder.group({
       'crop_type': ['', [Validators.required]],
 			'crop_name': ['', [Validators.required]],
       'fertilizer_type': ['', [Validators.required]],
       'quantity': ['', [Validators.required]],
-      'base_price': ['', [Validators.required]]
-
-      
+      'base_price': ['', [Validators.required]],
+      'ph':['',[Validators.required]],    
       });
-    }
-
-  ngOnInit(): void {
   }
+  get f() 
+    { 
+      return this.registerForm.controls;
+    }
   onSubmit(){
+    this.submitted = true;
+
+        // stop here if form is invalid
+        if (this.registerForm.invalid) {
+            return;
+        }
     var user = JSON.parse(localStorage.getItem('userData'));
-    this.service.addAuctionRequest(user.UID,this.requestForm.value).subscribe(data=>{
+    this.service.addAuctionRequest(user.UID,this.registerForm.value).subscribe(data=>{
       localStorage.setItem("cropData",JSON.stringify(data));
       this.router.navigate(['/farmer-welcome']);
       
@@ -36,7 +45,7 @@ export class AuctionRequestComponent implements OnInit {
       console.log(e);
  
     })
-    console.log(this.requestForm.value);
+    console.log(this.registerForm.value);
     alert("Auction Request Placed Successfully");
   
   }

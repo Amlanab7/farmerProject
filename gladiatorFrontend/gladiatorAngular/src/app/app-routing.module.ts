@@ -22,6 +22,7 @@ import { LoginBidderComponent } from './components/login-bidder/login-bidder.com
 import { LoginFarmerComponent } from './components/login-farmer/login-farmer.component';
 import { LoginComponent } from './components/login/login.component';
 import { SoldHistoryComponent } from './components/sold-history/sold-history.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { DocsUploadComponent } from './docs-upload/docs-upload.component';
 
@@ -49,7 +50,8 @@ const routes: Routes = [
 {path:'forgotpassword',component:ForgotPasswordComponent},
 {path:'farmer-marketplace',component:FarmerMarketplaceComponent},
 {path:'previousbids/:CID',component:FarmerPreviousbidsComponent},
-{path:'adminsold',component:AdminSoldComponent}
+{path:'adminsold',component:AdminSoldComponent},
+{path:'userdetails/:UID',component:UserDetailsComponent}
 ];
 
 @NgModule({

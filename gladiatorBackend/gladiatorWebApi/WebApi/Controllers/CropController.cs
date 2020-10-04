@@ -19,6 +19,7 @@ namespace WebApi.Controllers
 
         public IEnumerable<crop> GetCrops()
         {
+
             return db.crops;
 
         }
@@ -187,20 +188,20 @@ namespace WebApi.Controllers
             IList<AllBids> allbids = null;
 
 
-            
-                allbids = (IList<AllBids>)(from c in db.crops
-                            join b in db.bids on c.CID equals b.CID
-                                           where b.approved==null               
-                            select new AllBids()
-                            {
-                                BIID=b.BIID,
-                                crop_name=c.crop_name,
-                                crop_type=c.crop_type,
-                                base_price= (int)c.base_price,
-                                current_bid= (double)c.current_bid,
-                                bid1=b.bid1
-                            }).ToList<AllBids>();
-            
+
+            allbids = (IList<AllBids>)(from c in db.crops
+                                       join b in db.bids on c.CID equals b.CID
+                                       where b.approved == null
+                                       select new AllBids()
+                                       {
+                                           BIID = b.BIID,
+                                           crop_name = c.crop_name,
+                                           crop_type = c.crop_type,
+                                           base_price = (int)c.base_price,
+                                           current_bid = (double)c.current_bid,
+                                           bid1 = b.bid1
+                                       }).ToList<AllBids>();
+
 
             if (allbids.Count == 0)
             {
@@ -292,7 +293,7 @@ namespace WebApi.Controllers
                     Crop_Type = s.crop_type,
                     Crop_name = s.crop_name,
                     Base_price = (int)s.base_price,
-                    Current_bid = (double)s.current_bid
+                   Current_bid = (double?)s.current_bid
                 }).ToList<CropsforSale>();
             }
 

@@ -1,37 +1,39 @@
-
+<div class="bgpic"></div>
 <br><br>
-<h1 style="text-align: center;">Sold History Table</h1>
+
 <br>
+<div class="form1">
+    <table align="center" class="background">
+        
+        <tr style="background-color:rgb(37, 145, 37)">
+            <th>
+                Sold Date
+            </th>
+            <th>
+                Crop Name
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Base Price
+            </th>
+            <th>
+                Sold Price
+            </th>
+            
+        </tr>
+        <tr *ngFor="let i of soldItems">
+            <td>{{i.date}}</td>
+            <td>{{i.Crop_name}}</td>
+            <td>{{i.Quantity}}</td>
+            <td>{{i.Base_price}}</td>
+            <td>{{i.Sold_price}}</td>
+        </tr>   
+        </table>
+      
 
-<table align="center" class="table">
-<tr style="background-color:rgb(37, 145, 37)">
-    <th>
-        Sold Date
-    </th>
-    <th>
-        Crop Name
-    </th>
-    <th>
-        Quantity
-    </th>
-    <th>
-        Base Price
-    </th>
-    <th>
-        Sold Price
-    </th>
-    
-</tr>
-<tr *ngFor="let i of soldItems">
-    <td>{{i.date}}</td>
-    <td>{{i.Crop_name}}</td>
-    <td>{{i.Quantity}}</td>
-    <td>{{i.Base_price}}</td>
-    <td>{{i.Sold_price}}</td>
-  
-    
 
 
-</tr>
-</table>
-<td><a><button class="btn btn-danger btn-lg" routerLink="/farmer-welcome" >Back </button></a></td>
+</div>
+ 

@@ -1,0 +1,58 @@
+
+
+<h3>User Approval Requests</h3>
+<br>
+
+<table align="center" class="table">
+<tr>
+    <td>UID</td><td>{{i.UID}}</td>
+</tr>
+<tr>
+    <td>Full Name</td><td>{{i.full_name}}</td>
+</tr>
+<tr>
+    <td>Contact</td><td>{{i.contactno}}</td>
+</tr>
+<tr>
+    <td>Email</td><td>{{i.email}}<td>
+</tr>
+<tr>
+    <td>Address Line1</td><td>{{i.address_line1}}</td>
+</tr>
+<tr>
+    <td>Address Line2</td><td>{{i.address_line2}}</td>
+</tr>
+<tr>
+    <tr>
+        <td>City</td><td>{{i.city}}</td>
+    </tr>
+    <tr>
+        <td>State</td><td>{{i.state}}</td>
+    </tr>
+    <tr>
+        <td>Residence Pincode</td><td>{{i.pincode}}</td>
+    </tr>
+    <tr *ngIf="i.type=='Farmer'">
+    <td>Land Area</td><td>{{i.land_area}}</td>
+</tr>
+<tr *ngIf="i.type=='Farmer'" >
+    <td>Land Address </td><td>{{i.land_address}}</td>
+</tr>
+<tr *ngIf="i.type=='Farmer'">
+    <td>Land Pincode</td><td>{{i.land_pincode}}</td>
+</tr>
+<tr>
+    <td>Account Number</td><td>{{i.account_no}}</td>
+</tr>
+<tr>
+    <td>IFSC code</td><td>{{i.ifsc}}</td>
+</tr>  
+</table>
+
+<div>
+    <h3>{{panimage.imgName}}</h3>
+   
+    <img src="D:\GLADIATOR\farmerProject\gladiatorBackend\gladiatorWebApi\WebApi\Images\4.jpg" alt="">
+</div>
+<a><button class="btn btn-danger btn-lg" (click)="onAccept(i.UID)" >Approve</button></a>
+    <a><button class="btn btn-danger btn-lg" (click)="onReject(i.UID)" >Reject</button></a>

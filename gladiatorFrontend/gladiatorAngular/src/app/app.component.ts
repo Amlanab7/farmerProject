@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FarmerRegistrationComponent } from './components/farmer-registration/farmer-registration.component';
+import { FarmerRegistrationForm } from './Models/FarmerRegistrationForm';
+import { LoginForm } from './Models/LoginForm';
 
 @Component({
   selector: 'app-root',
@@ -7,30 +10,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'gladiatorAngular';
-  iwillhide=false;
-  logoutbtn=true;
-  loginbtn = false;
+  title = 'FarmerPortal';
+ loggedInUser:FarmerRegistrationForm=null;
 
   ngOnInit(): void {
     
-    // this.farmerName=sessionStorage.getItem('FarmerName');
-    if(sessionStorage.length===0)
-    {
-      this.logoutbtn = false;
-      this.loginbtn = true;
-    }
-    else{
-      this.loginbtn = false;
-      this.logoutbtn = true;
+    var user=JSON.parse(localStorage.getItem('userData'));
+    this.loggedInUser=user;
+    
 
-    }
 }
+
 constructor(private router: Router){}
-  
+
   logout()
   {
-    sessionStorage.clear()
-    this.router.navigate(['/']);
+   localStorage.removeItem("userData");
+   this.router.navigate([""]);
+   window.location.reload();
   }
 }

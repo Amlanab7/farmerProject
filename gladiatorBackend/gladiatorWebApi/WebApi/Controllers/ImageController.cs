@@ -82,6 +82,27 @@ namespace WebApi.Controllers
                 
         //    }
         //}
+
+        [HttpPut]
+        [Route("caption/{id}")]
+        public IHttpActionResult Caption(image newimg)
+        {
+            gladiatorEntities dbi = new gladiatorEntities();
+
+            var captionRow = dbi.images.FirstOrDefault(x => x.UID == newimg.UID);
+
+            //var crop_current = db.crops.FirstOrDefault(u => u.CID == approval.CID);
+            //var bidder = db.users.FirstOrDefault(u => u.UID == crop_current.UID);
+            if (captionRow != null)
+            {
+                captionRow.imgCaption=newimg.imgCaption;
+                //crop_current.current_bid = approval.bid1;
+                //crop_current.bidder_name = bidder.full_name;
+
+                dbi.SaveChanges();
+            }
+            return Ok();
+        }
     }
     
 }

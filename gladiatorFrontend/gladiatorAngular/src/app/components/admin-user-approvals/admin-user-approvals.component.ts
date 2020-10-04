@@ -19,24 +19,14 @@ tempuser:AdminUserApprovalForm;
        this.listUsers = data;
        console.log(this.listUsers);
      });
+     
 
   }
-   onAccept(UID){
-     alert(UID);
-     this.service.accept(UID).subscribe(data=>{
-      this.tempuser = data;
-      console.log(this.tempuser);
-      alert("user approved");
-    });
-
-   }
-   onReject(UID){
-    this.service.reject(UID).subscribe(data=>{
-      this.tempuser = data;
-      console.log(this.tempuser);
-      alert("user rejected");
-    });
-
+  onView(UID){
+      
+    alert(UID);
+    this.router.navigate(["/userdetails",UID]);
+    // this.router.navigate("/bid-request");
   }
 
 }

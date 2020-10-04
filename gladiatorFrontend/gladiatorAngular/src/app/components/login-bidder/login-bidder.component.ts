@@ -29,7 +29,7 @@ export class LoginBidderComponent implements OnInit {
       localStorage.setItem('userData', JSON.stringify(result));
       // var user = JSON.parse(localStorage.getItem('userData'));
       // alert(user.UID);
-      this.router.navigate(['/bidder-welcome']);
+      this.router.navigate(['/bidder-welcome']).then(()=>{window.location.reload()});
       alert('Success');
     }, (error) => {
       console.log(error);

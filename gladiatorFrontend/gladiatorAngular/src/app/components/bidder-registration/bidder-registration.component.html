@@ -1,92 +1,114 @@
-<div class="background"><form [formGroup]="user" (ngSubmit)="(onSubmit())">
 
-  <div class="form-group" >
-      <label for="fullName">First Name: </label>
-      <input type="text" size="10px"class="form-control" formControlName="full_name" id="fullName" />
+<div class="bgpic">
+  <br><br>
+<div class="formdesign" >
+  <h1 class="card-header" style="font-size: 40px;font-style:oblique;font-weight: normal;color:black">Signup and Start Selling</h1>
+  <div class="card-body">
+      <form class= "form-margin" [formGroup]="registerForm" (ngSubmit)="onNext()">
+              <div class="form-group col-10">
+                  <label>Full Name</label>
+                  <input type="text" formControlName="full_name" class="form-control" pattern="[A-Za-z]{2,}$" title="Name should contain atleast 2 letters" [ngClass]="{ 'is-invalid': submitted && f.full_name.errors }" />
+                  <div *ngIf="submitted && f.full_name.errors" class="invalid-feedback">
+                      <div *ngIf="f.full_name.errors.required">Name is required</div>
+                </div>
+              </div>
+              <div class="form-group col-5">
+                  <label>Contact Number</label>
+                  <input type="text" formControlName="contactno" class="form-control"   pattern="^[0-9]{10}$" title="Contact Number should contain 10 digits" [ngClass]="{ 'is-invalid': submitted && f.contactno.errors }"  />      
+                              <div *ngIf="submitted && f.contactno.errors" class="invalid-feedback">
+                      <div *ngIf="f.contactno.errors.required">Contact Number is required</div>
+                      
+                  </div>
+              </div>
+          
+          <div class="form-group col-10">
+              <label>Email</label>
+                    <input type="text" formControlName="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Invalid Email format" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
+              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                  <div *ngIf="f.email.errors.required">Email is required</div>
+                  <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+              </div>
+          </div>
+    
+            <div class="form-group col-10">
+              <label>Address Line1</label>
+              <input type="text" formControlName="address_line1" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address_line1.errors }" />
+              <div *ngIf="submitted && f.address_line1.errors" class="invalid-feedback">
+                  <div *ngIf="f.address_line1.errors.required"> Please provide the address</div>
+              </div>
+            </div>&nbsp;&nbsp;&nbsp;&nbsp;
+           <div class="form-group col-10">
+            <label>Address Line2</label>
+            <input type="text" formControlName="address_line2" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address_line2.errors }" />
+            <div *ngIf="submitted && f.address_line2.errors" class="invalid-feedback">
+                <div *ngIf="f.address_line2.errors.required"> Please provide the address</div>
+           </div>
+          </div>
+      
+          <div class="form-group col-7">
+              <label>City</label>
+              <input type="text" formControlName="city" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.city.errors }" />
+              <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                  <div *ngIf="f.city.errors.required">Please enter your city</div>
+                  
+              </div>
+              
+                <label>State</label>
+                <input type="text" formControlName="state" class="form-control" [ngClass]="{'is-invalid': submitted && f.state.errors }" />
+                <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+                    <div *ngIf="f.state.errors.required">Please enter your state</div>
+                    
+                </div>
+              </div>
+        
+              <div class="form-group col-7">
+                <label>Pincode</label>
+                <input type="text" formControlName="pincode" class="form-control"  pattern="^[0-9]{4,}$" title="Invalid Pincode" [ngClass]="{ 'is-invalid': submitted && f.pincode.errors }" />
+                <div *ngIf="submitted && f.pincode.errors" class="invalid-feedback">
+                    <div *ngIf="f.pincode.errors.required">Please enter your residence pincode</div>
+                    
+                </div>
+              </div>
+               <div class="form-group col">
+                  <label>IFSC Code</label>
+                  <input type="text" formControlName="ifsc" class="form-control" pattern="^[A-Za-z0-9]{4,}$" title="Invalid IFSC code"[ngClass]="{ 'is-invalid': submitted && f.ifsc.errors }" />
+                  <div *ngIf="submitted && f.ifsc.errors" class="invalid-feedback">
+                      <div *ngIf="f.ifsc.errors.required">Please enter your IFSC code</div>
+                      
+                  </div>
+                </div>
+              
+            
+          <div class="form-row">
+              <div class="form-group col">
+                  <label>Password</label>
+                  <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                      <div *ngIf="f.password.errors.required">Password is required</div>
+                      <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                  </div>
+              </div>
+              
+              <div class="form-group col">
+                  <label>Confirm Password</label>
+                  <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+                  <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                      <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                      <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+                  </div>
+              </div>
+          </div>
+          <!-- <div class="form-group form-check">
+              <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
+              <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
+              <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Ts & Cs is required</div>
+          </div> -->
+          <div class="text-center">
+              <button class="btn btn-primary mr-1"> Next </button>
+              <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+          </div>
 
+      </form>
   </div>
-
-  <div class="form-group" >
-      <label for="ContactNumber">Contact Number: </label>
-      <input type="text" class="form-control" formControlName="contactno" id="ContactNumber" />
-
-  </div>
-
-  <div class="form-group" >
-      <label for="EmailId">Email: </label>
-      <input type="email" class="form-control" formControlName="email" id="EmailId" />
-
-  </div>
-
-  <div class="form-group" >
-      <label for="AddressLine1">AddressLine1: </label>
-      <input type="text" class="form-control" formControlName="address_line1" id="AddressLine1" />
-
-  </div>
-  <div class="form-group" >
-    <label for="AddressLine2">AddressLine2: </label>
-    <input type="text" class="form-control" formControlName="address_line2" id="AddressLine2" />
-
 </div>
-<div class="form-group" >
-  <label for="city">city: </label>
-  <input type="text" class="form-control" formControlName="city" id="city" />
-
-</div>
-
-<div class="form-group" >
-<label for="state">state: </label>
-<input type="text" class="form-control" formControlName="state" id="state" />
-
-</div>
-<div class="form-group" >
-<label for="ResidencePincode">Residence Pincode: </label>
-<input type="text" class="form-control" formControlName="pincode" id="ResidencePincode" />
-
-
-
-</div>
-<div class="form-group" >
-<label for="AccountNo">AccountNo: </label>
-<input type="text" class="form-control" formControlName="account_no" id="AccountNo" />
-
-</div>
-<div class="form-group" >
-<label for="IFSCcode">IFSCcode: </label>
-<input type="text" class="form-control" formControlName="ifsc" id="IFSCcode" />
-
-</div>
-<!-- <div class="form-group" >
-<label for="Aadhar">Aadhar: </label>
-<input type="text" class="form-control" formControlName="Aadhar" id="Aadhar" />
-
-</div>
-<div class="form-group" >
-<label for="PAN">PAN: </label>
-<input type="text" class="form-control" formControlName="PAN" id="PAN" />
-
-</div>
-<div class="form-group">
-<label for="TraderLicense:string;"> TraderLicense:string; : </label>
-<input type="text" class="form-control" formControlName="TraderLicense"id=" TraderLicense" /> -->
-
-<!-- </div> -->
-<div class="form-group" >
-<label for="Password">Password: </label>
-<input type="password" class="form-control" formControlName="password" id="Password" />
-
-</div>
-<!-- <div class="form-group" >
-<label for="ConfirmPassword">ConfirmPassword: </label>
-<input type="password" class="form-control" formControlName="ConfirmPassword" id="ConfirmPassword" />
-</div> -->
-  <button class="btn btn-success" type="submit" >Save</button> &nbsp;&nbsp;
-  <button class="btn btn-danger" type="reset">Cancel</button>
-  &nbsp;&nbsp;
-  <a class="btn btn-warning" routerLink="">Home</a>
-</form>
-</div>
-
-
-
-
+<br><br>

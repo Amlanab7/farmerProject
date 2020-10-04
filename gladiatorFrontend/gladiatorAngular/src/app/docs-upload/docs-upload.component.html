@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="form-group">
     <label for="PAN">PAN: </label><br>
     <input type="file" id="image" (change)="onSelectedFile($event)" />
@@ -6,4 +6,32 @@
   
 </div>
 
-<a ><button mat-raised-button (click)="onSubmit()">Submit</button></a>
+<a ><button mat-raised-button (click)="onSubmit()">Submit</button></a> -->
+
+<div class="bgpic">>
+    <br><br>
+  <div class="formdesign" >
+    <h1 class="card-header" style="font-size: 40px;font-style:oblique;font-weight: normal;color:black">Documents Upload</h1>
+    <div class="card-body">
+     <br>
+        <div class="input-group">
+            <label for="PAN" >PAN: </label><br><br>
+             <input type="file" id="image" (change)="onSelectedFile($event)" />
+            <span class="input-group-btn">
+                <button class="btn btn-info" type="button" (click)="onUploadPan()">Upload file</button>
+            </span>
+        </div>
+        
+         <div class="input-group">
+            <label for="Aadhar" >Aadhar</label><br>
+            <input type="file" id="image" (change)="onSelectedFile($event)" />
+            <span class="input-group-btn">
+                <button class="btn btn-info" type="button" (click)="onUploadAadhar()">Upload file</button>
+            </span>
+         </div>
+           
+         <button class="btn btn-warning" style="margin-left: 550px;" type="button" (click)="onSubmit()">Submit</button>
+         </div>
+         
+  </div>
+</div>

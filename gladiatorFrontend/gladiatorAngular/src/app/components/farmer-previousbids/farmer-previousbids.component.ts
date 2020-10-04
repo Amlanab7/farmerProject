@@ -12,7 +12,7 @@ import { CroptableService } from 'src/app/services/croptable.service';
 export class FarmerPreviousbidsComponent implements OnInit {
   CID;
   UID;
-  marketcrop: CropsforSale;
+  marketcrop: CropsforSale=new CropsforSale();
   previousbids:Bids[];
   constructor(private route:ActivatedRoute,private service:CroptableService) { }
 
@@ -21,8 +21,8 @@ export class FarmerPreviousbidsComponent implements OnInit {
     
     this.CID = this.route.snapshot.paramMap.get('CID');
     alert(this.CID);
-    var UID = JSON.parse(localStorage.getItem('userData'));
-    this.UID=UID.UID;
+    var cropuser = JSON.parse(localStorage.getItem('userData'));
+    this.UID=cropuser.UID;
     
     console.log(this.CID);
     alert(this.CID+" "+this.UID);

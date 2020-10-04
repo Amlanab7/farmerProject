@@ -30,7 +30,7 @@ export class LoginFarmerComponent implements OnInit {
        localStorage.setItem('userData', JSON.stringify(result));
       // var user = JSON.parse(localStorage.getItem('userData'));
       // alert(user.UID);
-      this.router.navigate(['/farmer-welcome']);
+      this.router.navigate(['/farmer-welcome']).then(()=>{window.location.reload()});
       alert('Success');
     }, (error) => {
       console.log(error);

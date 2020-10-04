@@ -11,6 +11,6 @@ namespace WebApi.Models
         public string Crop_name { get; set; }
         public int Quantity { get; set; }
         public int Base_price { get; set; }
-        public double Sold_price { get; set; }
+        public double? Sold_price { get; set; }
     }
 }

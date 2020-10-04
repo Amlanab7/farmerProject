@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('userData', JSON.stringify(result));
       // var user = JSON.parse(localStorage.getItem('userData'));
       // alert(user.UID);
-      this.router.navigate(['/admin-welcome']);
+      this.router.navigate(['/admin-welcome']).then(()=>{window.location.reload()});
       alert('Success');
     }, (error) => {
       console.log(error);

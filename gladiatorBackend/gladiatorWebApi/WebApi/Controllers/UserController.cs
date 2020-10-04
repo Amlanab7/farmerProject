@@ -21,10 +21,74 @@ namespace WebApi.Controllers
 
         public IEnumerable<user> GetUsers()
         {
-            return db.users;
+            var unapproved = db.users.Where(u => u.approved == null);
+            return unapproved;
             
         }
-        
+        [HttpGet]
+        [Route("get/{id}")]
+        public IHttpActionResult GetUser(int id)
+        {
+            user userdetail = null;
+            try
+            {
+                userdetail = db.users.Find(id);
+                if (userdetail == null)
+                {
+                    return NotFound();
+                }
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return Ok(userdetail);
+        }
+        [HttpGet]
+        [Route("pan/{id}")]
+        public IHttpActionResult GetPan(int id)
+        {
+            image img = null;
+            
+
+            try
+            {
+                img = db.images.Where(i => i.UID == id && i.imgCaption == "PAN").SingleOrDefault();
+                if (img == null)
+                {
+                    return NotFound();
+                }
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return Ok(img);
+        }
+        [HttpGet]
+        [Route("Aadhar/{id}")]
+        public IHttpActionResult GetAadhar(int id)
+        {
+            var img = db.images.Where(i => i.UID == id && i.imgCaption == "Aadhar");
+
+            try
+            {
+
+                if (img == null)
+                {
+                    return NotFound();
+                }
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return Ok(img);
+        }
+
 
         [HttpPost]
         [Route("create")]
@@ -104,7 +168,7 @@ namespace WebApi.Controllers
 
             try
             {
-                var userFound = db.users.Where(u => u.email == Details.email && u.password == Details.password && u.type == "admin").SingleOrDefault();
+                var userFound = db.users.Where(u => u.email == Details.email && u.password == Details.password && u.type == "Admin" && u.approved==2).SingleOrDefault();
 
                 if (userFound != null)
                 {
@@ -132,7 +196,7 @@ namespace WebApi.Controllers
 
             try
             {
-                var userFound = db.users.Where(u => u.email == Details.email && u.password == Details.password && u.type == "farmer").SingleOrDefault();
+                var userFound = db.users.Where(u => u.email == Details.email && u.password == Details.password && u.type == "Farmer" && u.approved==1).SingleOrDefault();
 
                 if (userFound != null)
                 {
@@ -160,7 +224,7 @@ namespace WebApi.Controllers
 
             try
             {
-                var userFound = db.users.Where(u => u.email == Details.email && u.password == Details.password && u.type == "bidder").SingleOrDefault();
+                var userFound = db.users.Where(u => u.email == Details.email && u.password == Details.password && u.type == "Bidder" && u.approved==1).SingleOrDefault();
 
                 if (userFound != null)
                 {

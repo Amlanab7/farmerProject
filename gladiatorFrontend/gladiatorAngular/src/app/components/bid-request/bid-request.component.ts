@@ -9,8 +9,8 @@ import { CroptableService } from 'src/app/services/croptable.service';
   styleUrls: ['./bid-request.component.css']
 })
 export class BidRequestComponent implements OnInit {
-  item:CropsforSale;
-  newitem:CropsforSale;
+  item:CropsforSale=new CropsforSale();
+  newitem:CropsforSale=new CropsforSale();
   CID;
   UID;
   bidamount;

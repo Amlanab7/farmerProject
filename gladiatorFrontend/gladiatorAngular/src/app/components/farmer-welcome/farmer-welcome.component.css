@@ -1,7 +1,7 @@
 .homegpic{
     background-position: center;
-
-    background-image: url("src/assets/images/FarmerBGI.jpg");
+    height:100%;
+    background-image: url("src/assets/images/FarmerwelcomeBGI.jpg");
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
   }
@@ -21,21 +21,30 @@
 }
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: rgba(209, 202, 212, 0.712);
     max-width: 250px;
     height: 250px;
-    margin: auto;
+    margin-top:100px;
+    margin-left:auto;
+    margin-right:auto;
     text-align: center;
     font-family: arial;
+    border-radius: 5px;
   }
   
 
-  
-  .card button {
+  .card-body{
+    text-align: center;
+    font-size:20px;   
+    height: 100%;
+  }
+  button {
+    
     border: none;
     outline: 0;
     padding: 12px;
-    color:black;
-    background-color: white;
+    color:white;
+    background-color:green;
     text-align: center;
     cursor: pointer;
     width: 100%;

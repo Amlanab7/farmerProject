@@ -16,25 +16,25 @@
         <div class="screen-body">
           <div class="screen-body-item left">
             <div class="app-title">
-              <span>CONTACT</span>
+              <span>CONTACT</span><br><br>
               <span>US</span>
             </div>
-            <div class="app-contact">Mobile No : +91 9589979448 <br> Email : ltiteam4@gmail.com  </div>
+         
             
           </div>
           <div class="screen-body-item">
             <div class="app-form">
                 <form (ngSubmit)="submitForm()">
               <div class="app-form-group">
-                <input class="app-form-control" name="name" placeholder="NAME" [(ngModel)]="name">
+                <input class="app-form-control"  style="block-size: auto;color:black" name="name" placeholder="NAME" [(ngModel)]="name">
               </div>
               <div class="app-form-group">
-                <input class="app-form-control" name="email" placeholder="EMAIL" [(ngModel)]="email">
+                <input class="app-form-control" style="color:black" name="email" placeholder="EMAIL" [(ngModel)]="email">
               </div>
               
               <div class="app-form-group message">
                 
-                <textarea class="app-form-control" name="message" placeholder="Message" [(ngModel)]="message"></textarea>
+                <textarea class="app-form-control" style="color:black" name="message" placeholder= Query [(ngModel)]="message"></textarea>
               </div>
               <div class="app-form-group buttons">
                 
@@ -46,5 +46,14 @@
         </div>
       </div>
       
+    </div>
+    <div style="font-size: larger;font-weight: bold;position:absolute;margin-top:10%;margin-right: 7%;margin-left:75%;">
+      <h1 style="color:rgb(27, 16, 16)">Please feel free to Contact us!!</h1>
+      <h3>Our employees are always available(24/7) and please dial the above numbers to reach us</h3>
+      <p>Hyderabad:+10478952</p>
+      <p>Delhi:+10478953</p>
+      <p>Mumbai:+10478954</p>
+      <p>UttarPradesh:+10478955</p><br>
+      <h2 style="color:rgb(27, 16, 16)">Email:farmerteam@gmail.com</h2>
     </div>
   </div>

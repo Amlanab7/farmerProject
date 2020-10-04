@@ -1,4 +1,5 @@
 export class FarmerRegistrationForm{
+    UID:number;
     full_name:string;
     contactno:string;
     email:string;
@@ -13,6 +14,7 @@ export class FarmerRegistrationForm{
     account_no:string;
     ifsc:string;
     password:string;
-    
+    confirmPassword:string;
+    type:string;
  
 }

@@ -35,6 +35,7 @@ import { FarmerMarketplaceComponent } from './components/farmer-marketplace/farm
 import { FarmerPreviousbidsComponent } from './components/farmer-previousbids/farmer-previousbids.component';
 import { AdminSoldComponent } from './components/admin-sold/admin-sold.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     FarmerPreviousbidsComponent,
     AdminSoldComponent,
     ForgotPasswordComponent,
+    UserDetailsComponent,
     
 
 
