@@ -53,7 +53,8 @@ const routes: Routes = [
 {path:'forgotpassword',component:ForgotPasswordComponent},
 {path:'farmer-marketplace',component:FarmerMarketplaceComponent,canActivate:[FarmerauthGuard]},
 {path:'previousbids/:CID',component:FarmerPreviousbidsComponent,canActivate:[FarmerauthGuard]},
-{path:'adminsold',component:AdminSoldComponent,canActivate:[AdminauthGuard]}
+{path:'adminsold',component:AdminSoldComponent,canActivate:[AdminauthGuard]},
+{path:'userdetails-admin/:UID',component:UserDetailsComponent,canActivate:[AdminauthGuard]}
 ];
 
 @NgModule({

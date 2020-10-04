@@ -6,6 +6,7 @@ import { CropsforSale } from '../Model/CropsforSale';
 import { BidRequest } from '../Model/Bidrequest';
 import { Bids } from '../Model/bids';
 import { AdminMarket } from '../Model/AdminMarket';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -64,7 +65,8 @@ getCropbyCID(CID){
     alert(CID+bidamount+UID);
    return this.http.post<CropsforSale>(this.baseURL+"/bids/"+CID,[CID,bidamount,UID],this.httpOptions);
   }
-  PreviousBids(CID,UID){
+  public PreviousBids(CID,UID):Observable<Bids[]>{
     return this.http.get<Bids[]>(this.baseURL+"/previous/get/"+CID,UID);
   }
+
 }

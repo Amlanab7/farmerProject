@@ -26,6 +26,7 @@ constructor(private router: Router){}
   logout()
   {
    localStorage.removeItem("userData");
+   sessionStorage.removeItem("sessionUser");
    this.router.navigate([""]);
    window.location.reload();
   }

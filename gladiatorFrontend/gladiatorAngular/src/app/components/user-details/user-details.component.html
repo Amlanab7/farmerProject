@@ -1,5 +1,3 @@
-
-
 <h3>User Approval Requests</h3>
 <br>
 
@@ -51,8 +49,13 @@
 
 <div>
     <h3>{{panimage.imgName}}</h3>
-   
-    <img src="D:\GLADIATOR\farmerProject\gladiatorBackend\gladiatorWebApi\WebApi\Images\4.jpg" alt="">
+
+    
 </div>
+<div>
+    <img [src]="imgurl" width="30%" height="30%"/>
+ </div>
+     
 <a><button class="btn btn-danger btn-lg" (click)="onAccept(i.UID)" >Approve</button></a>
     <a><button class="btn btn-danger btn-lg" (click)="onReject(i.UID)" >Reject</button></a>
+   

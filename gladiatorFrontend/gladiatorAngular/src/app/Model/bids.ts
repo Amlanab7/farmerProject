@@ -1,5 +1,5 @@
 export class Bids
 {
-    bid1:number;
+    bid1:DoubleRange;
     
 }

@@ -13,7 +13,7 @@ export class FarmerPreviousbidsComponent implements OnInit {
   CID;
   UID;
   marketcrop: CropsforSale=new CropsforSale();
-  previousbids:Bids[];
+  public previousbids:Bids[];
   constructor(private route:ActivatedRoute,private service:CroptableService) { }
 
   ngOnInit(): void {
@@ -31,11 +31,18 @@ export class FarmerPreviousbidsComponent implements OnInit {
       this.marketcrop = data;
       console.log(this.marketcrop);
     });
-       this.service.PreviousBids(this.CID,this.UID).subscribe(
        
-     );
      var bidData = JSON.parse(localStorage.getItem('bidData'));
      alert(bidData.CID+" "+bidData.crop_type);
+  }
+  previousBids(){
+    this.service.PreviousBids(this.CID,this.UID).subscribe(data=>{
+      this.previousbids=data;
+      console.log(this.previousbids);
+    }
+       
+      );
+
   }
 
 }

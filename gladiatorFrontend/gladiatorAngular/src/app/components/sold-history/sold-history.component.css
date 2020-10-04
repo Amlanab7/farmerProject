@@ -29,6 +29,18 @@
   .form1{
     margin-top: 100px;
   }
+  .heading{
+    font-weight: normal;
+    font-size: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    margin-top: 0.0000005px;
+    height:20%;
+  }
   .background{
 
 background-color: white;

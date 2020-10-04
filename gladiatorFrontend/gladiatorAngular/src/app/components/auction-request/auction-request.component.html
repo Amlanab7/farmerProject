@@ -28,15 +28,15 @@
          
         <div class="form-group col-5">
             <label>Quantity</label>
-            <input type="text" formControlName="quantity" class="form-control"   pattern="^[0-9]{10}$" title="Quantity should be greater than zero" [ngClass]="{ 'is-invalid': submitted && f.quantity.errors }"  />      
+            <input type="text" formControlName="quantity" class="form-control"   pattern="^[0-9]{1,}$" title="Quantity should be greater than zero and must be in number format" [ngClass]="{ 'is-invalid': submitted && f.quantity.errors }"  />      
                         <div *ngIf="submitted && f.quantity.errors" class="invalid-feedback">
-                <div *ngIf="f.quantity.errors.required">Quantity should be greater than zero</div>
+                <div *ngIf="f.quantity.errors.required">Quantity cant be empty</div>
                 
             </div>
         </div>
         <div class="form-group col-5">
             <label>BasePrice</label>
-            <input type="text" formControlName="base_price" class="form-control"   pattern="^[0-9]{10}$" title="BasePrice should be greater than zero" [ngClass]="{ 'is-invalid': submitted && f.base_price.errors }"  />      
+            <input type="text" formControlName="base_price" class="form-control"   pattern="^[0-9]{1,}$" title="BasePrice should be greater than zero" [ngClass]="{ 'is-invalid': submitted && f.base_price.errors }"  />      
                         <div *ngIf="submitted && f.base_price.errors" class="invalid-feedback">
                 <div *ngIf="f.base_price.errors.required">Base price should be greater than zero</div>
                 
@@ -44,7 +44,7 @@
         </div>
         <div class="form-group col-5">
             <label>pH Value</label>
-            <input type="text" formControlName="ph" class="form-control"   pattern="^[0-9]{10}$" title="pH should be greater than zero" [ngClass]="{ 'is-invalid': submitted && f.ph.errors }"  />      
+            <input type="text" formControlName="ph" class="form-control"   pattern="^[0-9]{1,}$" title="pH should be greater than zero" [ngClass]="{ 'is-invalid': submitted && f.ph.errors }"  />      
                         <div *ngIf="submitted && f.ph.errors" class="invalid-feedback">
                 <div *ngIf="f.ph.errors.required">pH is required</div>
                 
