@@ -2,23 +2,43 @@
     background-position: center;
     background-image: url("src/assets/images/LoginBGI.jpg");
     background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+     background-size: cover; }
+     .form-margin{
+         width:100%;
+         margin:auto;
+     }
+ .formdesign { 
+     
+      margin: auto;
+    width: 50%;
+    border: 1px solid white;
+    border-radius: 16px;
+    padding: 5px;
+
 }
+label{
+    font-size: medium;
+    font-weight:bolder;
+    color:black;
+}
+
 input{
-    width: 100%;
+    width: 80%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
     border: 2px solid green;
     border-radius: 4px;
+
   }
-  .background{
+
+.background{
     background-color:rgb(193, 241, 193);
     
     padding:7px;
     width:70%;
     margin-left: 15%;
-   margin-top:8%;
+    margin-top:8%;
     align-content: center;
     text-align: center;
     border-radius: 15px;
@@ -27,13 +47,19 @@ input{
     /* background-image: url("src/assets/images/LoginBGI.jpg"); */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
-  }
-span{
+}span{
     margin-left:100px;
 }
 .form{
     margin-top:50px;
     margin-left:500px;
+}
+.padding_textbox{
+    font-size: 0.8em;
+    font: bold;
+    /* border-radius: 15em; rounded corners */
+    padding: 0.7%;
+    height: 10%;
 }
 .form-signin
 {
@@ -111,13 +137,6 @@ span{
     margin-top: 10px;
 }
 
-
-.bgpic{
-    background-position: center;
-    background-image: url("/assets/images/online_banking_login.jpg");
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
-}
 #login {
 	width: 100px;
 	height: 100px;	

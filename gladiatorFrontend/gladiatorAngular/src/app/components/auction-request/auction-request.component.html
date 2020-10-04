@@ -1,47 +1,63 @@
-<br><br><h1 style="text-align: center;">Place Auction Request</h1>
-<form [formGroup]="requestForm" (ngSubmit)="(onSubmit())" class="background">
+<div class="bgpic"></div> 
+<br><br><br><br><br><br>              
+<div class="form1">  
+    <form [formGroup]="registerForm" (ngSubmit)="(onSubmit())" class="background">
+        <br><br><h1 style="text-align: center;font-size: 40px;">Place Sell Request</h1><br>
+          
+        <div class="form-group col-10">
+            <label>Crop Name</label>
+            <input type="text" formControlName="crop_name" class="form-control" pattern="[A-Za-z]{2,}$" title="Name should contain atleast 2 letters" [ngClass]="{ 'is-invalid': submitted && f.crop_name.errors }" />
+            <div *ngIf="submitted && f.crop_name.errors" class="invalid-feedback">
+                <div *ngIf="f.crop_name.errors.required">Crop name is required</div>
+          </div>
+        </div>
+        <div class="form-group col-10">
+            <label>Crop Type</label>
+            <input type="text" formControlName="crop_type" class="form-control" pattern="[A-Za-z]{2,}$" title="Type should contain atleast 2 letters" [ngClass]="{ 'is-invalid': submitted && f.crop_type.errors }" />
+            <div *ngIf="submitted && f.crop_type.errors" class="invalid-feedback">
+                <div *ngIf="f.crop_type.errors.required">Crop type is required</div>
+          </div>
+        </div>
+           <div class="form-group col-10">
+            <label>Ferilizer Type</label>
+            <input type="text" formControlName="fertilizer_type" class="form-control" pattern="[A-Za-z]{2,}$" title="Fertilizer type should contain atleast 2 letters" [ngClass]="{ 'is-invalid': submitted && f.fertilizer_type.errors }" />
+            <div *ngIf="submitted && f.fertilizer_type.errors" class="invalid-feedback">
+                <div *ngIf="f.fertilizer_type.errors.required">Fertilizer type is required</div>
+          </div>
+           </div>
+         
+        <div class="form-group col-5">
+            <label>Quantity</label>
+            <input type="text" formControlName="quantity" class="form-control"   pattern="^[0-9]{10}$" title="Quantity should be greater than zero" [ngClass]="{ 'is-invalid': submitted && f.quantity.errors }"  />      
+                        <div *ngIf="submitted && f.quantity.errors" class="invalid-feedback">
+                <div *ngIf="f.quantity.errors.required">Quantity should be greater than zero</div>
+                
+            </div>
+        </div>
+        <div class="form-group col-5">
+            <label>BasePrice</label>
+            <input type="text" formControlName="base_price" class="form-control"   pattern="^[0-9]{10}$" title="BasePrice should be greater than zero" [ngClass]="{ 'is-invalid': submitted && f.base_price.errors }"  />      
+                        <div *ngIf="submitted && f.base_price.errors" class="invalid-feedback">
+                <div *ngIf="f.base_price.errors.required">Base price should be greater than zero</div>
+                
+            </div>
+        </div>
+        <div class="form-group col-5">
+            <label>pH Value</label>
+            <input type="text" formControlName="ph" class="form-control"   pattern="^[0-9]{10}$" title="pH should be greater than zero" [ngClass]="{ 'is-invalid': submitted && f.ph.errors }"  />      
+                        <div *ngIf="submitted && f.ph.errors" class="invalid-feedback">
+                <div *ngIf="f.ph.errors.required">pH is required</div>
+                
+            </div>
+        </div>
+            <button  style="margin-left:450px" class="btn btn-success" type="submit" >Place Request</button> &nbsp;&nbsp;
+           <button class="btn btn-danger" type="reset">Cancel</button>
+           &nbsp;&nbsp;
+           <a routerLink="/farmer-welcome"><button class="btn btn-warning" >Home</button></a>        
+       </form>
+    </div>
 
-       <div class="form-group" >
-           <label for="crop_name">Crop Name: </label>
-           <input type="text" size="10px"class="form-control" formControlName="crop_name" id="crop_name" />
-   
-       </div>
-   
-       <div class="form-group" >
-           <label for="crop_type">Crop Type: </label>
-           <input type="text" class="form-control" formControlName="crop_type" id="crop_type" />
-   
-       </div>
-   
-       <div class="form-group" >
-           <label for="fertilizer_type">Fertilizer Type: </label>
-           <input type="text" class="form-control" formControlName="fertilizer_type" id="fertilizer_type" />
-   
-       </div>
-   
-       <div class="form-group" >
-           <label for="quantity">Quantity:</label>
-           <input type="text" class="form-control" formControlName="quantity" id="quantity" />
-   
-       </div>
-       <div class="form-group" >
-         <label for="base_price">Base Price: </label>
-         <input type="text" class="form-control" formControlName="base_price" id="base_price" />
-   
-     </div>
-     <!-- <div class="form-group" >
-       <label for="ph">pH value: </label>
-       <input type="text" class="form-control" formControlName="ph" id="ph" />
-   
-   </div> -->
-       <button class="btn btn-success" type="submit" >Place Request</button> &nbsp;&nbsp;
-       <button class="btn btn-danger" type="reset">Cancel</button>
-       &nbsp;&nbsp;
-       <a class="btn btn-warning" routerLink="">Home</a>
-   </form>
-   
-    
-   
-   
-   
-   
+        
+       
+       
+

@@ -9,63 +9,91 @@ import { UsertableService } from 'src/app/services/usertable.service';
   styleUrls: ['./bidder-registration.component.css']
 })
 export class BidderRegistrationComponent implements OnInit {
-  user : FormGroup;
-  
-  hide = true;
-  constructor(private formBuilder:FormBuilder,private service:UsertableService,private router: Router) { }
+  registerForm: FormGroup;
+  submitted = false;
+
+  constructor(private formBuilder: FormBuilder,private service:UsertableService,private router:Router) { }
 
   ngOnInit() {
-    this.user= this.formBuilder.group({
-        full_name: ['', [
+    this.registerForm =this.formBuilder.group({
+      
+      'full_name': ['', [
       Validators.required
       ]],
-      'contactno': ['', [
+       'contactno': ['', [
       Validators.required
-      ]],
+     ]],
       'email': ['', [
-        Validators.required,
-       // Validators.email
-     ]],
-    'address_line1': ['', [
-        Validators.required,
-  ]],
-      'address_line2': ['', [
-        Validators.required,
-   ]],
-      'city': ['', [
-        Validators.required,
-     ]],
-     'state': ['', [
-      Validators.required,
-    ]],
-    'pincode': ['', [
-       Validators.required,
-     ]],
-   
-      'account_no': ['', [
-       Validators.required,
-   ]],
-      'ifsc': ['', [
-        Validators.required,
-    ]],
-     
-     'password': ['', [
-    Validators.required,
+         Validators.required,
+         Validators.email
       ]],
-      
-  })
+    'address_line1': ['', [
+         Validators.required,
+   ]],
+     'address_line2': ['', [
+         Validators.required,
+    ]],
+       'city': ['', [
+         Validators.required,
+      ]],
+     'state': ['', [
+       Validators.required,
+     ]],
+     'pincode': ['', [
+       Validators.required,
+      ]],
+       'account_no': ['', [
+        Validators.required,
+    ]],
+       'ifsc': ['', [
+         Validators.required,
+     ]],
+     
+      'password': ['', [
+     Validators.required,
+       ]],
+       'confirmPassword':
+        ['', Validators.required
+        ]},
+        {
+          validator: this.MustMatch('password', 'confirmPassword')
+        }
+ )
   }
-  onSubmit() {
-    this.service.addUser(this.user.value).subscribe(data=>{
-      localStorage.setItem("userData",JSON.stringify(data));
-      this.router.navigate(['/loginbidder']);
-      
-    },(e)=>{
-      console.log(e);
- 
-    })
-    console.log(this.user.value);
-    alert("User Added Successfully");
-   }
+    MustMatch(a,b){
+      if(a==b)
+      {
+        return true;
+      }
+      return false;
+    }
+    get f() 
+    { 
+      return this.registerForm.controls;
+    }
 
+    onNext() {
+        this.submitted = true;
+
+        // stop here if form is invalid
+        if (this.registerForm.invalid) {
+            return;
+        }
+        this.service.addUser(this.registerForm.value).subscribe(data=>{
+          console.log(data);
+         localStorage.setItem("userData",JSON.stringify(data));
+          this.router.navigate(['/docs-upload']);
+         
+        },(e)=>{
+          console.log(e);
+    
+        })
+        console.log(this.registerForm.value);
+        alert("User Added Successfully");
+    }
+
+    onReset() {
+        this.submitted = false;
+        this.registerForm.reset();
+    }
 }

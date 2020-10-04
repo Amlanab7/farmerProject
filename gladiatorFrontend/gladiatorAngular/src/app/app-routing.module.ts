@@ -22,6 +22,7 @@ import { LoginBidderComponent } from './components/login-bidder/login-bidder.com
 import { LoginFarmerComponent } from './components/login-farmer/login-farmer.component';
 import { LoginComponent } from './components/login/login.component';
 import { SoldHistoryComponent } from './components/sold-history/sold-history.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { DocsUploadComponent } from './docs-upload/docs-upload.component';
 import { AdminauthGuard } from './guards/adminauth.guard';

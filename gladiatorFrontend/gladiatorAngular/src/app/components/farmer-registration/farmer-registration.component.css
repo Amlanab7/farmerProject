@@ -1,10 +1,29 @@
-/* .bgpic{
+ .bgpic{
     background-position: center;
     background-image: url("src/assets/images/LoginBGI.jpg");
     background-repeat: no-repeat; /* Do not repeat the image */
-    /* background-size: cover; Resize the background image to cover the entire container */
+     background-size: cover; }
+     .form-margin{
+         width:100%;
+         margin:auto;
+     }
+ .formdesign { 
+     
+      margin: auto;
+    width: 50%;
+    border: 1px solid white;
+    border-radius: 16px;
+    padding: 5px;
+
+}
+label{
+    font-size: medium;
+    font-weight:bolder;
+    color:black;
+}
+
 input{
-    width: 100%;
+    width: 80%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;

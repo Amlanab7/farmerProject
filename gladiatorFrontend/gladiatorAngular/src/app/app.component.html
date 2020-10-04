@@ -1,14 +1,14 @@
-<mat-toolbar class="navbar" color="white">
+<mat-toolbar class="navbar" color="white"> 
   <div class="logo-text" >
-    <a routerLink='/' style="color: inherit; text-decoration: none; height: 100%">
+    <a routerLink='' style="color: inherit; text-decoration: none; height: 100%">
       Farmer Portal
     </a>
   </div>
   <div>
     <span> 
-      <a mat-button routerLink=""  style="color:white;font-size: medium;">Home</a> 
-      <a mat-button routerLink="src/app/about" style="color:white;font-size: medium;">About Us</a> 
-      <a mat-button routerLink="src/app/contact" style="color:white;font-size: medium;" >Contact Us</a> 
+      <a mat-button routerLink=""  style="color:white;font-size: large;">Home</a> 
+      <a mat-button routerLink="src/app/about" style="color:white;font-size: large;;">About Us</a> 
+      <a mat-button routerLink="src/app/contact" style="color:white;font-size: large;" >Contact Us</a> 
       <mat-menu #appMenu="matMenu">
         <a routerLink="/loginfarmer"><button mat-menu-item >Farmer</button></a>
         <a routerLink="/loginbidder"><button mat-menu-item >Bidder</button></a>
@@ -16,7 +16,31 @@
 
       </mat-menu>
 
-    <button  mat-raised-button [matMenuTriggerFor]="appMenu">Login</button>
+    <button  mat-raised-button [matMenuTriggerFor]="appMenu" *ngIf="loggedInUser==null">Login</button>
+    <mat-menu #farmerMenu="matMenu" >
+      <a routerLink="/auction-request"><button mat-menu-item >Sell request</button></a>
+      <a routerLink="/soldhistory"><button mat-menu-item >Sold History</button></a>
+      <a routerLink="/farmer-marketplace"><button mat-menu-item >Market Place</button></a>
+    </mat-menu>
+
+    <button  mat-raised-button [matMenuTriggerFor]="farmerMenu"  *ngIf="((loggedInUser!=null) && (loggedInUser.type=='Farmer'))">GoTo</button>&nbsp;&nbsp;
+    <mat-menu #bidderMenu="matMenu" >
+      <a routerLink="/bidding-auction"><button mat-menu-item >Bid Now</button></a>
+     
+    </mat-menu>
+
+    <button  mat-raised-button [matMenuTriggerFor]="bidderMenu"  *ngIf="((loggedInUser!=null) && (loggedInUser.type=='Bidder'))">GoTo</button>&nbsp;&nbsp;
+    <mat-menu #adminMenu="matMenu" >
+      <a routerLink="/admin-user-approval"><button mat-menu-item >User Requests</button></a>
+      <a routerLink="/admin-sell-auction"><button mat-menu-item >Farmer Sell Requests</button></a>
+      <a routerLink="/admin-bid-auction"><button mat-menu-item >Bid requests</button></a>
+      <a routerLink="/admin-sold"><button mat-menu-item >Market Place</button></a>    
+    </mat-menu>
+
+    <button  mat-raised-button [matMenuTriggerFor]="adminMenu"  *ngIf="((loggedInUser!=null) && (loggedInUser.type=='Admin'))">GoTo</button>&nbsp;&nbsp;
+    <button mat-raised-button *ngIf="loggedInUser!=null" (click)="logout()">Logout</button>
+
+    
     </span>
   </div>
   </mat-toolbar>

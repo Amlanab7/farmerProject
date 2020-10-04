@@ -1,17 +1,49 @@
-
+.bgpic{
+  background-position: center;
+  background-image: url("src/assets/images/FarmerwelcomeBGI.jpg");
+ background-repeat: no-repeat; /* Do not repeat the image */
+ background-size: cover; /* Resize the background image to cover the entire container */
+ height:120%;
+ filter: blur(8px);
+  -webkit-filter: blur(8px);
+ 
+}
+.form1{
+  margin-top: 100px;
+}
+label{
+  font-size: medium;
+  text-align: left;
+}
+.button1{
+  margin-left: 450px;
+  text-align:center;
+}
 .background{
-    background-color:rgb(193, 241, 193);
+    /* background-color:rgb(193, 241, 193); */
     
-    padding:7px;
+    /* padding:7px;
     width:70%;
     margin-left: 15%;
    margin-top:3%;
     align-content: center;
     text-align: center;
     border-radius: 15px;
-    font-size:large;
-    background-position: center;
-    /* background-image: url("src/assets/images/LoginBGI.jpg"); */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+    font-size:large; */
+    background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: normal;
+  font-size: 20px;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  margin-top: 150px;
+  
+  
   }

@@ -1,18 +1,36 @@
-<h1>Please Upload your documents</h1>
-<br>
+<!-- 
 <div class="form-group">
-    <label for="PAN" style="font-weight:bold;">PAN: </label><br>
+    <label for="PAN">PAN: </label><br>
     <input type="file" id="image" (change)="onSelectedFile($event)" />
-    <button mat-raised-button type="button" (click)="onUpload()">Upload</button>
+    <button mat-raised-button type="button" (click)="onUpload()">Upload the file</button>
   
 </div>
-<br>
 
-<div >
-    <label for="Aadhar" style="font-weight:bold;">Aadhar: </label><br>
-    <input type="file" id="image" (change)="onSelectedFile($event)" />
-    <button mat-raised-button type="button" (click)="onUpload()">Upload</button>
-  
+<a ><button mat-raised-button (click)="onSubmit()">Submit</button></a> -->
+
+<div class="bgpic">>
+    <br><br>
+  <div class="formdesign" >
+    <h1 class="card-header" style="font-size: 40px;font-style:oblique;font-weight: normal;color:black">Documents Upload</h1>
+    <div class="card-body">
+     <br>
+        <div class="input-group">
+            <label for="PAN" >PAN: </label><br><br>
+             <input type="file" id="image" (change)="onSelectedFile($event)" />
+            <span class="input-group-btn">
+                <button class="btn btn-info" type="button" (click)="onUpload()">Upload file</button>
+            </span>
+        </div>
+        
+         <div class="input-group">
+            <label for="Aadhar" >Aadhar</label><br>
+            <input type="file" id="image" (change)="onSelectedFile($event)" />
+            <span class="input-group-btn">
+                <button class="btn btn-info" type="button" (click)="onUpload()">Upload file</button>
+            </span>
+         </div>
+           
+       
+         </div>
+  </div>
 </div>
-<br>
-<a ><button btn-btn-success (click)="onSubmit()">Submit</button></a>

@@ -38,6 +38,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { AdminauthService } from './services/adminauth.service';
 import { BidderauthService } from './services/bidderauth.service';
 import { FarmerauthService } from './services/farmerauth.service';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { FarmerauthService } from './services/farmerauth.service';
     FarmerPreviousbidsComponent,
     AdminSoldComponent,
     ForgotPasswordComponent,
+    UserDetailsComponent,
     
 
 
