@@ -1,8 +1,13 @@
-<h3>Bidder Marketplace Table</h3>
-<br>
+<div class="bgpic"></div>
+<br><br>
 
-<table align="center" class="table">
-<tr>
+<br>
+<div class="form1">
+    <h1 style="text-align:center;height:0.005px;background-color: inherit;">Crops in the Auction</h1>
+    <table class="background">
+       
+<tr style="background-color:rgb(37, 145, 37); text-align: center; color:white;">
+
     <th>
         CID
     </th>
@@ -19,6 +24,10 @@
     <th>
         Current Bid
     </th>
+    <th>
+        Action
+    </th>
+
     
 </tr>
 <tr *ngFor="let i of saleItems">
@@ -27,11 +36,13 @@
     <td>{{i.Crop_name}}</td>
     <td>{{i.Base_price}}</td>
     <td>{{i.Current_bid}}</td>
-    <td><a><button class="btn btn-danger btn-lg" (click)="onBid(i.CID)">Bid</button></a></td>
-    
-    
-
-
+    <td><a><button class="btn btn-info" (click)="onBid(i.CID)">Bid</button></a></td>
 </tr>
-<a><button class="btn btn-danger btn-lg" routerLink="/farmer-welcome" >Back</button></a>
-</table>
+<p style="background-color: inherit;position:relative;"><a><button class="btn btn-success btn-lg" routerLink="/bidder-welcome" >Back</button></a>
+</p>
+
+</table> 
+
+
+
+

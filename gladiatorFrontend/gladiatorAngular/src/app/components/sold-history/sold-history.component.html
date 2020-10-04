@@ -3,13 +3,11 @@
 
 <br>
 <div class="form1">
-    <table align="center" class="background">
+    <table class="background">
         
-        <tr style="background-color:rgb(37, 145, 37)">
-            <th>
-                Sold Date
-            </th>
-            <th>
+        <tr style="background-color:rgb(37, 145, 37); text-align: center; color:white;">
+           
+            <th >
                 Crop Name
             </th>
             <th>
@@ -21,14 +19,17 @@
             <th>
                 Sold Price
             </th>
-            
+             <th>
+                Sold Date
+            </th>
         </tr>
         <tr *ngFor="let i of soldItems">
-            <td>{{i.date}}</td>
+           
             <td>{{i.Crop_name}}</td>
             <td>{{i.Quantity}}</td>
             <td>{{i.Base_price}}</td>
             <td>{{i.Sold_price}}</td>
+            <td>{{i.date}}</td>
         </tr>   
         </table>
       

@@ -1,14 +1,15 @@
 <mat-toolbar class="navbar" color="white"> 
   <div class="logo-text" >
-    <a routerLink='' style="color: inherit; text-decoration: none; height: 100%">
-      Farmer Portal
+    <mat-icon style="font-size: 50px;">eco</mat-icon>&nbsp;
+    <a routerLink='' style="color: inherit; font-style: italic;margin-top: 0.004px; height: 100%">
+      AgroMart
     </a>
   </div>
   <div>
     <span> 
       <a mat-button routerLink=""  style="color:white;font-size: large;">Home</a> 
       <a mat-button routerLink="src/app/about" style="color:white;font-size: large;;">About Us</a> 
-      <a mat-button routerLink="src/app/contact" style="color:white;font-size: large;" >Contact Us</a> 
+      <a mat-button routerLink="src/app/contact" style="color:white;font-size: large;" >Contact Us</a> &nbsp;&nbsp;
       <mat-menu #appMenu="matMenu">
         <a routerLink="/loginfarmer"><button mat-menu-item >Farmer</button></a>
         <a routerLink="/loginbidder"><button mat-menu-item >Bidder</button></a>

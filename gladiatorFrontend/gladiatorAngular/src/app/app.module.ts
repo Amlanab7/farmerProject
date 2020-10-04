@@ -1,6 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser'
 import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,6 +35,7 @@ import { FarmerPreviousbidsComponent } from './components/farmer-previousbids/fa
 import { AdminSoldComponent } from './components/admin-sold/admin-sold.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -83,8 +83,8 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    CommonModule
   ],
   providers: [
     AuthguardService

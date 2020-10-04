@@ -9,9 +9,11 @@
   }
 
   .btn-container {
-    width: 150px;
+    width: 200px;
+    height: 60%;
     text-align: center;
     margin: auto;
+
   }
 
   .card-title {

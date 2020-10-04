@@ -9,6 +9,7 @@ import { CroptableService } from 'src/app/services/croptable.service';
   styleUrls: ['./farmer-marketplace.component.css']
 })
 export class FarmerMarketplaceComponent implements OnInit {
+  
 marketcrops:CropsforSale[];
   constructor(private service:CroptableService,private router:Router) { }
 

@@ -36,6 +36,6 @@ export class LoginComponent implements OnInit {
       console.log(error);
       alert("Unsuccessfull")
     });
-    this.router.navigate(['loginbidder']);
+    this.router.navigate(['login']);
   }
 }

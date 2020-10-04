@@ -2,5 +2,49 @@
    
     margin-left: auto;
     margin-right: auto;
-  
+    width:80%;
+    height:20%;
+    background-color:rgb(255, 255, 255);
 }
+
+.button{
+    font-size:10px;
+    background-color:green;
+    border-radius: 4px;
+    margin-left:50%;
+}
+.bgpic{
+    background-position: center;
+    background-image: url("src/assets/images/Bidderwelcome.jpg");
+   background-repeat: no-repeat; /* Do not repeat the image */
+   background-size: cover; /* Resize the background image to cover the entire container */
+   height:120%;
+   filter: blur(8px);
+    -webkit-filter: blur(8px);
+   
+  }
+  .button1{
+    margin-left: 450px;
+    text-align:center;
+  }
+  .form1{
+    margin-top: 100px;
+  }
+  .background{
+
+background-color: white;
+    color: rgb(8, 82, 6);
+    font-weight: normal;
+    font-size: 20px;
+    border: 2px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    margin-top: 0.0000005px;
+    height:20%;
+    }
+    

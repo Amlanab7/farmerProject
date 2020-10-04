@@ -5,16 +5,15 @@
         <!-- LOGIN FORM -->
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-4 container justify-content-center">
-                <h1 class="text-center login-title text-white font-weight-bold" style="color:green">
-                    Hello Admin!!<br>
-                    Please Enter login details
-                </h1>
-                <div class="account-wall">
-                    
-                    <mat-icon>eco</mat-icon> 
-                    
-                
-                    <form [formGroup]="loginForm" (ngSubmit)="doLogin()" class="form-signin">
+               
+                <div class="account-wall">     
+                    <mat-icon style="margin-left:40%;font-size: 70px; color:green">eco</mat-icon>    
+                    <h1 class="text-center login-title text-green font-weight-normal" style="color:green">
+                        Hello Admin!!<br>
+                        Please Enter login details
+                    </h1>   
+                       
+               <form [formGroup]="loginForm" (ngSubmit)="doLogin()" class="form-signin">
                         <!-- email address -->
                         <div class="form-group">
                             <label for="email" class="font-weight-bold">
@@ -55,7 +54,7 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
                         <button class="btn btn-outline-danger" type="reset"> Cancel</button>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a class="btn btn-warning" routerLink="/home">
+                        <a class="btn btn-warning" routerLink="">
                              Home</a>
                         <br/>
                         <br/>
@@ -73,9 +72,7 @@
                 </div>
                 <br/>
                 <br/>
-                <br/>
-                <br/>
-                <br/>
+
             </div>
             <br/>
             <br/>

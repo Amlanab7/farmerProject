@@ -25,9 +25,11 @@
 
 .logo-text
 {
+  
+  margin-left:0.3%;
   position: relative;
   display: inline;
-  margin: 0 0.5%;
+ 
   color: white;
   font-size: 200%;
   letter-spacing: 2px;

@@ -1,9 +1,11 @@
+<div class="bgpic"></div>
 <br><br>
-<h1 style="text-align: center;">Market Place</h1>
 <br>
-
-<table align="center"  class="table" >
-<tr style="background-color: green;color:white">
+<div class="form1">
+    <table class="background">
+        
+        <tr style="background-color:rgb(37, 145, 37); text-align: center; color:white;">
+           
     <th>
         CID
     </th>
@@ -13,18 +15,16 @@
     <th>
         Crop Type
     </th>
-    
-  
-    
+    <th>
+        Action
+    </th>
 </tr>
 <tr *ngFor ="let i of marketcrops">
     <td>{{i.CID}}</td>
     <td>{{i.crop_name}}</td>
     <td>{{i.crop_type}}</td>
-    
     <td><a><button class="btn btn-success" (click)="onView(i.CID)" >View</button></a></td>
-    
-
-
 </tr>
 </table>
+</div>
+

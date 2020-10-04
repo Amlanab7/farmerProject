@@ -2,7 +2,9 @@
    
     margin-left: auto;
     margin-right: auto;
-    width:70%;
+    width:80%;
+    height:20%;
+    background-color:rgb(255, 255, 255);
 }
 .button{
     font-size:10px;
@@ -28,22 +30,12 @@
     margin-top: 100px;
   }
   .background{
-      /* background-color:rgb(193, 241, 193); */
-      
-      /* padding:7px;
-      width:70%;
-      margin-left: 15%;
-     margin-top:3%;
-      align-content: center;
-      text-align: center;
-      border-radius: 15px;
-      font-size:large; */
-      background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-    color: white;
+
+background-color: white;
+    color: rgb(8, 82, 6);
     font-weight: normal;
     font-size: 20px;
-    border: 3px solid #f1f1f1;
+    border: 2px solid #f1f1f1;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -52,6 +44,8 @@
     width: 80%;
     padding: 20px;
     margin-top: 0.0000005px;
+    height:20%;
+    
  
     
     }
