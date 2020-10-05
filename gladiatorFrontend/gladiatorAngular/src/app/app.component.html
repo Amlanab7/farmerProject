@@ -35,7 +35,7 @@
       <a routerLink="/admin-user-approval"><button mat-menu-item >User Requests</button></a>
       <a routerLink="/admin-sell-auction"><button mat-menu-item >Farmer Sell Requests</button></a>
       <a routerLink="/admin-bid-auction"><button mat-menu-item >Bid requests</button></a>
-      <a routerLink="/admin-sold"><button mat-menu-item >Market Place</button></a>    
+      <a routerLink="/adminsold"><button mat-menu-item >Market Place</button></a>    
     </mat-menu>
 
     <button  mat-raised-button [matMenuTriggerFor]="adminMenu"  *ngIf="((loggedInUser!=null) && (loggedInUser.type=='Admin'))">GoTo</button>&nbsp;&nbsp;

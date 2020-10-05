@@ -19,7 +19,7 @@ export class AdminSoldComponent implements OnInit {
     });
   }
   onSold(CID){
-    alert(CID);
+    // alert(CID);
     this.service.soldByAdmin(CID).subscribe(data=>{
      this.tempcrop = data;
      console.log(this.tempcrop);

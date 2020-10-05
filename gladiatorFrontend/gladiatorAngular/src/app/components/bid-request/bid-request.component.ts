@@ -31,7 +31,7 @@ export class BidRequestComponent implements OnInit {
     this.UID=UIDforBid.UID;
     
     console.log(this.CID);
-    alert(this.CID+" "+this.UID);
+    // alert(this.CID+" "+this.UID);
   
     this.service.getCropbyCID(this.CID).subscribe(data=>{
      this.item= data;console.log(data);localStorage.setItem("bidData",JSON.stringify(data));})

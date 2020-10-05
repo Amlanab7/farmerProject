@@ -32,10 +32,10 @@ export class LoginBidderComponent implements OnInit {
       // alert(user.UID);
       
       this.router.navigate(['/bidder-welcome']).then(()=>{window.location.reload()});
-      alert('Success');
+      // alert('Success');
     }, (error) => {
       console.log(error);
-      alert("Unsuccessfull")
+      alert("Invalid Credentials")
     });
     this.router.navigate(['loginbidder']);
   }

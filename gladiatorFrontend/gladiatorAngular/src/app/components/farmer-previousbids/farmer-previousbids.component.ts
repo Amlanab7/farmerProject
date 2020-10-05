@@ -20,12 +20,12 @@ export class FarmerPreviousbidsComponent implements OnInit {
     this.route.params.subscribe(data => {console.log(data);});
     
     this.CID = this.route.snapshot.paramMap.get('CID');
-    alert(this.CID);
+    // alert(this.CID);
     var cropuser = JSON.parse(localStorage.getItem('userData'));
     this.UID=cropuser.UID;
     
     console.log(this.CID);
-    alert(this.CID+" "+this.UID);
+    // alert(this.CID+" "+this.UID);
   
     this.service.getCropbyCID(this.CID).subscribe(data=>{
       this.marketcrop = data;
@@ -33,16 +33,16 @@ export class FarmerPreviousbidsComponent implements OnInit {
     });
        
      var bidData = JSON.parse(localStorage.getItem('bidData'));
-     alert(bidData.CID+" "+bidData.crop_type);
+    //  alert(bidData.CID+" "+bidData.crop_type);
   }
-  previousBids(){
-    this.service.PreviousBids(this.CID,this.UID).subscribe(data=>{
-      this.previousbids=data;
-      console.log(this.previousbids);
-    }
+  // previousBids(){
+  //   this.service.PreviousBids(this.CID,this.UID).subscribe(data=>{
+  //     this.previousbids=data;
+  //     console.log(this.previousbids);
+  //   }
        
-      );
+  //     );
 
-  }
+  // }
 
 }

@@ -34,10 +34,10 @@ export class LoginFarmerComponent implements OnInit {
       this.router.navigate(['/farmer-welcome']).then(()=>{
         window.location.reload();
       });
-      alert('Success');
+      // alert('Success');
     }, (error) => {
       console.log(error);
-      alert("Unsuccessfull")
+      alert("Invalid Credentials")
     });
     this.router.navigate(['loginfarmer']);
     

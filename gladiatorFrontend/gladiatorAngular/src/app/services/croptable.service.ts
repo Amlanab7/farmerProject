@@ -62,11 +62,11 @@ getCropbyCID(CID){
 //,[bidamount,UID]
   PlaceBidRequest(CID,bidamount,UID)
   {
-    alert(CID+bidamount+UID);
+    // alert(CID+bidamount+UID);
    return this.http.post<CropsforSale>(this.baseURL+"/bids/"+CID,[CID,bidamount,UID],this.httpOptions);
   }
-  public PreviousBids(CID,UID):Observable<Bids[]>{
-    return this.http.get<Bids[]>(this.baseURL+"/previous/get/"+CID,UID);
-  }
+  // public PreviousBids(CID,UID):Observable<Bids[]>{
+  //   return this.http.get<Bids[]>(this.baseURL+"/previous/get/"+CID,UID);
+  // }
 
 }

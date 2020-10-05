@@ -24,7 +24,7 @@ tempuser:AdminUserApprovalForm;
   }
   onView(UID){
       
-    alert(UID);
+    // alert(UID);
     this.router.navigate(["/userdetails-admin",UID]);
     // this.router.navigate("/bid-request");
   }

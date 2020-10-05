@@ -23,7 +23,7 @@ marketcrops:CropsforSale[];
   }
   onView(CID){
       
-    alert(CID);
+    // alert(CID);
     this.router.navigate(["/previousbids",CID]);
     // this.router.navigate("/bid-request");
   }

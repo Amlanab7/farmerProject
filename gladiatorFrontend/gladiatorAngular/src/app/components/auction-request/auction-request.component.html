@@ -6,7 +6,7 @@
           
         <div class="form-group col-10">
             <label>Crop Name</label>
-            <input type="text" formControlName="crop_name" class="form-control" pattern="[A-Za-z]{2,}$" title="Name should contain atleast 2 letters" [ngClass]="{ 'is-invalid': submitted && f.crop_name.errors }" />
+            <input type="text" formControlName="crop_name" class="form-control" pattern="[A-Z a-z]{2,}$" title="Name should contain atleast 2 letters" [ngClass]="{ 'is-invalid': submitted && f.crop_name.errors }" />
             <div *ngIf="submitted && f.crop_name.errors" class="invalid-feedback">
                 <div *ngIf="f.crop_name.errors.required">Crop name is required</div>
           </div>

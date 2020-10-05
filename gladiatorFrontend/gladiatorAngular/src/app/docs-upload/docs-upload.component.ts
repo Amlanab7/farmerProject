@@ -57,13 +57,13 @@ export class DocsUploadComponent implements OnInit {
     }
     onSubmit(){
       var user=JSON.parse(localStorage.getItem('userData'));
-      alert(user.UID);
+      // alert(user.UID);
       
      this.typedata.UID=user.UID;
-     alert(this.typedata.UID);
-     this.typedata.type="farmer";
+    //  alert(this.typedata.UID);
+     this.typedata.type="Farmer";
     
-      alert(this.typedata.UID+this.typedata.type);
+      // alert(this.typedata.UID+this.typedata.type);
       this.service.usertype(this.typedata).subscribe(data=>{
         console.log(data);
         localStorage.setItem("userData",JSON.stringify(data));

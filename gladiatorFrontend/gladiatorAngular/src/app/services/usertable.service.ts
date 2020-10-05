@@ -6,6 +6,7 @@ import { UserType } from '../Models/UserType';
 import { LoginForm } from '../Models/LoginForm';
 import { Forgot } from '../Models/Forgot';
 import { ImageClass } from '../Models/Image';
+import { ContactQuery } from '../Models/ContactQuery';
 @Injectable({
   providedIn: 'root'
 })
@@ -53,5 +54,9 @@ getPan(UID){
 }
 getAadhar(UID){
   return this.http.get<ImageClass>(this.baseURL+"/Aadhar/"+UID);
+}
+ContactUs(contactquery:ContactQuery){
+
+ return this.http.post<ContactQuery>(this.baseURL+"/contact",contactquery,this.httpOptions);
 }
 }

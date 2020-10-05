@@ -64,12 +64,9 @@ export class FarmerRegistrationComponent implements OnInit {
      
       'password': ['', [
      Validators.required,
-       ]],
-       'confirmPassword':
-        ['', Validators.required
-        ]},
+       ]]
        
- )
+      })
   }
 
     get f() 
@@ -94,7 +91,7 @@ export class FarmerRegistrationComponent implements OnInit {
     
         })
         console.log(this.registerForm.value);
-        alert("User Added Successfully");
+        // alert("User Added Successfully");
     }
 
     onReset() {

@@ -25,7 +25,7 @@ export class UserDetailsComponent implements OnInit {
     
     this.UID = this.route.snapshot.paramMap.get('UID');
    // var user = JSON.parse(localStorage.getItem('userData'));
-   alert("going to userdetails");
+  //  alert("going to userdetails");
      this.service.getUserbyUID(this.UID).subscribe(data=>{
        this.i=data;
        console.log(this.i);
@@ -36,28 +36,28 @@ export class UserDetailsComponent implements OnInit {
 
   }
   getPan(){
-    alert("going to getpan");
+    // alert("going to getpan");
 
     this.service.getPan(this.UID).subscribe(data=>{
      this.panimage=data;
      console.log(this.panimage);
    })
-    alert(this.panimage.imgCaption);
+    // alert(this.panimage.imgCaption);
    this.imgurl=this.imgcommonpath+this.panimage.imgName;
   }
   getAadhar(){
-    alert("going to getadhar");
+    // alert("going to getadhar");
      this.service.getAadhar(this.UID).subscribe(data=>{
        this.aadharimage=data;
        console.log(this.aadharimage);
      });
   }
    onAccept(UID){
-     alert(UID);
+    //  alert(UID);
      this.service.accept(UID).subscribe(data=>{
       this.tempuser = data;
       console.log(this.tempuser);
-      alert("user approved");
+      alert("User approved");
     });
 
    }
@@ -65,7 +65,7 @@ export class UserDetailsComponent implements OnInit {
     this.service.reject(UID).subscribe(data=>{
       this.tempuser = data;
       console.log(this.tempuser);
-      alert("user rejected");
+      alert("User rejected");
     });
 
 }

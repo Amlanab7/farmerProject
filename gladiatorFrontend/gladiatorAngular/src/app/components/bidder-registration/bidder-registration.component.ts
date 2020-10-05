@@ -52,21 +52,10 @@ export class BidderRegistrationComponent implements OnInit {
       'password': ['', [
      Validators.required,
        ]],
-       'confirmPassword':
-        ['', Validators.required
-        ]},
-        {
-          validator: this.MustMatch('password', 'confirmPassword')
-        }
- )
-  }
-    MustMatch(a,b){
-      if(a==b)
-      {
-        return true;
-      }
-      return false;
-    }
+       
+     })
+}
+    
     get f() 
     { 
       return this.registerForm.controls;
@@ -89,7 +78,7 @@ export class BidderRegistrationComponent implements OnInit {
     
         })
         console.log(this.registerForm.value);
-        alert("User Added Successfully");
+        // alert("User Added Successfully");
     }
 
     onReset() {
