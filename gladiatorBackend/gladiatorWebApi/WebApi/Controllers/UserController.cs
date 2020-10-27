@@ -12,9 +12,9 @@ namespace WebApi.Controllers
     [RoutePrefix("api/users")]
     public class UserController : ApiController
     {
-        
+
         gladiatorEntities db = new gladiatorEntities();
-       
+
 
         [HttpGet]
         [Route("GetAll")]
@@ -23,7 +23,7 @@ namespace WebApi.Controllers
         {
             var unapproved = db.users.Where(u => u.approved == null);
             return unapproved;
-            
+
         }
         [HttpGet]
         [Route("get/{id}")]
@@ -50,7 +50,7 @@ namespace WebApi.Controllers
         public IHttpActionResult GetPan(int id)
         {
             image img = null;
-            
+
 
             try
             {
@@ -102,7 +102,7 @@ namespace WebApi.Controllers
                 }
 
                 db.users.Add(RegistrationForm);
-                
+
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -112,18 +112,18 @@ namespace WebApi.Controllers
             }
             return Ok(RegistrationForm);
         }
-        
+
         [HttpPut]
         [Route("type/{id}")]
         public IHttpActionResult TypeInputFarmer(UserType type)
         {
-            var user= db.users.Where(x => x.UID == type.UID).FirstOrDefault();
-            if (user != null) 
+            var user = db.users.Where(x => x.UID == type.UID).FirstOrDefault();
+            if (user != null)
             {
                 user.type = type.type;
                 db.SaveChanges();
             }
-         
+
             return Ok(user);
 
         }
@@ -132,7 +132,7 @@ namespace WebApi.Controllers
         [Route("approval/{id}")]
         public IHttpActionResult Approval(int id)
         {
-            
+
             var approval = db.users.FirstOrDefault(x => x.UID == id);
 
             if (approval != null)
@@ -148,7 +148,7 @@ namespace WebApi.Controllers
         [Route("rejection/{id}")]
         public IHttpActionResult Reject(int id)
         {
-            
+
             var approval = db.users.FirstOrDefault(x => x.UID == id);
 
             if (approval != null)
@@ -168,7 +168,7 @@ namespace WebApi.Controllers
 
             try
             {
-                var userFound = db.users.Where(u => u.email == Details.email && u.password == Details.password && u.type == "Admin" && u.approved==2).SingleOrDefault();
+                var userFound = db.users.Where(u => u.email == Details.email && u.password == Details.password && u.type == "Admin" && u.approved == 2).SingleOrDefault();
 
                 if (userFound != null)
                 {
@@ -196,7 +196,7 @@ namespace WebApi.Controllers
 
             try
             {
-                var userFound = db.users.Where(u => u.email == Details.email && u.password == Details.password && u.type == "Farmer" && u.approved==1).SingleOrDefault();
+                var userFound = db.users.Where(u => u.email == Details.email && u.password == Details.password && u.type == "Farmer" && u.approved == 1).SingleOrDefault();
 
                 if (userFound != null)
                 {
@@ -224,7 +224,7 @@ namespace WebApi.Controllers
 
             try
             {
-                var userFound = db.users.Where(u => u.email == Details.email && u.password == Details.password && u.type == "Bidder" && u.approved==1).SingleOrDefault();
+                var userFound = db.users.Where(u => u.email == Details.email && u.password == Details.password && u.type == "Bidder" && u.approved == 1).SingleOrDefault();
 
                 if (userFound != null)
                 {
@@ -241,7 +241,7 @@ namespace WebApi.Controllers
             {
                 throw ex;
             }
-            
+
 
         }
 
@@ -295,9 +295,34 @@ namespace WebApi.Controllers
             }
             else
             {
-             
+
                 return NotFound();
             }
+
+        }
+
+        [HttpPost]
+        [Route("contact")]
+        public IHttpActionResult AddContactQuery([FromBody] contactU newcontact)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                db.contactUs.Add(newcontact);
+
+                db.SaveChanges();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+            return Ok(newcontact);
 
         }
     }
